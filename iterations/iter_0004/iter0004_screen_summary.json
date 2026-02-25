@@ -1,0 +1,119 @@
+{
+  "inputs": {
+    "domain_runs": {
+      "immune": {
+        "seed42_main": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_main/layer_gene_embeddings.npy",
+        "seed43": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed43/layer_gene_embeddings.npy",
+        "seed44": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed44/layer_gene_embeddings.npy"
+      },
+      "external_lung": {
+        "seed42_main": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle7_external_lung_main/layer_gene_embeddings.npy",
+        "seed43": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle7_external_lung_seed43/layer_gene_embeddings.npy",
+        "seed44": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle7_external_lung_seed44/layer_gene_embeddings.npy"
+      }
+    }
+  },
+  "config": {
+    "n_points_per_layer": 350,
+    "pca_dim": 20,
+    "n_null_feature_shuffle": 20,
+    "n_perm_intrinsic_corr": 2000
+  },
+  "cross_domain_h1": [
+    {
+      "domain": "external_lung",
+      "n_layers": 12,
+      "n_layers_fisher_p_lt_0_05": 12,
+      "frac_layers_fisher_p_lt_0_05": 1.0,
+      "mean_layer_h1_delta": 12.482377872036563,
+      "median_layer_h1_delta": 12.144201221068702,
+      "min_layer_h1_delta": 4.045075464248658,
+      "max_layer_h1_delta": 20.854782203833263,
+      "top_layer": 0,
+      "top_layer_mean_delta": 20.854782203833263,
+      "top_layer_fisher_p": 0.005598163615730096
+    },
+    {
+      "domain": "immune",
+      "n_layers": 12,
+      "n_layers_fisher_p_lt_0_05": 12,
+      "frac_layers_fisher_p_lt_0_05": 1.0,
+      "mean_layer_h1_delta": 12.073879463166241,
+      "median_layer_h1_delta": 12.055502093831697,
+      "min_layer_h1_delta": 4.323103249073029,
+      "max_layer_h1_delta": 18.310806369781492,
+      "top_layer": 7,
+      "top_layer_mean_delta": 18.310806369781492,
+      "top_layer_fisher_p": 0.005598163615730096
+    }
+  ],
+  "intrinsic_corr_domain_metric": [
+    {
+      "domain": "external_lung",
+      "metric": "linearity_top5_ratio",
+      "mean_spearman_rho": -0.5104895104895105,
+      "std_spearman_rho": 0.14735180073919918,
+      "n_seed_runs": 3,
+      "fisher_stat": 15.335497864825104,
+      "fisher_p": 0.01780180548954309,
+      "sign_consistency": 1.0
+    },
+    {
+      "domain": "external_lung",
+      "metric": "mle_intrinsic_dim",
+      "mean_spearman_rho": 0.07925407925407928,
+      "std_spearman_rho": 0.09897843238024312,
+      "n_seed_runs": 3,
+      "fisher_stat": 1.8104223948346383,
+      "fisher_p": 0.9362822573629632,
+      "sign_consistency": 0.6666666666666666
+    },
+    {
+      "domain": "external_lung",
+      "metric": "participation_ratio_dim",
+      "mean_spearman_rho": 0.5081585081585083,
+      "std_spearman_rho": 0.0863100633173595,
+      "n_seed_runs": 3,
+      "fisher_stat": 14.683968657606888,
+      "fisher_p": 0.022862405508219923,
+      "sign_consistency": 1.0
+    },
+    {
+      "domain": "immune",
+      "metric": "linearity_top5_ratio",
+      "mean_spearman_rho": -0.24242424242424243,
+      "std_spearman_rho": 0.39169163284466146,
+      "n_seed_runs": 3,
+      "fisher_stat": 9.498787451600723,
+      "fisher_p": 0.14740836784996372,
+      "sign_consistency": 0.6666666666666666
+    },
+    {
+      "domain": "immune",
+      "metric": "mle_intrinsic_dim",
+      "mean_spearman_rho": 0.013986013986013965,
+      "std_spearman_rho": 0.4006816042175325,
+      "n_seed_runs": 3,
+      "fisher_stat": 6.66592402148544,
+      "fisher_p": 0.3528497538971098,
+      "sign_consistency": 0.3333333333333333
+    },
+    {
+      "domain": "immune",
+      "metric": "participation_ratio_dim",
+      "mean_spearman_rho": 0.2657342657342658,
+      "std_spearman_rho": 0.3394310797066181,
+      "n_seed_runs": 3,
+      "fisher_stat": 8.70213804261628,
+      "fisher_p": 0.19103552243482877,
+      "sign_consistency": 0.6666666666666666
+    }
+  ],
+  "artifacts": {
+    "h1_by_seed_layer": "iterations/iter_0004/scgpt_cross_domain_h1_by_seed_layer.csv",
+    "h1_layer_summary": "iterations/iter_0004/scgpt_cross_domain_h1_layer_summary.csv",
+    "h1_domain_summary": "iterations/iter_0004/scgpt_cross_domain_h1_domain_summary.csv",
+    "intrinsic_corr_by_seed": "iterations/iter_0004/intrinsic_dimensionality_h1_correlation_by_seed.csv",
+    "intrinsic_corr_summary": "iterations/iter_0004/intrinsic_dimensionality_h1_correlation_summary.csv"
+  }
+}

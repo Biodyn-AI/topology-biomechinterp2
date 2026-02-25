@@ -1,0 +1,13 @@
+split_regime,metric,seed_tag,n_layers,spearman_rho
+source_disjoint,delta_edge_recon_pos_minus_neg,seed42_main,12,0.013986013986013986
+source_disjoint,delta_edge_recon_pos_minus_neg,seed43,12,-0.22377622377622378
+source_disjoint,delta_edge_recon_pos_minus_neg,seed44,12,-0.2657342657342658
+source_disjoint,mean_edge_reconstruction_error,seed42_main,12,-0.07692307692307693
+source_disjoint,mean_edge_reconstruction_error,seed43,12,-0.2867132867132868
+source_disjoint,mean_edge_reconstruction_error,seed44,12,-0.31468531468531474
+target_disjoint,delta_edge_recon_pos_minus_neg,seed42_main,12,-0.2867132867132868
+target_disjoint,delta_edge_recon_pos_minus_neg,seed43,12,-0.6433566433566434
+target_disjoint,delta_edge_recon_pos_minus_neg,seed44,12,-0.41958041958041964
+target_disjoint,mean_edge_reconstruction_error,seed42_main,12,-0.3636363636363637
+target_disjoint,mean_edge_reconstruction_error,seed43,12,-0.4125874125874127
+target_disjoint,mean_edge_reconstruction_error,seed44,12,-0.44755244755244755

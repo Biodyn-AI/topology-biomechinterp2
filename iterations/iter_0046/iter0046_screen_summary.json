@@ -1,0 +1,36 @@
+{
+  "iteration": "iter_0046",
+  "h121": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.03272708537398344,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 2,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0046/h121_directional_geodesic_asymmetry_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0046/h121_directional_geodesic_asymmetry_domain_summary.csv",
+      "null_summary": "iterations/iter_0046/h121_directional_geodesic_asymmetry_null_summary.csv"
+    }
+  },
+  "h122": {
+    "rows_tested": 12,
+    "mean_transport_score": -100.5498987556919,
+    "positive_domain_splits": 0,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0046/h122_landscape_transport_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0046/h122_landscape_transport_domain_summary.csv",
+      "null_summary": "iterations/iter_0046/h122_landscape_transport_null_summary.csv"
+    }
+  },
+  "h123": {
+    "rows_tested": 22,
+    "mean_delta_auc": 0.09351145992810796,
+    "positive_domain_splits": 8,
+    "positive_null_gap_domain_splits": 8,
+    "artifact_paths": {
+      "by_seed_domain_split": "iterations/iter_0046/h123_signed_motif_module_hardening_by_seed_domain_split.csv",
+      "domain_summary": "iterations/iter_0046/h123_signed_motif_module_hardening_domain_summary.csv",
+      "null_summary": "iterations/iter_0046/h123_signed_motif_module_hardening_null_summary.csv"
+    }
+  }
+}

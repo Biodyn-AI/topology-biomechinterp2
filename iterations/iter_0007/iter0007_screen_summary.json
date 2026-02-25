@@ -1,0 +1,102 @@
+{
+  "config": {
+    "domain": "immune",
+    "split_regimes": [
+      "source_disjoint",
+      "target_disjoint"
+    ],
+    "n_points_per_test": 160,
+    "pca_dim": 14,
+    "knn_k_min": 12,
+    "knn_k_max": 30,
+    "n_null_degree_preserving_rewire": 6,
+    "rewire_swap_multiplier": 1.5,
+    "rewire_retry_per_null": 10,
+    "rewire_attempt_multiplier": 8,
+    "observed_metrics": [
+      "h1_observed_euclidean",
+      "h1_observed_geodesic",
+      "distortion_observed"
+    ]
+  },
+  "inputs": {
+    "immune": {
+      "seed42_main": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_main/layer_gene_embeddings.npy",
+      "seed43": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed43/layer_gene_embeddings.npy",
+      "seed44": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed44/layer_gene_embeddings.npy"
+    }
+  },
+  "domain_summary": [
+    {
+      "domain": "immune",
+      "split_regime": "source_disjoint",
+      "n_layers": 12,
+      "n_layers_geo_sig": 0,
+      "frac_layers_geo_sig": 0.0,
+      "n_layers_geo_positive_delta": 0,
+      "frac_layers_geo_positive_delta": 0.0,
+      "n_layers_euclid_sig": 0,
+      "frac_layers_euclid_sig": 0.0,
+      "n_layers_euclid_positive_delta": 0,
+      "frac_layers_euclid_positive_delta": 0.0,
+      "n_layers_delta_shift_positive": 10,
+      "frac_layers_delta_shift_positive": 0.8333333333333334,
+      "mean_h1_delta_geodesic_vs_rewire": -105.58129219399137,
+      "mean_h1_delta_euclidean_vs_rewire": -105.73158476272796,
+      "mean_h1_delta_shift_geodesic_minus_euclidean": 0.15029256873660618,
+      "n_layers_distortion_lower_sig": 0,
+      "frac_layers_distortion_lower_sig": 0.0,
+      "mean_distortion_delta_observed_minus_null": 0.08749634758082252
+    },
+    {
+      "domain": "immune",
+      "split_regime": "target_disjoint",
+      "n_layers": 12,
+      "n_layers_geo_sig": 0,
+      "frac_layers_geo_sig": 0.0,
+      "n_layers_geo_positive_delta": 0,
+      "frac_layers_geo_positive_delta": 0.0,
+      "n_layers_euclid_sig": 0,
+      "frac_layers_euclid_sig": 0.0,
+      "n_layers_euclid_positive_delta": 0,
+      "frac_layers_euclid_positive_delta": 0.0,
+      "n_layers_delta_shift_positive": 12,
+      "frac_layers_delta_shift_positive": 1.0,
+      "mean_h1_delta_geodesic_vs_rewire": -85.12991700708027,
+      "mean_h1_delta_euclidean_vs_rewire": -85.33961089587389,
+      "mean_h1_delta_shift_geodesic_minus_euclidean": 0.2096938887936128,
+      "n_layers_distortion_lower_sig": 0,
+      "frac_layers_distortion_lower_sig": 0.0,
+      "mean_distortion_delta_observed_minus_null": 0.1228011425348291
+    }
+  ],
+  "calibration_shift_summary": [
+    {
+      "domain": "immune",
+      "split_regime": "source_disjoint",
+      "n_rows": 36,
+      "mean_shift": 0.15029256873660618,
+      "median_shift": 0.0,
+      "min_shift": 0.0,
+      "max_shift": 1.297067642211914,
+      "frac_rows_shift_positive": 0.4722222222222222
+    },
+    {
+      "domain": "immune",
+      "split_regime": "target_disjoint",
+      "n_rows": 36,
+      "mean_shift": 0.20969388879361284,
+      "median_shift": 0.0,
+      "min_shift": 0.0,
+      "max_shift": 6.900093078613282,
+      "frac_rows_shift_positive": 0.4722222222222222
+    }
+  ],
+  "artifacts": {
+    "by_seed": "iterations/iter_0007/h1_immune_metric_matched_by_seed_layer.csv",
+    "layer_summary": "iterations/iter_0007/h1_immune_metric_matched_layer_summary.csv",
+    "pass_matrix": "iterations/iter_0007/h1_immune_metric_matched_pass_matrix.csv",
+    "domain_summary": "iterations/iter_0007/h1_immune_metric_matched_domain_summary.csv",
+    "calibration_shift_summary": "iterations/iter_0007/h1_immune_metric_calibration_shift_summary.csv"
+  }
+}

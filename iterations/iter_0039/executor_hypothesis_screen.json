@@ -1,0 +1,70 @@
+{
+  "iteration": "iter_0039",
+  "hypotheses": [
+    {
+      "id": "H100",
+      "name": "Relative persistence contrast vs matched background",
+      "family": "persistent_homology",
+      "split_regime": "other",
+      "method": "Seed42 run across immune/lung/external_lung with source/target-disjoint splits and layers {7,11}; compared relative filtration-connectivity contrasts (anchor vs matched background complexes) against an H93-style weighted-filtration backbone with anchor-permutation, random-background, and label-permutation nulls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_relative_ph_minus_h93",
+      "result_value": "mean=-0.00188; positive rows=3/12; positive mean domain-splits=2/6; positive mean null-gap domain-splits=0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0039/h100_relative_persistence_contrast_by_domain_split_layer.csv",
+        "iterations/iter_0039/h100_relative_persistence_contrast_domain_summary.csv",
+        "iterations/iter_0039/h100_relative_persistence_contrast_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this exact relative-contrast construction unless anchor/background pairing is materially changed.",
+      "novelty_type": "new_method",
+      "lineage": "H93",
+      "retired": true,
+      "retirement_reason": "Current formulation underperforms the H93 backbone and is null-gap negative in all domain-splits."
+    },
+    {
+      "id": "H101",
+      "name": "Persistence derivative-spectrum descriptors",
+      "family": "persistent_homology",
+      "split_regime": "other",
+      "method": "Seed42 breadth run across immune/lung/external_lung with source/target-disjoint splits and layers {0,3,7,11}; derived filtration-trajectory derivative features and tested additive lift over H70 using quantile-order permutation, derivative-sign randomization, and label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_persistence_derivative_minus_h70",
+      "result_value": "mean=+0.00621; positive rows=12/24; positive mean domain-splits=4/6; positive mean null-gap domain-splits=0/6",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0039/h101_persistence_derivative_spectrum_by_domain_split_layer.csv",
+        "iterations/iter_0039/h101_persistence_derivative_spectrum_domain_summary.csv",
+        "iterations/iter_0039/h101_persistence_derivative_spectrum_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Only revisit once with a materially changed interaction-only design on top of robust H91/H93 features.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": false
+    },
+    {
+      "id": "H102",
+      "name": "Cross-model OT alignment with monotone depth warp",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Seed42 pilot across immune/lung/external_lung using joint scGPT layers {7,11}; built GO-module role vectors, selected best monotone depth warp by OT cost, and evaluated concordance under module-membership permutation, depth-order permutation, random monotone warp, and random-subspace nulls.",
+      "status": "tested",
+      "primary_metric": "module_persistence_ot_concordance",
+      "result_value": "mean=+0.57065; mean null-gap(q95)=-0.09697; positive null-gap domains=0/3",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0039/h102_ot_monotone_depth_warp_by_domain.csv",
+        "iterations/iter_0039/h102_ot_monotone_depth_warp_domain_summary.csv",
+        "iterations/iter_0039/h102_ot_monotone_depth_warp_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Re-retire cross-model branch; only reopen with a fundamentally different shared-representation anchor and strict fast-fail criteria.",
+      "novelty_type": "new_method",
+      "lineage": "H99",
+      "retired": true,
+      "retirement_reason": "Major-change rescue still failed q95 null-gap gate in all pilot domains."
+    }
+  ]
+}

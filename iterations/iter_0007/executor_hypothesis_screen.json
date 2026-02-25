@@ -1,0 +1,42 @@
+{
+  "iteration": "iter_0007",
+  "hypotheses": [
+    {
+      "id": "H09",
+      "name": "Metric-matched geodesic persistence rescues rewiring-null failure",
+      "family": "null_sensitivity",
+      "split_regime": "other",
+      "method": "Ran immune full-layer source/target-disjoint screening with degree-preserving rewiring nulls, comparing both observed Euclidean H1 and observed geodesic H1 against rewired-geodesic null distributions via `conda run -n subproject40-topology python iterations/iter_0007/run_iter0007_screen.py`.",
+      "status": "tested",
+      "primary_metric": "n_layer_split_tests_fisher_p_lt_0_05_for_geodesic_vs_rewire",
+      "result_value": "0/24 significant; mean geodesic delta -95.356; min Fisher p 0.6913; dual-split pass 0/12",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0007/h1_immune_metric_matched_layer_summary.csv",
+        "iterations/iter_0007/h1_immune_metric_matched_domain_summary.csv",
+        "iterations/iter_0007/h1_immune_metric_matched_pass_matrix.csv",
+        "iterations/iter_0007/iter0007_screen_summary.json"
+      ],
+      "decision": "negative",
+      "next_action": "Replicate the same metric-matched rewiring protocol in external-lung to test whether this negative outcome generalizes across domains."
+    },
+    {
+      "id": "H10",
+      "name": "Metric mismatch is the dominant cause of rewiring-null negativity",
+      "family": "manifold_distance",
+      "split_regime": "other",
+      "method": "Computed calibration-shift diagnostic per seed-layer-split as (geodesic delta - Euclidean delta) under the same rewired-geodesic null; additionally tested geodesic-distortion lower-tail significance.",
+      "status": "tested",
+      "primary_metric": "mean_h1_delta_shift_geodesic_minus_euclidean",
+      "result_value": "Mean shift +0.180 (positive in 22/24 layer-split aggregates), but all geodesic tests remain non-significant (0/24) and distortion test is non-significant (0/24, min p 0.0696)",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0007/h1_immune_metric_calibration_shift_summary.csv",
+        "iterations/iter_0007/h1_immune_metric_matched_layer_summary.csv",
+        "iterations/iter_0007/iter0007_screen_summary.json"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Introduce edge-length-bin-preserving rewiring to test whether stronger metric preservation materially increases the calibration shift and recovers any positive layers."
+    }
+  ]
+}

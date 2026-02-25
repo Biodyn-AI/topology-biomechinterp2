@@ -1,0 +1,41 @@
+{
+  "iteration": "iter_0024",
+  "h55": {
+    "rows_tested": 36,
+    "mean_delta_auc": 0.011694560968874276,
+    "fraction_delta_positive": 0.6944444444444444,
+    "domain_split_fisher_sig": 6,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0024/h55_directed_signed_highperm_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0024/h55_directed_signed_highperm_domain_summary.csv",
+      "null_summary": "iterations/iter_0024/h55_directed_signed_highperm_null_summary.csv",
+      "failure_slice_diagnostics": "iterations/iter_0024/h55_directed_signed_failure_slice_diagnostics.csv"
+    }
+  },
+  "h56": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.007572845656844268,
+    "mean_transfer_f1_lift": 0.0,
+    "domain_transfer_fisher_sig": 0,
+    "artifact_paths": {
+      "by_domain_layer_split": "iterations/iter_0024/h56_path_homology_v2_by_domain_layer_split.csv",
+      "utility_transfer_summary": "iterations/iter_0024/h56_path_homology_v2_utility_transfer_summary.csv",
+      "null_summary": "iterations/iter_0024/h56_path_homology_v2_null_summary.csv"
+    }
+  },
+  "h57": {
+    "rows_tested": 72,
+    "mean_delta_auc": -0.01778518459433244,
+    "fraction_delta_positive": 0.3472222222222222,
+    "domain_split_fisher_sig": 6,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0024/h57_geodesic_anisotropy_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0024/h57_geodesic_anisotropy_domain_summary.csv",
+      "null_summary": "iterations/iter_0024/h57_geodesic_anisotropy_null_summary.csv"
+    }
+  },
+  "environment": {
+    "python_env": "subproject40-topology",
+    "string_cache_used": "iterations/iter_0020/h43_string_network_api.tsv"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "iteration": "iter_0040",
+  "hypotheses": [
+    {
+      "id": "H103",
+      "name": "Interaction-only derivative rescue on H91/H93 backbone",
+      "family": "persistent_homology",
+      "split_regime": "other",
+      "method": "Seed42 run across immune/lung/external_lung with source/target-disjoint splits and layers {0,3,7,11}; derivative-spectrum x backbone interaction-only features vs H93-style backbone with quantile-order, interaction-partner-shuffle, and label-permutation nulls.",
+      "status": "tested",
+      "primary_metric": "mean_delta_auc_interaction_derivative_minus_h91_h93",
+      "result_value": "-0.00304 (24 rows; positive mean null-gap domain-splits 0/6)",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0040/h103_interaction_derivative_rescue_by_domain_split_layer.csv",
+        "iterations/iter_0040/h103_interaction_derivative_rescue_domain_summary.csv",
+        "iterations/iter_0040/h103_interaction_derivative_rescue_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this rescue form; only revisit if the topology object is materially changed (not interaction-only additive reuse).",
+      "novelty_type": "new_method",
+      "lineage": "H101",
+      "retired": true,
+      "retirement_reason": "Zero domain-splits with positive mean null-gap under adequate controls."
+    },
+    {
+      "id": "H104",
+      "name": "Depth motif grammar for descriptor trajectories",
+      "family": "manifold_distance",
+      "split_regime": "other",
+      "method": "Seed42 run across immune/lung/external_lung with source/target-disjoint splits; discretized layered H70/H93-style descriptors into motif tokens over layers {0,3,7,11}; motif log-likelihood score vs H70 baseline with layer-order, token-shuffle, and label-permutation nulls.",
+      "status": "tested",
+      "primary_metric": "mean_delta_auc_motif_grammar_minus_h70",
+      "result_value": "-0.00908 (6 rows; positive mean null-gap domain-splits 0/6)",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0040/h104_depth_motif_grammar_by_domain_split.csv",
+        "iterations/iter_0040/h104_depth_motif_grammar_domain_summary.csv",
+        "iterations/iter_0040/h104_depth_motif_grammar_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Do not carry this exact motif tokenization forward; if revisited, require a materially different grammar objective and stronger supervision.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": true,
+      "retirement_reason": "Directional rows existed but robustness failed in every domain-split."
+    },
+    {
+      "id": "H105",
+      "name": "STRING-conditioned null calibration sensitivity",
+      "family": "null_sensitivity",
+      "split_regime": "other",
+      "method": "Seed42 run across immune/lung/external_lung with source/target-disjoint splits and layers {7,11}; compared unconditioned label-permutation nulls vs STRING-decile x degree-bin conditioned label-permutation nulls for H93-style model uplift.",
+      "status": "tested",
+      "primary_metric": "mean_conditioned_minus_unconditioned_null_gap",
+      "result_value": "-0.05125 (12 rows; positive conditioned-gain domain-splits 0/6)",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0040/h105_string_conditioned_null_calibration_by_domain_split_layer.csv",
+        "iterations/iter_0040/h105_string_conditioned_null_calibration_domain_summary.csv",
+        "iterations/iter_0040/h105_string_conditioned_null_calibration_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire the conditioned-null-rescue expectation in this form; use conditioned nulls as stricter controls, not as a recovery mechanism.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": true,
+      "retirement_reason": "Conditioned calibration consistently reduced null-gap margins relative to unconditioned nulls."
+    }
+  ]
+}

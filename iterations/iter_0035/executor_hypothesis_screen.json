@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0035",
+  "hypotheses": [
+    {
+      "id": "H88",
+      "name": "Multiseed sparse-descriptor consensus robustness",
+      "family": "split_robustness",
+      "split_regime": "other",
+      "method": "Across immune/lung/external_lung with seeds 42/43/44, source/target-disjoint splits, and layers {0,3,7,11}, reran H87-style sparse descriptor blend over H70 baseline, evaluated descriptor-shuffle/endpoint-swap/label-permutation nulls, and measured cross-seed descriptor-core stability (nonzero-set Jaccard/sign agreement).",
+      "status": "tested",
+      "primary_metric": "delta_auc_sparse_descriptor_blend_minus_h70",
+      "result_value": "mean=+0.07603; positive rows=72/72; positive mean domain-splits=6/6; positive mean null-gap domain-splits=5/6; mean descriptor Jaccard=0.49263",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0035/h88_multiseed_sparse_descriptor_by_seed_split_layer.csv",
+        "iterations/iter_0035/h88_multiseed_sparse_descriptor_domain_summary.csv",
+        "iterations/iter_0035/h88_multiseed_sparse_descriptor_null_summary.csv",
+        "iterations/iter_0035/h88_multiseed_sparse_descriptor_stability.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Run one focused rescue on immune/source_disjoint with larger null budget and stability-regularized feature selection to push descriptor Jaccard toward >=0.6.",
+      "novelty_type": "refinement",
+      "lineage": "H87",
+      "retired": false
+    },
+    {
+      "id": "H89",
+      "name": "Local linearity phase-boundary manifold screen",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "other",
+      "method": "Seed42 breadth screen across immune/lung/external_lung, source/target-disjoint splits, and layers {0,3,7,11}; computed local reconstruction-error and depth-wise ID-jump phase-boundary descriptors, blended with H70 baseline, and tested layer-order permutation, descriptor shuffle, and label permutation nulls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_phase_boundary_minus_h70",
+      "result_value": "mean=+0.01676; positive rows=20/24; positive mean domain-splits=6/6; positive mean null-gap domain-splits=0/6",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0035/h89_phase_boundary_by_domain_split_layer.csv",
+        "iterations/iter_0035/h89_phase_boundary_domain_summary.csv",
+        "iterations/iter_0035/h89_phase_boundary_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this exact phase-boundary utility form; only reopen as a diagnostic feature inside a stronger positive backbone.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": false
+    },
+    {
+      "id": "H90",
+      "name": "Perturbation topology-stability blend",
+      "family": "topology_stability",
+      "split_regime": "other",
+      "method": "Seed42 breadth screen across immune/lung/external_lung, source/target-disjoint splits, and layers {7,11}; measured H70 score stability under kNN-scale and metric-jitter perturbations, added stability descriptors to baseline, and tested feature/profile shuffles plus label permutation nulls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_stability_blend_minus_h70",
+      "result_value": "mean=+0.00449; positive rows=7/12; positive mean domain-splits=4/6; positive mean null-gap domain-splits=0/6",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0035/h90_topology_stability_by_domain_split_layer.csv",
+        "iterations/iter_0035/h90_topology_stability_domain_summary.csv",
+        "iterations/iter_0035/h90_topology_stability_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this stability-as-additive-score formulation; if revisited, treat stability as an error-analysis stratifier rather than direct utility feature.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": false
+    }
+  ]
+}

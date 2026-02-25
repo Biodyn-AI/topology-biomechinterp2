@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0030",
+  "hypotheses": [
+    {
+      "id": "H73",
+      "name": "Support-concordance anchoring of triangle-defect lift",
+      "family": "module_structure",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Across immune/lung/external_lung with seeds 42/43/44, source/target-disjoint splits, and layers {7,11}, reused H70 triangle-defect scoring and tested high-vs-low biological support-concordance interaction (support - 0.4*directional margin) with support-shuffle, matched-random-support, and label-shuffle controls.",
+      "status": "tested",
+      "primary_metric": "interaction_delta_high_minus_low",
+      "result_value": "mean interaction=-0.00032; mean delta_AUROC(triangle-baseline)=+0.02498; interaction>0 rows 19/36; p_best<0.05 rows 7/36; mean null_gap_q95(interaction)=-0.08390; immune/source mean delta_AUROC=+0.00026",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0030/h73_support_concordance_by_seed_layer_split.csv",
+        "iterations/iter_0030/h73_support_concordance_domain_summary.csv",
+        "iterations/iter_0030/h73_support_concordance_null_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Keep H70 geometry branch active but retire this support-interaction formulation; if rescued, require explicit coexpression-aware support anchoring and stronger null-surviving interaction gate.",
+      "novelty_type": "refinement",
+      "lineage": "H70",
+      "retired": false
+    },
+    {
+      "id": "H74",
+      "name": "Relational spectral cross-model alignment pilot",
+      "family": "cross_model_alignment",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Seed42 held-out-domain pilot on immune/lung/external_lung with source/target-disjoint splits and layers {7,11}; computed spectral embeddings of topology signatures in each model, fit orthogonal Procrustes map on source domains, and evaluated mapped-Geneformer transfer against unmapped baseline with eigenspectrum permutation, random orthogonal basis, and signature-destroy controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_transfer_minus_baseline",
+      "result_value": "mean delta_AUROC=+0.01136; mean null_gap_q95=-0.09881; immune mean delta_AUROC=-0.16020 and immune mean null_gap_q95=-0.14682; rows with null_gap_q95>0: 2/12; mean mapped-to-sc cosine=+0.00017",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0030/h74_relational_spectral_alignment_by_domain_layer_split.csv",
+        "iterations/iter_0030/h74_relational_spectral_alignment_domain_summary.csv",
+        "iterations/iter_0030/h74_relational_spectral_alignment_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire cross-model edge-utility transfer for now; only revisit with non-edge endpoint or explicit biological-stratum objective.",
+      "novelty_type": "new_method",
+      "lineage": "H71",
+      "retired": true,
+      "retirement_reason": "Major-change relational spectral rescue still failed immune gate and remained null-gap negative overall."
+    },
+    {
+      "id": "H75",
+      "name": "Geodesic curvature-acceleration broad screen",
+      "family": "manifold_distance",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Seed42 screen across immune/lung/external_lung and source/target-disjoint splits using layers {0,3,7,11}; derived edge curvature trajectories from multiscale triangle-defect proxies, added slope/acceleration smoothness terms to geodesic baseline, and tested against layer-order permutation, curvature-shuffle-within-geodesic-bins, and label-shuffle controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_curvature_minus_baseline",
+      "result_value": "mean delta_AUROC=+0.00210; positive rows 3/6; p_best<0.05 rows 2/6; positive mean domain-splits 3/6; mean null_gap_q95<0 in all 6/6 domain-splits",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0030/h75_curvature_acceleration_by_domain_split.csv",
+        "iterations/iter_0030/h75_curvature_acceleration_domain_summary.csv",
+        "iterations/iter_0030/h75_curvature_acceleration_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Do not scale this variant yet; if retained, reparameterize curvature features and require null_gap_q95>0 in at least one domain-split before expansion.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": false
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0018",
+  "hypotheses": [
+    {
+      "id": "H37",
+      "name": "Consensus-tier concentration of convexity/detour geometry lift",
+      "family": "graph_topology",
+      "split_regime": "other",
+      "method": "On seed42 across immune/lung/external_lung and source/target disjoint splits (layers 0/3/7/11), recomputed geodesic+diffusion baseline and convexity+detour extension, built consensus tiers from TRRUST + DoRothEA + GO co-annotation, and tested high-tier (>=2) vs low-tier (<=1) AUROC uplift gap with stratified tier-shuffle nulls.",
+      "status": "tested",
+      "primary_metric": "mean_tier_gap_high_minus_low",
+      "result_value": "-0.00801 (finite in 12/24 rows); 0/24 row-level p<0.05; 0/6 domain-split Fisher-significant",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0018/h37_consensus_tier_geometry_by_seed_layer_split.csv",
+        "iterations/iter_0018/h37_consensus_tier_geometry_domain_summary.csv",
+        "iterations/iter_0018/h37_consensus_tier_geometry_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this exact tier-gap formulation; if revisited, use prevalence-balanced tier bins and target-disjoint multiseed replication before interaction claims.",
+      "novelty_type": "refinement",
+      "lineage": "H34",
+      "retired": false
+    },
+    {
+      "id": "H38",
+      "name": "ID variance/skew mechanism for layerwise local-linearity AUROC",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "other",
+      "method": "Across 3 domains x 3 seeds x 2 disjoint splits x 12 layers, computed TWO-NN and local participation-ratio moments (mean/var/skew), then compared mean-only vs mean+variance+skew regressions for edge local-linearity AUROC with per-seed split permutation nulls.",
+      "status": "tested",
+      "primary_metric": "mean_delta_r2_full_minus_mean",
+      "result_value": "+0.35673 over 18 seed-split fits (positive in 18/18), but only 1/18 p<0.05 and 0/6 domain-split Fisher-significant",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0018/h38_id_distribution_moments_by_seed_layer_split.csv",
+        "iterations/iter_0018/h38_id_distribution_moments_fit_by_seed_split.csv",
+        "iterations/iter_0018/h38_id_distribution_moments_domain_summary.csv",
+        "iterations/iter_0018/h38_id_distribution_moments_null_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Run out-of-sample validation (leave-layer-out or split-held-out) and strengthen null calibration before promoting distributional ID mechanism claims.",
+      "novelty_type": "new_method",
+      "lineage": "H35",
+      "retired": false
+    },
+    {
+      "id": "H39",
+      "name": "Persistent-homology excess over feature-shuffle and geometry coupling",
+      "family": "persistent_homology",
+      "split_regime": "other",
+      "method": "On seed42 across domains/splits/layers {0,3,7,11}, computed H1 persistence summaries with ripser on PCA residual manifolds, compared H1 total lifetime to feature-shuffle nulls, and measured row/domain coupling with convexity/detour geometry delta-AUROC.",
+      "status": "tested",
+      "primary_metric": "mean_h1_total_lifetime_z",
+      "result_value": "+0.34579 across 24 rows, 5/6 domain-split mean z>0, global Spearman(h1_z, geometry_delta)=+0.3157, but 0/24 row-level p<0.05 and 0/6 domain-split Fisher-significant",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0018/h39_ph_feature_shuffle_by_seed_layer_split.csv",
+        "iterations/iter_0018/h39_ph_feature_shuffle_domain_summary.csv",
+        "iterations/iter_0018/h39_ph_feature_shuffle_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Increase PH null strength (more permutations + subsample bootstrap) and test whether positive-z domains replicate across seeds before advancing.",
+      "novelty_type": "new_family",
+      "lineage": "H14",
+      "retired": false
+    }
+  ]
+}

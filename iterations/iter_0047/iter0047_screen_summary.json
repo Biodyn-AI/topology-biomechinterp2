@@ -1,0 +1,40 @@
+{
+  "iteration": "iter_0047",
+  "h124": {
+    "rows_tested": 27,
+    "mean_delta_auc": 0.13097535791251766,
+    "positive_domain_splits": 9,
+    "positive_null_gap_domain_splits": 4,
+    "lung_dual_axis_rows": 3,
+    "lung_dual_axis_mean_null_gap": -0.0032606859792828624,
+    "artifact_paths": {
+      "by_seed_domain_split": "iterations/iter_0047/h124_signed_string_hardening_by_seed_domain_split.csv",
+      "domain_summary": "iterations/iter_0047/h124_signed_string_hardening_domain_summary.csv",
+      "null_summary": "iterations/iter_0047/h124_signed_string_hardening_null_summary.csv"
+    }
+  },
+  "h125": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.09855459141188365,
+    "positive_domain_count": 1,
+    "positive_null_gap_domain_count": 0,
+    "immune_mean_null_gap": -0.018943316334333327,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0047/h125_anchor_cycle_alignment_by_domain_split_layer.csv",
+      "domain_split_summary": "iterations/iter_0047/h125_anchor_cycle_alignment_domain_split_summary.csv",
+      "domain_summary": "iterations/iter_0047/h125_anchor_cycle_alignment_domain_summary.csv",
+      "null_summary": "iterations/iter_0047/h125_anchor_cycle_alignment_null_summary.csv"
+    }
+  },
+  "h126": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.0442050988815198,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 2,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0047/h126_geodesic_torsion_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0047/h126_geodesic_torsion_domain_summary.csv",
+      "null_summary": "iterations/iter_0047/h126_geodesic_torsion_null_summary.csv"
+    }
+  }
+}

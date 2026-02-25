@@ -1,0 +1,41 @@
+{
+  "iteration": "iter_0030",
+  "h73": {
+    "rows_tested": 36,
+    "mean_delta_auc": 0.024981024157812858,
+    "mean_interaction": -0.00032335272727008883,
+    "positive_interaction_domain_splits": 4,
+    "null_surviving_domain_splits": 0,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0030/h73_support_concordance_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0030/h73_support_concordance_domain_summary.csv",
+      "null_summary": "iterations/iter_0030/h73_support_concordance_null_summary.csv"
+    }
+  },
+  "h74": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.011355177148033089,
+    "mean_null_gap_q95": -0.09881134386750363,
+    "mean_alignment_cosine": 0.00017469063003847096,
+    "artifact_paths": {
+      "by_domain_layer_split": "iterations/iter_0030/h74_relational_spectral_alignment_by_domain_layer_split.csv",
+      "domain_summary": "iterations/iter_0030/h74_relational_spectral_alignment_domain_summary.csv",
+      "null_summary": "iterations/iter_0030/h74_relational_spectral_alignment_null_summary.csv"
+    }
+  },
+  "h75": {
+    "rows_tested": 6,
+    "mean_delta_auc": 0.0020983850794909684,
+    "positive_domain_splits": 3,
+    "significant_domain_splits": 2,
+    "artifact_paths": {
+      "by_domain_split": "iterations/iter_0030/h75_curvature_acceleration_by_domain_split.csv",
+      "domain_summary": "iterations/iter_0030/h75_curvature_acceleration_domain_summary.csv",
+      "null_summary": "iterations/iter_0030/h75_curvature_acceleration_null_summary.csv"
+    }
+  },
+  "environment": {
+    "python_env": "subproject40-topology",
+    "string_cache_used": "iterations/iter_0020/h43_string_network_api.tsv"
+  }
+}

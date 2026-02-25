@@ -1,0 +1,7 @@
+domain,map_variant,top1_retrieval,distance_spearman,knn_jaccard
+external_lung,anchor_regularized_best_lambda,0.95,0.6370859038859885,0.4201434090075731
+external_lung,baseline_unanchored_lambda0,0.6166666666666667,0.4133650507147398,0.13280074400430436
+immune,anchor_regularized_best_lambda,0.8416666666666667,0.35594258047040683,0.18074029764238742
+immune,baseline_unanchored_lambda0,0.7,0.3389235497272478,0.19270384221042117
+lung,anchor_regularized_best_lambda,0.9458333333333333,0.5374663952094823,0.3457904364154364
+lung,baseline_unanchored_lambda0,0.65,0.395216452586197,0.12506520826954265

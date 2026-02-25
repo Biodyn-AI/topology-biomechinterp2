@@ -1,0 +1,71 @@
+{
+  "iteration": "iter_0049",
+  "hypotheses": [
+    {
+      "id": "H130",
+      "name": "Continuous GO-semantic x STRING hardening",
+      "family": "module_structure",
+      "split_regime": "other",
+      "method": "Seeds 42/43/44 across immune/lung/external_lung; source/target/dual-axis disjoint splits at layer 11; H127-style signed motif-community + STRING stack replaced with continuous GO semantic similarity features and interactions; nulls: TF-identity-preserving sign shuffle, motif-decoy shuffle matched by TF/target-degree strata, STRING-bin permutation, GO-semantic rewiring within depth-proxy strata, label permutation (24 each).",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.13096 (27 rows); positive mean null-gap domain-splits=0/9; lung dual-axis mean null-gap=-0.00541; immune source mean null-gap=-0.01486",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0049/h130_semantic_go_string_hardening_by_seed_domain_split.csv",
+        "iterations/iter_0049/h130_semantic_go_string_hardening_domain_summary.csv",
+        "iterations/iter_0049/h130_semantic_go_string_hardening_null_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Run hard-slice-focused diagnostics only (lung dual-axis, immune source-disjoint) with stricter semantic-null designs before any scale-up.",
+      "novelty_type": "refinement",
+      "lineage": "H127",
+      "retired": false
+    },
+    {
+      "id": "H131",
+      "name": "Chart/sheaf cross-model consistency alignment",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Seed42 pilot across immune/lung/external_lung, source/target-disjoint splits, layers 7 and 11; per-chart orthogonal alignment maps between scGPT and Geneformer scaffold signatures with cycle-consistency residual diagnostics; nulls: chart-label permutation preserving chart sizes, cycle-order shuffle, random orthogonal map baseline, label permutation (24 each).",
+      "status": "tested",
+      "primary_metric": "alignment_delta_vs_random",
+      "result_value": "mean=-0.00293 (12 rows); positive mean null-gap domains=0/3; immune mean null-gap=-0.14339",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0049/h131_chart_sheaf_alignment_by_domain_split_layer.csv",
+        "iterations/iter_0049/h131_chart_sheaf_alignment_domain_split_summary.csv",
+        "iterations/iter_0049/h131_chart_sheaf_alignment_domain_summary.csv",
+        "iterations/iter_0049/h131_chart_sheaf_alignment_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this endpoint; only reopen cross-model testing with a materially different objective and non-transfer utility target.",
+      "novelty_type": "new_method",
+      "lineage": "H125",
+      "retired": true,
+      "retirement_reason": "No null-surviving support in any tested row/domain (0/12 rows, 0/3 domains positive mean null-gap)."
+    },
+    {
+      "id": "H132",
+      "name": "Local chart-fracture manifold diagnostic",
+      "family": "manifold_distance",
+      "split_regime": "other",
+      "method": "Seed42 across immune/lung/external_lung, source/target-disjoint splits, layers 7 and 11; directed geodesic path chart-fracture descriptors (fracture count/density/max-angle/asymmetry) over H70 baseline; nulls: chart-basis rotation shuffle within length bins, path-order permutation, endpoint swap within distance bins, label permutation (24 each).",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.01637 (12 rows); positive mean null-gap domain-splits=0/6",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0049/h132_chart_fracture_by_domain_split_layer.csv",
+        "iterations/iter_0049/h132_chart_fracture_domain_summary.csv",
+        "iterations/iter_0049/h132_chart_fracture_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this chart-fracture endpoint and only revisit manifold-distance family with a materially different representation objective.",
+      "novelty_type": "new_method",
+      "lineage": "H129",
+      "retired": true,
+      "retirement_reason": "Second manifold rescue-style endpoint in succession fails strict null-gap in all domain-splits (0/6)."
+    }
+  ]
+}

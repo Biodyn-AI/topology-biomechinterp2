@@ -1,0 +1,35 @@
+{
+  "iteration": "iter_0038",
+  "h97": {
+    "rows_tested": 24,
+    "mean_delta_auc": 0.07851526839685173,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0038/h97_graph_bridge_calibrated_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0038/h97_graph_bridge_calibrated_domain_summary.csv",
+      "null_summary": "iterations/iter_0038/h97_graph_bridge_calibrated_null_summary.csv"
+    }
+  },
+  "h98": {
+    "rows_tested": 24,
+    "mean_delta_auc": -0.007727633057481744,
+    "positive_domain_splits": 1,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0038/h98_id_entropy_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0038/h98_id_entropy_domain_summary.csv",
+      "null_summary": "iterations/iter_0038/h98_id_entropy_null_summary.csv"
+    }
+  },
+  "h99": {
+    "rows_tested": 6,
+    "mean_concordance": 0.03933736913809522,
+    "positive_domain_count": 0,
+    "artifact_paths": {
+      "by_domain_layer": "iterations/iter_0038/h99_cross_model_role_graph_by_domain_layer.csv",
+      "domain_summary": "iterations/iter_0038/h99_cross_model_role_graph_domain_summary.csv",
+      "null_summary": "iterations/iter_0038/h99_cross_model_role_graph_null_summary.csv"
+    }
+  }
+}

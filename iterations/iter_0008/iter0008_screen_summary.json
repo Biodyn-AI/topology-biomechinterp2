@@ -1,0 +1,160 @@
+{
+  "config": {
+    "domain": "immune",
+    "split_regimes": [
+      "source_disjoint",
+      "target_disjoint"
+    ],
+    "n_points_per_test": 150,
+    "pca_dim": 14,
+    "knn_k_min": 10,
+    "knn_k_max": 40,
+    "n_null_rewire_per_family": 5,
+    "rewire_swap_multiplier": 0.12,
+    "rewire_retry_per_null": 16,
+    "rewire_attempt_multiplier": 20,
+    "edge_length_quantile_bins": 5,
+    "quantile_constraint_target_l1_ratio": 0.22
+  },
+  "inputs": {
+    "immune": {
+      "seed42_main": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_main/layer_gene_embeddings.npy",
+      "seed43": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed43/layer_gene_embeddings.npy",
+      "seed44": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed44/layer_gene_embeddings.npy"
+    }
+  },
+  "domain_summary": [
+    {
+      "domain": "immune",
+      "split_regime": "source_disjoint",
+      "null_family": "degree_preserving_geodesic_rewire",
+      "n_layers": 12,
+      "n_layers_h1_sig": 0,
+      "frac_layers_h1_sig": 0.0,
+      "n_layers_h1_positive_delta": 0,
+      "frac_layers_h1_positive_delta": 0.0,
+      "mean_h1_delta_observed_minus_null": -11.344610478480655,
+      "median_h1_delta_observed_minus_null": -11.610329270362854,
+      "n_layers_distortion_lower_sig": 0,
+      "frac_layers_distortion_lower_sig": 0.0,
+      "mean_distortion_delta_observed_minus_null": 0.20268157128237255,
+      "mean_knn_k": 40.0,
+      "total_bridged_runs": 36,
+      "mean_edge_hist_l1_ratio": 0.3249164112038182
+    },
+    {
+      "domain": "immune",
+      "split_regime": "source_disjoint",
+      "null_family": "quantile_constrained_geodesic_rewire",
+      "n_layers": 12,
+      "n_layers_h1_sig": 0,
+      "frac_layers_h1_sig": 0.0,
+      "n_layers_h1_positive_delta": 0,
+      "frac_layers_h1_positive_delta": 0.0,
+      "mean_h1_delta_observed_minus_null": -10.78850470582644,
+      "median_h1_delta_observed_minus_null": -11.632307887077332,
+      "n_layers_distortion_lower_sig": 0,
+      "frac_layers_distortion_lower_sig": 0.0,
+      "mean_distortion_delta_observed_minus_null": 0.20391633448741617,
+      "mean_knn_k": 40.0,
+      "total_bridged_runs": 36,
+      "mean_edge_hist_l1_ratio": 0.31287109860100076
+    },
+    {
+      "domain": "immune",
+      "split_regime": "target_disjoint",
+      "null_family": "degree_preserving_geodesic_rewire",
+      "n_layers": 12,
+      "n_layers_h1_sig": 0,
+      "frac_layers_h1_sig": 0.0,
+      "n_layers_h1_positive_delta": 0,
+      "frac_layers_h1_positive_delta": 0.0,
+      "mean_h1_delta_observed_minus_null": -27.14326737753775,
+      "median_h1_delta_observed_minus_null": -27.633116030693053,
+      "n_layers_distortion_lower_sig": 0,
+      "frac_layers_distortion_lower_sig": 0.0,
+      "mean_distortion_delta_observed_minus_null": 0.15549725688276392,
+      "mean_knn_k": 31.194444444444443,
+      "total_bridged_runs": 2,
+      "mean_edge_hist_l1_ratio": 0.14614207440443402
+    },
+    {
+      "domain": "immune",
+      "split_regime": "target_disjoint",
+      "null_family": "quantile_constrained_geodesic_rewire",
+      "n_layers": 12,
+      "n_layers_h1_sig": 0,
+      "frac_layers_h1_sig": 0.0,
+      "n_layers_h1_positive_delta": 0,
+      "frac_layers_h1_positive_delta": 0.0,
+      "mean_h1_delta_observed_minus_null": -28.275408680592367,
+      "median_h1_delta_observed_minus_null": -28.56455324177592,
+      "n_layers_distortion_lower_sig": 0,
+      "frac_layers_distortion_lower_sig": 0.0,
+      "mean_distortion_delta_observed_minus_null": 0.1554845362061964,
+      "mean_knn_k": 31.194444444444443,
+      "total_bridged_runs": 2,
+      "mean_edge_hist_l1_ratio": 0.1466061493261121
+    }
+  ],
+  "bridge_gap_summary": [
+    {
+      "domain": "immune",
+      "null_family": "degree_preserving_geodesic_rewire",
+      "n_rows_total": 72,
+      "n_rows_bridged": 38,
+      "n_rows_non_bridged": 34,
+      "mean_h1_delta_bridged": -11.618748391929426,
+      "mean_h1_delta_non_bridged": -27.76621070362778,
+      "bridge_minus_nonbridge_h1_delta_gap": 16.147462311698355,
+      "mean_distortion_delta_bridged": 0.201312085938992,
+      "mean_distortion_delta_non_bridged": 0.15425231024303582,
+      "bridge_minus_nonbridge_distortion_delta_gap": 0.04705977569595618
+    },
+    {
+      "domain": "immune",
+      "null_family": "quantile_constrained_geodesic_rewire",
+      "n_rows_total": 72,
+      "n_rows_bridged": 38,
+      "n_rows_non_bridged": 34,
+      "mean_h1_delta_bridged": -11.269795998146657,
+      "mean_h1_delta_non_bridged": -28.766136293573645,
+      "bridge_minus_nonbridge_h1_delta_gap": 17.49634029542699,
+      "mean_distortion_delta_bridged": 0.20249331486070865,
+      "mean_distortion_delta_non_bridged": 0.1542260405959743,
+      "bridge_minus_nonbridge_distortion_delta_gap": 0.048267274264734344
+    }
+  ],
+  "paired_shift_summary": [
+    {
+      "domain": "immune",
+      "split_regime": "source_disjoint",
+      "n_rows": 36,
+      "mean_h1_delta_shift_constrained_minus_unconstrained": 0.5561057726542158,
+      "median_h1_delta_shift_constrained_minus_unconstrained": 0.588214099407196,
+      "frac_rows_h1_shift_positive": 0.6111111111111112,
+      "mean_distortion_delta_shift_constrained_minus_unconstrained": 0.0012347632050436579,
+      "frac_rows_distortion_shift_negative": 0.1111111111111111
+    },
+    {
+      "domain": "immune",
+      "split_regime": "target_disjoint",
+      "n_rows": 36,
+      "mean_h1_delta_shift_constrained_minus_unconstrained": -1.1321413030546164,
+      "median_h1_delta_shift_constrained_minus_unconstrained": -0.6989545345306389,
+      "frac_rows_h1_shift_positive": 0.4166666666666667,
+      "mean_distortion_delta_shift_constrained_minus_unconstrained": -1.2720676567551998e-05,
+      "frac_rows_distortion_shift_negative": 0.6666666666666666
+    }
+  ],
+  "artifacts": {
+    "by_seed": "iterations/iter_0008/h1_immune_constrained_rewire_by_seed_layer.csv",
+    "layer_summary": "iterations/iter_0008/h1_immune_constrained_rewire_layer_summary.csv",
+    "pass_matrix": "iterations/iter_0008/h1_immune_constrained_rewire_pass_matrix.csv",
+    "domain_summary": "iterations/iter_0008/h1_immune_constrained_rewire_domain_summary.csv",
+    "bridge_k_strata": "iterations/iter_0008/h1_immune_constrained_rewire_bridge_k_strata_summary.csv",
+    "bridge_gap_summary": "iterations/iter_0008/h1_immune_constrained_rewire_bridge_gap_summary.csv",
+    "paired_shift_by_seed_layer": "iterations/iter_0008/h1_immune_constrained_rewire_paired_shift_by_seed_layer.csv",
+    "paired_shift_summary": "iterations/iter_0008/h1_immune_constrained_rewire_paired_shift_summary.csv"
+  }
+}

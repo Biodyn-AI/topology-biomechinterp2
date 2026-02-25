@@ -1,0 +1,13 @@
+domain,layer,source_fisher_p_geodesic_vs_rewire,target_fisher_p_geodesic_vs_rewire,source_mean_h1_delta_geodesic_vs_rewire,target_mean_h1_delta_geodesic_vs_rewire,source_sig_geodesic,target_sig_geodesic,both_splits_sig_geodesic,both_splits_positive_geo_delta
+immune,0,1.0,1.0,-147.54190002735635,-67.34770692719353,False,False,False,False
+immune,1,1.0,0.6913133290219355,-100.74736048919097,-73.63287364112007,False,False,False,False
+immune,2,1.0,1.0,-92.08265636184427,-73.01984378622524,False,False,False,False
+immune,3,1.0,0.9950564425926097,-123.15053640942226,-59.80626588672859,False,False,False,False
+immune,4,1.0,0.9994559107481668,-108.63567903040502,-80.64727095302189,False,False,False,False
+immune,5,1.0,1.0,-110.84046622721148,-112.17267626151481,False,False,False,False
+immune,6,1.0,1.0,-120.02473184797498,-110.94052002959067,False,False,False,False
+immune,7,1.0,1.0,-123.51250165038637,-124.43038205705102,False,False,False,False
+immune,8,1.0,1.0,-105.5311084323459,-114.7919927710335,False,False,False,False
+immune,9,1.0,0.9806861159935513,-118.19491910895458,-71.09007301230366,False,False,False,False
+immune,10,1.0,0.9950564425926097,-71.61150660756898,-81.37868467825665,False,False,False,False
+immune,11,1.0,1.0,-45.10214013523526,-52.30071408092376,False,False,False,False

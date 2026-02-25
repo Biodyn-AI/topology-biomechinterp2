@@ -1,0 +1,49 @@
+{
+  "iteration": "iter_0024",
+  "h55": {
+    "rows": 36,
+    "mean_delta": 0.011694560968874263,
+    "positive_rows": 25,
+    "fraction_positive": 0.6944444444444444,
+    "domain_split_fisher_sig": 6,
+    "lung_source_mean_delta": -0.003146501919142467,
+    "others_mean_delta": 0.014662773546477608,
+    "top_assoc_by_abs_corr": [
+      {
+        "diagnostic_name": "margin_iqr",
+        "delta_corr_global": 0.4513091142084243,
+        "failure_slice_minus_other_mean": -0.0133333333333333
+      },
+      {
+        "diagnostic_name": "sign_balance",
+        "delta_corr_global": 0.1843439352055638,
+        "failure_slice_minus_other_mean": -0.0364068833528097
+      },
+      {
+        "diagnostic_name": "orientation_entropy",
+        "delta_corr_global": -0.1823610272355808,
+        "failure_slice_minus_other_mean": 0.0651780110843575
+      }
+    ]
+  },
+  "h56": {
+    "rows": 12,
+    "mean_delta": 0.0075728456568442334,
+    "positive_rows": 11,
+    "domain_split_fisher_sig": 6,
+    "transfer_rows": 12,
+    "mean_transfer_f1_lift": 0.0,
+    "positive_transfer_rows": 0,
+    "transfer_sig_rows": 0
+  },
+  "h57": {
+    "rows": 72,
+    "mean_delta": -0.01778518459433243,
+    "positive_rows": 25,
+    "fraction_positive": 0.3472222222222222,
+    "domain_split_fisher_sig": 6,
+    "domain_split_positive_mean": 3,
+    "min_domain_mean_delta": -0.0853415486702969,
+    "max_domain_mean_delta": 0.0341775839272259
+  }
+}

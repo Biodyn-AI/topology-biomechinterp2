@@ -1,0 +1,70 @@
+{
+  "iteration": "iter_0010",
+  "hypotheses": [
+    {
+      "id": "H13",
+      "name": "Geodesic manifold advantage for immune regulatory edges",
+      "family": "manifold_distance",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Compared geodesic vs Euclidean edge-distance AUROC on immune scGPT residuals (3 seeds x 12 layers x source/target splits) with 200 label-permutation null draws per seed-layer-split.",
+      "status": "tested",
+      "primary_metric": "delta_auc_geodesic_minus_euclidean",
+      "result_value": "mean delta +0.00519 (source), +0.01319 (target); dual-split positive 12/12 layers, dual-split significant 7/12",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0010/h13_manifold_distance_by_seed_layer_split.csv",
+        "iterations/iter_0010/h13_manifold_distance_layer_summary.csv",
+        "iterations/iter_0010/h13_manifold_distance_split_summary.csv",
+        "iterations/iter_0010/h13_manifold_distance_pass_matrix.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Replicate the same manifold-distance protocol on lung and external_lung to test cross-domain robustness.",
+      "novelty_type": "new_method",
+      "lineage": "H10",
+      "retired": false
+    },
+    {
+      "id": "H14",
+      "name": "Bootstrap persistence stability under filtration perturbations",
+      "family": "topology_stability",
+      "split_regime": "other",
+      "method": "Computed H1 persistence deltas vs feature-shuffle null for immune scGPT across sample-size/PCA settings (120/180 x 10/14), 4 bootstraps per setting, and 24 null draws per bootstrap.",
+      "status": "tested",
+      "primary_metric": "mean_h1_delta",
+      "result_value": "mean layer delta +3.870; 12/12 layers positive and 12/12 combined Fisher p<0.05; all-settings-positive fraction 1.0",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0010/h14_topology_stability_bootstrap_records.csv",
+        "iterations/iter_0010/h14_topology_stability_seed_layer_setting_summary.csv",
+        "iterations/iter_0010/h14_topology_stability_layer_summary.csv",
+        "iterations/iter_0010/h14_topology_stability_filtration_sensitivity.csv",
+        "iterations/iter_0010/h14_topology_stability_filtration_layer_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Add a second stronger null family (metric-preserving surrogate) to test whether stability survives beyond feature-shuffle.",
+      "novelty_type": "new_family",
+      "lineage": "H03",
+      "retired": false
+    },
+    {
+      "id": "H15",
+      "name": "Cross-model disagreement trend vs edge positivity",
+      "family": "cross_model_alignment",
+      "split_regime": "edge_stratified",
+      "method": "Per-domain Spearman trend test between cross-model disagreement magnitude and positive-edge rate across 10 disagreement bins, with 3000 within-domain permutations.",
+      "status": "tested",
+      "primary_metric": "spearman_rho_disagreement_vs_positive_rate",
+      "result_value": "rho: lung -0.9758 (p=3.33e-4), external_lung -0.5030 (p=0.141), immune +0.4012 (p=0.250); combined Fisher p(two-sided)=8.99e-4",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0010/h15_cross_model_disagreement_trend.csv",
+        "iterations/iter_0010/h15_cross_model_disagreement_summary.json"
+      ],
+      "decision": "neutral",
+      "next_action": "Resolve domain heterogeneity with per-edge cross-model scores and degree-controlled analysis.",
+      "novelty_type": "new_method",
+      "lineage": "H02",
+      "retired": false
+    }
+  ]
+}

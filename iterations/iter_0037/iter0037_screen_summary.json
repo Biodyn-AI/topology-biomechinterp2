@@ -1,0 +1,35 @@
+{
+  "iteration": "iter_0037",
+  "h94": {
+    "rows_tested": 36,
+    "mean_delta_auc": -0.009332337275141175,
+    "positive_domain_splits": 0,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_seed_split_layer": "iterations/iter_0037/h94_ontology_stratified_weighted_filtration_by_seed_split_layer.csv",
+      "domain_summary": "iterations/iter_0037/h94_ontology_stratified_weighted_filtration_domain_summary.csv",
+      "null_summary": "iterations/iter_0037/h94_ontology_stratified_weighted_filtration_null_summary.csv"
+    }
+  },
+  "h95": {
+    "rows_tested": 24,
+    "mean_delta_auc": 0.07710021672319589,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0037/h95_graph_bridge_curvature_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0037/h95_graph_bridge_curvature_domain_summary.csv",
+      "null_summary": "iterations/iter_0037/h95_graph_bridge_curvature_null_summary.csv"
+    }
+  },
+  "h96": {
+    "rows_tested": 6,
+    "mean_spearman": -0.005547924297924292,
+    "positive_domain_count": 0,
+    "artifact_paths": {
+      "by_domain_layer": "iterations/iter_0037/h96_cross_model_module_topology_by_domain_layer.csv",
+      "domain_summary": "iterations/iter_0037/h96_cross_model_module_topology_domain_summary.csv",
+      "null_summary": "iterations/iter_0037/h96_cross_model_module_topology_null_summary.csv"
+    }
+  }
+}

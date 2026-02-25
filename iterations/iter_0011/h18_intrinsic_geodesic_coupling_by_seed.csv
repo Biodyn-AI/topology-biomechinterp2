@@ -1,0 +1,13 @@
+split_regime,metric,seed_tag,n_layers,spearman_rho
+source_disjoint,local_linearity_top5,seed42_main,12,0.07692307692307693
+source_disjoint,local_linearity_top5,seed43,12,0.31468531468531474
+source_disjoint,local_linearity_top5,seed44,12,0.31468531468531474
+source_disjoint,participation_ratio_dim,seed42_main,12,-0.07692307692307693
+source_disjoint,participation_ratio_dim,seed43,12,-0.31468531468531474
+source_disjoint,participation_ratio_dim,seed44,12,-0.31468531468531474
+target_disjoint,local_linearity_top5,seed42_main,12,0.3636363636363637
+target_disjoint,local_linearity_top5,seed43,12,0.4125874125874127
+target_disjoint,local_linearity_top5,seed44,12,0.44755244755244755
+target_disjoint,participation_ratio_dim,seed42_main,12,-0.3636363636363637
+target_disjoint,participation_ratio_dim,seed43,12,-0.4125874125874127
+target_disjoint,participation_ratio_dim,seed44,12,-0.44755244755244755

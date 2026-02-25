@@ -1,0 +1,81 @@
+{
+  "iteration": "iter_0025",
+  "h58": {
+    "rows": 36,
+    "mean_delta_weighted_vs_distance": 0.011371928063392158,
+    "mean_delta_weighted_vs_unweighted": -0.0005238837848689662,
+    "positive_weighted_vs_distance_rows": 25,
+    "positive_weight_gain_rows": 22,
+    "domain_split_fisher_sig": 4,
+    "source_failure_slices": [
+      {
+        "domain": "external_lung",
+        "split_regime": "source_disjoint",
+        "n_rows": 6,
+        "mean_delta_auc_weighted_minus_distance": -0.0043261267987726,
+        "mean_delta_auc_weighted_minus_unweighted": -0.0005016106775824,
+        "fraction_weight_gain_positive": 0.3333333333333333,
+        "fraction_delta_positive": 0.3333333333333333
+      },
+      {
+        "domain": "lung",
+        "split_regime": "source_disjoint",
+        "n_rows": 6,
+        "mean_delta_auc_weighted_minus_distance": -0.0019292742880809,
+        "mean_delta_auc_weighted_minus_unweighted": -0.0005841417303262,
+        "fraction_weight_gain_positive": 0.8333333333333334,
+        "fraction_delta_positive": 0.3333333333333333
+      }
+    ]
+  },
+  "h59": {
+    "rows": 12,
+    "mean_delta_transfer_vs_baseline": 0.024042329876509377,
+    "positive_rows": 10,
+    "rows_p_best_lt_0_05": 0,
+    "domain_fisher_sig": 0,
+    "domain_summary": [
+      {
+        "domain": "external_lung",
+        "n_rows": 4,
+        "mean_auc_transfer": 0.3913034874634302,
+        "mean_auc_baseline": 0.3586189037031033,
+        "mean_delta_auc_transfer_minus_baseline": 0.0326845837603269,
+        "fraction_delta_positive": 1.0,
+        "fraction_p_best_lt_0_05": 0.0,
+        "combined_fisher_p_best": 0.9990513654405038,
+        "mean_alignment_diag_cosine": 0.0310273429899058
+      },
+      {
+        "domain": "immune",
+        "n_rows": 4,
+        "mean_auc_transfer": 0.4218266595026502,
+        "mean_auc_baseline": 0.4146644449618288,
+        "mean_delta_auc_transfer_minus_baseline": 0.0071622145408213,
+        "fraction_delta_positive": 0.5,
+        "fraction_p_best_lt_0_05": 0.0,
+        "combined_fisher_p_best": 0.9993454734946436,
+        "mean_alignment_diag_cosine": 0.0762195717790986
+      },
+      {
+        "domain": "lung",
+        "n_rows": 4,
+        "mean_auc_transfer": 0.3884251418519311,
+        "mean_auc_baseline": 0.3561449505235512,
+        "mean_delta_auc_transfer_minus_baseline": 0.0322801913283799,
+        "fraction_delta_positive": 1.0,
+        "fraction_p_best_lt_0_05": 0.0,
+        "combined_fisher_p_best": 0.9993702357297908,
+        "mean_alignment_diag_cosine": -0.0377029522209537
+      }
+    ]
+  },
+  "h60": {
+    "rows": 72,
+    "mean_delta_combined_vs_baseline": -0.004349741899407804,
+    "positive_rows": 31,
+    "rows_p_best_lt_0_05": 4,
+    "domain_split_positive_mean": 3,
+    "domain_split_fisher_sig": 1
+  }
+}

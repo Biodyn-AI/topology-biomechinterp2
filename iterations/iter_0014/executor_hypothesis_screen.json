@@ -1,0 +1,68 @@
+{
+  "iteration": "iter_0014",
+  "hypotheses": [
+    {
+      "id": "H25",
+      "name": "Diffusion-distance sweep for regulatory edge discrimination",
+      "family": "manifold_distance",
+      "split_regime": "other",
+      "method": "Screened scGPT domains (immune/lung/external_lung) across 3 seeds, source+target disjoint splits, layers {0,3,7,11}, and diffusion times {1,2,4,8}; compared best diffusion AUROC to max(Euclidean, geodesic) with per-row label-permutation nulls (n=180).",
+      "status": "tested",
+      "primary_metric": "mean_delta_best_diffusion_minus_best_baseline",
+      "result_value": "+0.0173 mean AUROC delta overall; 3/3 domains Fisher-significant",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0014/h25_diffusion_distance_by_seed_layer_split.csv",
+        "iterations/iter_0014/h25_diffusion_distance_domain_summary.csv",
+        "iterations/iter_0014/h25_diffusion_distance_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Run dual-axis disjoint + coexpression-matched null stress test to confirm robustness of the diffusion uplift.",
+      "novelty_type": "new_method",
+      "lineage": "H13",
+      "retired": false
+    },
+    {
+      "id": "H26",
+      "name": "Geometry x multi-prior biological anchoring interaction",
+      "family": "module_structure",
+      "split_regime": "other",
+      "method": "Built edge-level table across all 3 domains and both disjoint splits using diffusion/geodesic/euclidean geometry scores plus DoRothEA support, GO co-membership, and TF-source priors; fit baseline vs interaction logistic models with degree-stratified prior permutations (n=180) and stratified bootstraps (n=180). TRRUST support was excluded from predictors due label leakage risk.",
+      "status": "tested",
+      "primary_metric": "interaction_coef",
+      "result_value": "0/6 rows with significant positive interaction; mean interaction=-0.1608; AUROC-delta combined Fisher p=0.0140",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0014/h26_bio_anchor_edge_table.csv",
+        "iterations/iter_0014/h26_bio_anchor_model_summary.csv",
+        "iterations/iter_0014/h26_bio_anchor_permutation_null.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Re-run with independent STRING prior support and the same permutation/bootstrap protocol to test whether interaction weakness is prior-limited.",
+      "novelty_type": "new_method",
+      "lineage": "H19",
+      "retired": false
+    },
+    {
+      "id": "H27",
+      "name": "Unseeded Gromov-Wasserstein cross-model alignment",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Aligned scGPT vs Geneformer matched-gene graphs (280 genes/domain) with unseeded GW (scaled costs, entropic solver with classic GW fallback), then evaluated map quality (top-1/mutual top-1), geometry transfer (distance Spearman, kNN Jaccard), and label transfer AUROC against random-correspondence nulls (n=180).",
+      "status": "tested",
+      "primary_metric": "top1_retrieval_gw",
+      "result_value": "mean top-1=0.00119 (combined p=0.990), mean distance Spearman=0.8556 (combined p=2.33e-05), mean transfer AUROC=0.5186 (combined p=0.051)",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0014/h27_gw_alignment_domain_summary.csv",
+        "iterations/iter_0014/h27_gw_alignment_null_summary.csv",
+        "iterations/iter_0014/h27_gw_alignment_map_quality.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Test CCA-seeded/one-to-one-regularized GW to improve correspondence recovery before treating this branch as promotable.",
+      "novelty_type": "new_method",
+      "lineage": "H24",
+      "retired": false
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+domains_tested,mean_canonical_corr,mean_distance_spearman_cca,mean_knn_jaccard_cca,mean_top1_retrieval_cca,domains_distance_sig,domains_jaccard_sig,domains_top1_sig,combined_fisher_distance_p,combined_fisher_jaccard_p,combined_fisher_top1_p
+3,0.7968462361797961,0.7466319770168658,0.17138432835511008,0.7229166666666668,3,3,3,3.173455838155336e-05,3.173455838155336e-05,3.173455838155336e-05

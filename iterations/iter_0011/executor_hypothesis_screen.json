@@ -1,0 +1,68 @@
+{
+  "iteration": "iter_0011",
+  "hypotheses": [
+    {
+      "id": "H16",
+      "name": "Community co-membership enriches immune regulatory edges",
+      "family": "module_structure",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Built kNN graph communities on immune scGPT residual embeddings (3 seeds x 12 layers x source/target-disjoint splits) and tested same-community edge membership against labels with 300 label permutations per row.",
+      "status": "tested",
+      "primary_metric": "mean_auc_same_community",
+      "result_value": "source AUC 0.5387, target AUC 0.5413; 12/12 layers AUC>0.5 and Fisher-significant in both splits",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0011/h16_module_structure_by_seed_layer_split.csv",
+        "iterations/iter_0011/h16_module_structure_layer_summary.csv",
+        "iterations/iter_0011/h16_module_structure_split_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Test whether within-community enrichment scales with DoRothEA/STRING confidence tiers.",
+      "novelty_type": "new_family",
+      "lineage": "none",
+      "retired": false
+    },
+    {
+      "id": "H17",
+      "name": "Cross-model geometric feature transfer on shared metrics",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Compared scGPT and Geneformer delta-AUROC rankings for shared geometric features (centered_cosine/dot/cosine) across immune, lung, and external_lung with exact feature-index permutation nulls (6 per domain, 216 global).",
+      "status": "tested",
+      "primary_metric": "mean_spearman_rho",
+      "result_value": "mean rho 0.8333; top feature match 3/3 domains; exact global p(mean rho)=0.0369, p(top-match-count)=0.0415",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0011/h17_cross_model_transfer_domain_summary.csv",
+        "iterations/iter_0011/h17_cross_model_transfer_global_null.csv",
+        "iterations/iter_0011/h17_cross_model_transfer_summary.json"
+      ],
+      "decision": "promising",
+      "next_action": "Expand to a larger matched feature panel and per-edge transfer tests to de-risk small-feature-set effects.",
+      "novelty_type": "new_method",
+      "lineage": "H15",
+      "retired": false
+    },
+    {
+      "id": "H18",
+      "name": "Intrinsic dimensionality coupling with geodesic advantage",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Computed participation-ratio and local-linearity metrics for immune scGPT seed-layer-split embeddings, merged with iter_0010 geodesic-minus-Euclidean AUROC deltas, and tested seed-mean Spearman coupling via 3000 within-seed layer permutations.",
+      "status": "tested",
+      "primary_metric": "mean_seed_spearman_rho",
+      "result_value": "source split weak (|rho|=0.235, p~0.17); target split stronger (linearity rho=+0.408 p=0.014, participation rho=-0.408 p=0.019)",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0011/h18_intrinsic_geodesic_metrics_by_seed_layer_split.csv",
+        "iterations/iter_0011/h18_intrinsic_geodesic_coupling_by_seed.csv",
+        "iterations/iter_0011/h18_intrinsic_geodesic_coupling_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Replicate the same coupling test in lung/external_lung to determine if target-disjoint coupling generalizes.",
+      "novelty_type": "new_method",
+      "lineage": "H04",
+      "retired": false
+    }
+  ]
+}

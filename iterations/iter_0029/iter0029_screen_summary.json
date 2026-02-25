@@ -1,0 +1,39 @@
+{
+  "iteration": "iter_0029",
+  "h70": {
+    "rows_tested": 36,
+    "mean_delta_auc": 0.026366198296245716,
+    "positive_domain_splits": 6,
+    "random_gap_positive_domain_splits": 6,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0029/h70_triangle_defect_robust_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0029/h70_triangle_defect_robust_domain_summary.csv",
+      "null_summary": "iterations/iter_0029/h70_triangle_defect_robust_null_summary.csv"
+    }
+  },
+  "h71": {
+    "rows_tested": 12,
+    "mean_delta_auc": -0.42757636904554563,
+    "mean_null_gap_q95": -0.14795252979601373,
+    "mean_alignment_cosine": 0.006341353763845027,
+    "artifact_paths": {
+      "by_domain_layer_split": "iterations/iter_0029/h71_topology_signature_distill_by_domain_layer_split.csv",
+      "domain_summary": "iterations/iter_0029/h71_topology_signature_distill_domain_summary.csv",
+      "null_summary": "iterations/iter_0029/h71_topology_signature_distill_null_summary.csv"
+    }
+  },
+  "h72": {
+    "rows_tested": 6,
+    "mean_delta_auc": 8.17270734532934e-05,
+    "mean_enrichment": 0.4450940944052799,
+    "artifact_paths": {
+      "by_domain_split": "iterations/iter_0029/h72_edge_trajectory_motif_by_domain_split.csv",
+      "domain_summary": "iterations/iter_0029/h72_edge_trajectory_motif_domain_summary.csv",
+      "null_summary": "iterations/iter_0029/h72_edge_trajectory_motif_null_summary.csv"
+    }
+  },
+  "environment": {
+    "python_env": "subproject40-topology",
+    "string_cache_used": "iterations/iter_0020/h43_string_network_api.tsv"
+  }
+}

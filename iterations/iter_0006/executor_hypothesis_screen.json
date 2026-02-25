@@ -1,0 +1,41 @@
+{
+  "iteration": "iter_0006",
+  "hypotheses": [
+    {
+      "id": "H07",
+      "name": "Immune H1 persistence survives degree-preserving geodesic rewiring null",
+      "family": "null_sensitivity",
+      "split_regime": "dual_axis_disjoint",
+      "method": "immune-only full-layer split screen with 3 seeds, 180 genes/test, PCA(14), H1 lifetime sum, feature-shuffle (20 draws) and degree-preserving kNN rewiring geodesic null (8 draws), Fisher combined across seeds",
+      "status": "tested",
+      "primary_metric": "n_layer_tests_fisher_p_lt_0_05 under degree_preserving_geodesic_rewire",
+      "result_value": "0/24 significant; mean layer delta source=-140.519, target=-129.702",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0006/h1_immune_rewire_split_domain_summary.csv",
+        "iterations/iter_0006/h1_immune_rewire_split_layer_summary.csv",
+        "iterations/iter_0006/iter0006_screen_summary.json"
+      ],
+      "decision": "negative",
+      "next_action": "Recalibrate null by comparing geodesic-observed vs rewired-geodesic null to control metric-scale mismatch."
+    },
+    {
+      "id": "H08",
+      "name": "Immune split robustness has depth structure across all layers",
+      "family": "split_robustness",
+      "split_regime": "dual_axis_disjoint",
+      "method": "same run as H07; layer-by-layer dual-split pass matrix using Fisher p-values under feature-shuffle and rewiring null families",
+      "status": "tested",
+      "primary_metric": "n_layers_both_splits_sig",
+      "result_value": "feature_shuffle: 4/12 both-split significant (layers 7,9,10,11); rewiring: 0/12",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0006/h1_immune_rewire_split_pass_matrix.csv",
+        "iterations/iter_0006/h1_immune_rewire_dual_split_summary.csv",
+        "iterations/iter_0006/h1_immune_rewire_split_layer_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Replicate full-layer split map in external-lung and add biological anchoring for immune layers 7,9,10,11."
+    }
+  ]
+}

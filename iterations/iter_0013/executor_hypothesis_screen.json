@@ -1,0 +1,68 @@
+{
+  "iteration": "iter_0013",
+  "hypotheses": [
+    {
+      "id": "H22",
+      "name": "Split-depth phase transition of local reconstruction signal",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Computed local reconstruction edge-AUROC across immune/lung/external_lung (3 seeds x 12 layers x source/target-disjoint), then tested phase-wise target-minus-source contrasts (early/mid/late) with sign-flip permutation nulls (4000) and bootstrap CIs (2000).",
+      "status": "tested",
+      "primary_metric": "mean_diff_late_target_minus_source",
+      "result_value": "immune late diff=-0.0215 (p=0.00075), lung=+0.0037, external_lung=+0.0112; significant negative late pattern in 1/3 domains",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0013/h22_phase_transition_by_seed_layer_split.csv",
+        "iterations/iter_0013/h22_phase_transition_model_summary.csv",
+        "iterations/iter_0013/h22_phase_transition_null_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Add biological-anchor stratification to test whether immune-only late inversion is domain-specific biology before promoting or retiring.",
+      "novelty_type": "refinement",
+      "lineage": "H21",
+      "retired": false
+    },
+    {
+      "id": "H23",
+      "name": "Negative-curvature enrichment for regulatory edges",
+      "family": "graph_topology",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Built layer-wise kNN graphs (layers 0/3/7/11) for each domain/seed/split, computed Forman curvature on graph edges, and tested whether negative curvature predicts positive labels via AUROC and top-bottom bin deltas against 300 label-permutation nulls per row.",
+      "status": "tested",
+      "primary_metric": "mean_auc_neg_curvature",
+      "result_value": "immune=0.3406, lung=0.3894, external_lung=0.3905; top-bottom delta negative in all domains",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0013/h23_curvature_enrichment_by_seed_layer_split.csv",
+        "iterations/iter_0013/h23_curvature_enrichment_split_summary.csv",
+        "iterations/iter_0013/h23_curvature_enrichment_domain_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this exact curvature variant; only rescue with a materially changed curvature definition and explicit degree-matched controls.",
+      "novelty_type": "new_method",
+      "lineage": "H11",
+      "retired": false
+    },
+    {
+      "id": "H24",
+      "name": "CCA-like cross-model manifold consistency",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Aligned matched scGPT/Geneformer genes per domain with PCA(48) + linear CCA-like whitening/SVD (cca_dim=20), evaluated canonical correlation, pairwise-distance Spearman, kNN Jaccard, and top-1 retrieval versus 160 correspondence-permutation nulls/domain and PCA-only baseline.",
+      "status": "tested",
+      "primary_metric": "mean_distance_spearman_cca",
+      "result_value": "mean distance Spearman=0.7466, mean Jaccard=0.1714, mean top1=0.7229; all 3 domains significant vs null (combined Fisher p=3.17e-05)",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0013/h24_cross_model_cca_domain_summary.csv",
+        "iterations/iter_0013/h24_cross_model_cca_null_summary.csv",
+        "iterations/iter_0013/h24_cross_model_cca_overall_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Escalate to a correspondence-free alignment rescue test (e.g., Sinkhorn/GW) while preserving the same domain-level null/effect-size gates.",
+      "novelty_type": "new_method",
+      "lineage": "H20",
+      "retired": false
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "iteration": "iter_0036",
+  "h91": {
+    "rows_tested": 72,
+    "mean_delta_auc": 0.07424000622963489,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 6,
+    "mean_descriptor_jaccard": 0.6504629629629629,
+    "artifact_paths": {
+      "by_seed_split_layer": "iterations/iter_0036/h91_stability_selected_sparse_descriptor_by_seed_split_layer.csv",
+      "domain_summary": "iterations/iter_0036/h91_stability_selected_sparse_descriptor_domain_summary.csv",
+      "null_summary": "iterations/iter_0036/h91_stability_selected_sparse_descriptor_null_summary.csv",
+      "stability": "iterations/iter_0036/h91_stability_selected_sparse_descriptor_stability.csv"
+    }
+  },
+  "h92": {
+    "rows_tested": 24,
+    "mean_delta_auc": 0.0038596996161837185,
+    "positive_domain_splits": 5,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0036/h92_scale_space_lifetime_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0036/h92_scale_space_lifetime_domain_summary.csv",
+      "null_summary": "iterations/iter_0036/h92_scale_space_lifetime_null_summary.csv"
+    }
+  },
+  "h93": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.08442914258521927,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 6,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0036/h93_confidence_sign_weighted_filtration_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0036/h93_confidence_sign_weighted_filtration_domain_summary.csv",
+      "null_summary": "iterations/iter_0036/h93_confidence_sign_weighted_filtration_null_summary.csv"
+    }
+  }
+}

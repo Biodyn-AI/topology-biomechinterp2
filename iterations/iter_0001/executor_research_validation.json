@@ -1,0 +1,28 @@
+{
+  "detected_user_files": [
+    "geometric_topology_test_summary.json"
+  ],
+  "failed_checks": [
+    "executor_iteration_report.md lacks explicit command trace/reproduction markers",
+    "missing required executor_hypothesis_screen.json artifact",
+    "paper PDF is stale (older than TeX source): /Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_40_topology_hypothesis_screening_autoloop/paper/autoloop_research_paper.pdf"
+  ],
+  "has_code_artifact": false,
+  "has_machine_results_artifact": true,
+  "has_non_narrative_artifact": true,
+  "hypothesis_screen_count": 0,
+  "hypothesis_screen_error": "",
+  "hypothesis_screen_exists": false,
+  "hypothesis_screen_file": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_40_topology_hypothesis_screening_autoloop/iterations/iter_0001/executor_hypothesis_screen.json",
+  "hypothesis_screen_valid": false,
+  "paper_has_iteration_marker": true,
+  "paper_iteration_marker": "ITERATION UPDATE: iter_0001",
+  "paper_pdf_exists": true,
+  "paper_pdf_file": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_40_topology_hypothesis_screening_autoloop/paper/autoloop_research_paper.pdf",
+  "paper_pdf_is_fresh": false,
+  "paper_pdf_nonempty": true,
+  "paper_tex_exists": true,
+  "paper_tex_file": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_40_topology_hypothesis_screening_autoloop/paper/autoloop_research_paper.tex",
+  "passed_min_research_gate": false,
+  "report_has_command_trace": false
+}

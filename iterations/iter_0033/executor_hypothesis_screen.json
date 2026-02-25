@@ -1,0 +1,70 @@
+{
+  "iteration": "iter_0033",
+  "hypotheses": [
+    {
+      "id": "H82",
+      "name": "Local witness-cycle persistence on H70 hotspots",
+      "family": "persistent_homology",
+      "split_regime": "other",
+      "method": "Across immune/lung/external_lung with seeds 42/43/44, source/target-disjoint splits, and layers {7,11}, computed local edge-centered cycle-persistence surrogates on kNN geodesic neighborhoods and added them to H70-style defect scores; evaluated against matched-random hotspot-set, feature-shuffle, and label-shuffle nulls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_local_cycle_plus_h70_minus_h70",
+      "result_value": "mean=+0.01595; positive mean domain-splits=6/6; positive mean null-gap domain-splits=4/6",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0033/h82_local_witness_cycle_by_seed_layer_split.csv",
+        "iterations/iter_0033/h82_local_witness_cycle_domain_summary.csv",
+        "iterations/iter_0033/h82_local_witness_cycle_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Run a confirmatory pass with explicit endpoint-swap null and alternate hotspot thresholding to test robustness of the 4/6 null-gap gate.",
+      "novelty_type": "new_method",
+      "lineage": "H70",
+      "retired": false
+    },
+    {
+      "id": "H83",
+      "name": "Cross-model pathway trajectory invariance",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Seed42 pilot on immune/lung/external_lung with scGPT layers {0,3,7,11} and Geneformer token-rank quartile strata; built TRRUST+GO pathway modules, compared depth-wise module-distance trajectories via mean pairwise Spearman, and tested module-label, depth-order, and signature-destroy nulls.",
+      "status": "tested",
+      "primary_metric": "trajectory_spearman_mean",
+      "result_value": "mean=-0.07043; positive null-gap domains=0/3",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0033/h83_pathway_trajectory_invariance_by_domain.csv",
+        "iterations/iter_0033/h83_pathway_trajectory_invariance_domain_summary.csv",
+        "iterations/iter_0033/h83_pathway_trajectory_invariance_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this variant; only reopen cross-model work with a materially different anchoring regime and pre-registered null-gap gate.",
+      "novelty_type": "new_method",
+      "lineage": "H80",
+      "retired": true,
+      "retirement_reason": "Cross-model trajectory concordance remained below null-q95 in all tested domains."
+    },
+    {
+      "id": "H84",
+      "name": "Shortcut-bridge competition index broad screen",
+      "family": "graph_topology",
+      "split_regime": "other",
+      "method": "Seed42 breadth screen across immune/lung/external_lung, source/target-disjoint splits, and layers {0,3,7,11}; combined node bridge proxy and triangle-closing fraction into an SBC index and added it to directed-geodesic baseline; tested endpoint-swap, feature-shuffle, and label-shuffle nulls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_sbc_index_minus_baseline",
+      "result_value": "mean=-0.02803; positive mean domain-splits=0/6; positive mean null-gap domain-splits=0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0033/h84_shortcut_bridge_competition_by_domain_split_layer.csv",
+        "iterations/iter_0033/h84_shortcut_bridge_competition_domain_summary.csv",
+        "iterations/iter_0033/h84_shortcut_bridge_competition_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire SBC as a standalone additive score; if revisited, test only as a conditional modifier within an already-positive geometry channel.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": true,
+      "retirement_reason": "Uniformly negative deltas and null-gaps across all domain-splits in this broad screen."
+    }
+  ]
+}

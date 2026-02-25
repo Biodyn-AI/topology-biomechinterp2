@@ -1,0 +1,81 @@
+{
+  "iteration": "iter_0015",
+  "inputs": {
+    "scgpt_runs_by_domain": {
+      "immune": {
+        "seed42_main": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_main",
+        "seed43": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed43",
+        "seed44": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed44"
+      },
+      "lung": {
+        "seed42_main": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle6_lung_main",
+        "seed43": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle6_lung_seed43",
+        "seed44": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle6_lung_seed44"
+      },
+      "external_lung": {
+        "seed42_main": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle7_external_lung_main",
+        "seed43": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle7_external_lung_seed43",
+        "seed44": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle7_external_lung_seed44"
+      }
+    },
+    "geneformer_edge_by_domain": {
+      "immune": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle12_geneformer_immune_bootstrap/geneformer_edge_dataset.tsv",
+      "lung": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle12_geneformer_lung_bootstrap/geneformer_edge_dataset.tsv",
+      "external_lung": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle12_geneformer_external_lung_bootstrap/geneformer_edge_dataset.tsv"
+    },
+    "processed_h5ad_by_domain": {
+      "immune": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/single_cell_mechinterp/outputs/tabula_sapiens_immune_subset_hpn_processed.h5ad",
+      "lung": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/single_cell_mechinterp/outputs/invariant_causal_edges/lung/processed.h5ad",
+      "external_lung": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/single_cell_mechinterp/outputs/invariant_causal_edges/external_lung/processed.h5ad"
+    },
+    "h27_reference_domain_summary": "iterations/iter_0014/h27_gw_alignment_domain_summary.csv",
+    "cross_model_layer_by_domain": {
+      "immune": 0,
+      "lung": 0,
+      "external_lung": 3
+    },
+    "h28_note": "Coexpression-aware null uses absolute Pearson correlation bins computed from backed processed h5ad expression matrices and combined with degree bins.",
+    "h30_note": "Cheap broad-screen uses one seed per domain (seed42_main) by design for rapid triage."
+  },
+  "h28_diffusion_coexpression_matched_null": {
+    "rows_tested": 72,
+    "domains_tested": 3,
+    "domains_positive_mean_delta": 3,
+    "domains_sig_fisher_matched": 0,
+    "mean_delta_overall": 0.00773588892630963,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0015/h28_diffusion_coexp_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0015/h28_diffusion_coexp_domain_summary.csv",
+      "null_summary": "iterations/iter_0015/h28_diffusion_coexp_null_summary.csv"
+    }
+  },
+  "h29_seeded_one_to_one_gw": {
+    "domains_tested": 3,
+    "domains_sig_top1": 0,
+    "domains_sig_transfer_auc": 0,
+    "mean_top1_seeded": 0.008333333333333333,
+    "mean_transfer_auc_seeded": 0.5007551236687829,
+    "mean_delta_top1_vs_h27": 0.007142857142857167,
+    "mean_delta_auc_vs_h27": -0.017819552653597987,
+    "combined_fisher_top1": 0.12477787148468616,
+    "combined_fisher_transfer_auc": 0.4344784528987792,
+    "artifact_paths": {
+      "domain_summary": "iterations/iter_0015/h29_seeded_gw_domain_summary.csv",
+      "null_summary": "iterations/iter_0015/h29_seeded_gw_null_summary.csv",
+      "map_quality": "iterations/iter_0015/h29_seeded_gw_map_quality.csv"
+    }
+  },
+  "h30_triangle_thinness_screen": {
+    "rows_tested": 24,
+    "domain_split_groups": 6,
+    "groups_mean_auc_gt_0_5": 1,
+    "groups_sig_fisher": 1,
+    "mean_auc_thinness": 0.46573724095851415,
+    "mean_auc_geodesic": 0.5507808786117255,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0015/h30_hyperbolicity_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0015/h30_hyperbolicity_domain_summary.csv",
+      "null_summary": "iterations/iter_0015/h30_hyperbolicity_null_summary.csv"
+    }
+  }
+}

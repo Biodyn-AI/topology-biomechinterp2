@@ -1,0 +1,70 @@
+{
+  "iteration": "iter_0042",
+  "hypotheses": [
+    {
+      "id": "H109",
+      "name": "Cross-model perturbation Jacobian alignment (multi-seed)",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Multi-seed (seed42_main/seed43/seed44) run across immune/lung/external_lung; GO-module role vectors aligned between scGPT and Geneformer; perturbation panel used dropout/sign-flip/rewire across strengths {0.25,0.50,0.75,1.00}; measured response-rank Spearman and Jacobian-subspace cosine with nulls: perturbation-schedule permutation, module size/variance-matched shuffle, random gene mapping.",
+      "status": "tested",
+      "primary_metric": "module_response_rank_spearman",
+      "result_value": "mean_response=+0.79114; mean_jacobian_cosine=+0.52211; positive_response_null_gap_rows=2/9; immune_response_null_gap_negative_in_3/3_seeds",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0042/h109_cross_model_jacobian_alignment_by_seed_domain.csv",
+        "iterations/iter_0042/h109_cross_model_jacobian_alignment_domain_summary.csv",
+        "iterations/iter_0042/h109_cross_model_jacobian_alignment_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this rescue endpoint and only revisit cross-model transfer with a materially different objective and immune-specific causal anchor.",
+      "novelty_type": "refinement",
+      "lineage": "H108",
+      "retired": true,
+      "retirement_reason": "Fail-fast criterion triggered: immune null-gap stayed negative across all three seeds; seed-level domain gate not met."
+    },
+    {
+      "id": "H110",
+      "name": "Perturbation persistence vineyards",
+      "family": "topology_stability",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Seed42 breadth run across immune/lung/external_lung with source/target-disjoint splits and layers {7,11}; built perturbation-strength trajectories over support-mixed filtrations (strengths {0.00,0.25,0.50,0.75,1.00}), extracted vineyard descriptors, and evaluated additive utility over H93 backbone with nulls: perturbation-schedule permutation, degree-preserving local rewiring, label permutation.",
+      "status": "tested",
+      "primary_metric": "delta_auc_vineyard_features_minus_h93",
+      "result_value": "mean=+0.00091; positive_mean_delta_domain_splits=4/6; positive_mean_null_gap_domain_splits=0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0042/h110_persistence_vineyard_by_domain_split_layer.csv",
+        "iterations/iter_0042/h110_persistence_vineyard_domain_summary.csv",
+        "iterations/iter_0042/h110_persistence_vineyard_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this exact vineyards additive utility formulation and move to a distinct topology family/method.",
+      "novelty_type": "new_method",
+      "lineage": "H93",
+      "retired": true,
+      "retirement_reason": "Fail-fast criterion triggered: positive mean null-gap in 0/6 domain-splits."
+    },
+    {
+      "id": "H111",
+      "name": "Biologically anchored finite-state grammar",
+      "family": "topology_stability",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Seed42 run across immune/lung/external_lung with source/target-disjoint splits over layers {0,3,7,11}; state alphabet used TF-activity bin x support bin x sign-state, scored via second-order sequence likelihood, compared against deep-layer H70 baseline with nulls: state-frequency-matched token shuffle, layer-order permutation, label permutation.",
+      "status": "tested",
+      "primary_metric": "delta_auc_biofsm_minus_h70",
+      "result_value": "mean=+0.11202; positive_mean_delta_domain_splits=6/6; positive_mean_null_gap_domain_splits=1/6",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0042/h111_bio_anchored_fsm_by_domain_split.csv",
+        "iterations/iter_0042/h111_bio_anchored_fsm_domain_summary.csv",
+        "iterations/iter_0042/h111_bio_anchored_fsm_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Run one rescue with stronger occupancy/transition-matched nulls and increased null budget before any promotion decision.",
+      "novelty_type": "new_method",
+      "lineage": "H107",
+      "retired": false
+    }
+  ]
+}

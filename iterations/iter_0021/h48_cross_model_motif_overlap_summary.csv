@@ -1,0 +1,4 @@
+domain,n_rows,mean_overlap_total,mean_delta_overlap_total,mean_z_overlap_total,fraction_delta_positive,fraction_z_positive,fraction_p_overlap_lt_0_05,combined_fisher_p_overlap
+external_lung,6,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+immune,6,1.0,1.0,0.0,0.6666666666666666,0.0,0.6666666666666666,0.00031373801614566985
+lung,6,0.0,0.0,0.0,0.0,0.0,0.0,1.0

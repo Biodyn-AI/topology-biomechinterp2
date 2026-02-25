@@ -1,0 +1,11 @@
+{
+  "domains_evaluated": 3,
+  "mean_spearman_rho": 0.8333333333333334,
+  "mean_cosine_similarity": 0.8247899533736538,
+  "max_cosine_similarity": 0.9977328536281844,
+  "min_cosine_similarity": 0.7302708164080246,
+  "combined_p_spearman_fisher": 0.40875515437284266,
+  "combined_p_cosine_fisher": 0.3489284258487412,
+  "combined_stat_spearman_fisher": 6.1302834498523175,
+  "combined_stat_cosine_fisher": 6.705647594755879
+}

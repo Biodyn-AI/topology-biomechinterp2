@@ -1,0 +1,42 @@
+{
+  "iteration": "iter_0005",
+  "hypotheses": [
+    {
+      "id": "H05",
+      "name": "Persistent-homology null-sensitivity stress test",
+      "family": "null_sensitivity",
+      "split_regime": "other",
+      "method": "Ran iterations/iter_0005/run_iter0005_screen.py in subproject40-topology over lung/immune/external-lung with top+weak layers per domain, 3 seeds, 180 genes/test, PCA14, and two nulls (feature_shuffle n=20; distance_permutation n=4), then Fisher-combined p-values across seeds.",
+      "status": "tested",
+      "primary_metric": "significant_layer_fraction_by_null",
+      "result_value": "feature_shuffle: 8/12 significant (mean delta +3.998); distance_permutation: 0/12 significant (mean delta -850.942, 10/12 negative deltas)",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0005/h1_stronger_null_split_by_seed_layer.csv",
+        "iterations/iter_0005/h1_stronger_null_split_layer_summary.csv",
+        "iterations/iter_0005/h1_stronger_null_split_domain_summary.csv",
+        "iterations/iter_0005/iter0005_screen_summary.json"
+      ],
+      "decision": "neutral",
+      "next_action": "Swap distance_permutation for a degree-preserving graph rewiring null and repeat the same evaluation grid."
+    },
+    {
+      "id": "H06",
+      "name": "Source/target disjoint split robustness of H1 signal",
+      "family": "split_robustness",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Within the same run, compared source_disjoint and target_disjoint split regimes for each domain-layer test under feature_shuffle null and required Fisher p<0.05 in both splits for robust pass.",
+      "status": "tested",
+      "primary_metric": "both_splits_significant_count",
+      "result_value": "2/6 domain-layer combinations passed both splits (lung L0, external_lung L11); remaining 4/6 were split-sensitive",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0005/h1_stronger_null_split_layer_summary.csv",
+        "iterations/iter_0005/h1_stronger_null_split_domain_summary.csv",
+        "iterations/iter_0005/executor_iteration_report.md"
+      ],
+      "decision": "neutral",
+      "next_action": "Increase split robustness coverage to all layers in immune and identify whether failures cluster by depth or domain."
+    }
+  ]
+}

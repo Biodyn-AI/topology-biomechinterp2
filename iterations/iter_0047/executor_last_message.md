@@ -1,0 +1,31 @@
+Executed exactly one iteration (`iter_0047`) and stopped.
+
+- Commands run:
+  - `conda run -n subproject40-topology python -m py_compile iterations/iter_0047/run_iter0047_screen.py`
+  - `conda run -n subproject40-topology python iterations/iter_0047/run_iter0047_screen.py`
+  - `cd paper && latexmk -pdf -interaction=nonstopmode -halt-on-error autoloop_research_paper.tex`
+- Quantitative outcomes:
+  - `H124` (`N625`): mean `delta_vs_h70=+0.13098`; positive mean null-gap domain-splits `4/9`; `lung/dual_axis_disjoint` mean null-gap `-0.00326` -> `neutral`.
+  - `H125` (`N622`): mean `transfer_delta_auc_vs_h70=+0.09855`; positive domain null-gap `0/3`; immune mean null-gap `-0.01894` -> `negative` (retired endpoint).
+  - `H126` (`N620`): mean `delta_vs_h70=+0.04421`; positive mean null-gap domain-splits `2/6` (includes one source-disjoint positive split) -> `promising`.
+- Required iteration artifacts written:
+  - `iterations/iter_0047/executor_iteration_report.md`
+  - `iterations/iter_0047/executor_next_steps.md`
+  - `iterations/iter_0047/executor_hypothesis_screen.json`
+- Machine-readable outputs generated this iteration:
+  - `iterations/iter_0047/iter0047_screen_summary.json`
+  - `iterations/iter_0047/h124_signed_string_hardening_by_seed_domain_split.csv`
+  - `iterations/iter_0047/h124_signed_string_hardening_domain_summary.csv`
+  - `iterations/iter_0047/h124_signed_string_hardening_null_summary.csv`
+  - `iterations/iter_0047/h125_anchor_cycle_alignment_by_domain_split_layer.csv`
+  - `iterations/iter_0047/h125_anchor_cycle_alignment_domain_split_summary.csv`
+  - `iterations/iter_0047/h125_anchor_cycle_alignment_domain_summary.csv`
+  - `iterations/iter_0047/h125_anchor_cycle_alignment_null_summary.csv`
+  - `iterations/iter_0047/h126_geodesic_torsion_by_domain_split_layer.csv`
+  - `iterations/iter_0047/h126_geodesic_torsion_domain_summary.csv`
+  - `iterations/iter_0047/h126_geodesic_torsion_null_summary.csv`
+- Cumulative updates completed:
+  - `reports/autoloop_master_log.md`
+  - `paper/autoloop_research_paper.tex` (includes `ITERATION UPDATE: iter_0047`)
+  - `paper/autoloop_research_paper.pdf` (compiled)
+  - `tracking/prompt.md`

@@ -1,0 +1,4 @@
+domain,n_shared_features,spearman_rho_feature_transfer,top_feature_scgpt,top_feature_geneformer,top_feature_match,geneformer_gap_for_scgpt_top_minus_geneformer_top,p_rho_upper_exact,p_rho_two_sided_exact,p_top_feature_match_exact
+external_lung,3,1.0,centered_cosine,centered_cosine,True,0.0,0.2857142857142857,0.42857142857142855,0.42857142857142855
+immune,3,0.5,centered_cosine,centered_cosine,True,0.0,0.5714285714285714,1.0,0.42857142857142855
+lung,3,1.0,centered_cosine,centered_cosine,True,0.0,0.2857142857142857,0.42857142857142855,0.42857142857142855

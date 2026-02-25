@@ -1,0 +1,51 @@
+{
+  "iteration": "iter_0020",
+  "h43": {
+    "rows_tested": 24,
+    "mean_interaction_coef": 0.23253044625360655,
+    "domain_split_positive_interaction": 6,
+    "domain_split_fisher_sig": 4,
+    "domain_split_positive_top_bottom_uplift": 3,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0020/h43_support_interaction_ontology_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0020/h43_support_interaction_ontology_domain_summary.csv",
+      "null_summary": "iterations/iter_0020/h43_support_interaction_ontology_null_summary.csv",
+      "string_network_cache": "iterations/iter_0020/h43_string_network_api.tsv"
+    },
+    "string_info": {
+      "source": "api",
+      "rows": 84121,
+      "pairs_indexed": 84121,
+      "cache_path": "iterations/iter_0020/h43_string_network_api.tsv"
+    }
+  },
+  "h44": {
+    "rows_tested": 12,
+    "mean_h1_total_lifetime": 4219.583333333333,
+    "domain_positive_delta": 3,
+    "domain_fisher_sig": 3,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0020/h44_true_zigzag_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0020/h44_true_zigzag_domain_summary.csv",
+      "null_summary": "iterations/iter_0020/h44_true_zigzag_null_summary.csv"
+    },
+    "tooling": "true_zigzag_dionysus"
+  },
+  "h45": {
+    "rows_tested": 24,
+    "winsor_mean_observed_delta": 10.884790382631968,
+    "trimmed_mean_observed_delta": -65.46110901626086,
+    "winsor_rows_p_perm_lt_0_05": 6,
+    "trimmed_rows_p_perm_lt_0_05": 1,
+    "artifact_paths": {
+      "by_seed_split": "iterations/iter_0020/h45_id_oos_robust_by_seed_split.csv",
+      "domain_summary": "iterations/iter_0020/h45_id_oos_robust_domain_summary.csv",
+      "null_summary": "iterations/iter_0020/h45_id_oos_robust_null_summary.csv"
+    },
+    "source_h38_artifact": "iterations/iter_0018/h38_id_distribution_moments_by_seed_layer_split.csv"
+  },
+  "environment_note": {
+    "dionysus_installed": true,
+    "dionysus_install_command": "conda run -n subproject40-topology python -m pip install dionysus"
+  }
+}

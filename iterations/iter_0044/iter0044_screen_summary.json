@@ -1,0 +1,29 @@
+{
+  "iteration": "iter_0044",
+  "hypotheses": {
+    "H115": {
+      "n_rows": 6,
+      "mean_delta": -0.006224631972929551,
+      "mean_null_gap": 0.0015614100614897337,
+      "direction_passes": 2,
+      "null_passes": 4,
+      "artifact_paths": [
+        "iterations/iter_0044/h115_tangent_acceleration_by_domain_split.csv",
+        "iterations/iter_0044/h115_tangent_acceleration_null_summary.csv",
+        "iterations/iter_0044/h115_tangent_acceleration_domain_summary.csv"
+      ]
+    },
+    "H116": {
+      "n_rows": 6,
+      "mean_delta": 0.07809568727484216,
+      "mean_null_gap": 0.06989431115445623,
+      "direction_passes": 6,
+      "null_passes": 6,
+      "artifact_paths": [
+        "iterations/iter_0044/h116_trrust_sign_motif_by_domain_split.csv",
+        "iterations/iter_0044/h116_trrust_sign_motif_null_summary.csv",
+        "iterations/iter_0044/h116_trrust_sign_motif_domain_summary.csv"
+      ]
+    }
+  }
+}

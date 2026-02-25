@@ -1,0 +1,3 @@
+map_variant,mean_cycle_return_rate,delta_cycle_return_vs_independent,null_mean_cycle_return,p_cycle_return_upper_vs_random
+independent_pairwise,0.6384615384615384,0.0,0.022115384615384613,0.006211180124223602
+tri_domain_cycle_consistent,0.6653846153846154,0.02692307692307694,0.022115384615384613,0.006211180124223602

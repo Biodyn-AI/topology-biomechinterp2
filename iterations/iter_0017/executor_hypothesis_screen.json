@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0017",
+  "hypotheses": [
+    {
+      "id": "H34",
+      "name": "Multiseed convexity-detour incremental value",
+      "family": "graph_topology",
+      "split_regime": "other",
+      "method": "Across immune/lung/external_lung and seeds 42/43/44, fit nested logistic models (geodesic+diffusion covariates vs +detour_ratio+convexity_deficit) on source/target disjoint splits and layers {0,3,7,11} with stratified feature-shuffle nulls.",
+      "status": "tested",
+      "primary_metric": "mean_delta_auc_incremental",
+      "result_value": "+0.00153 overall; significant Fisher delta in 2/6 domain-split groups",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0017/h34_convexity_detour_multiseed_by_seed_layer_split.csv",
+        "iterations/iter_0017/h34_convexity_detour_multiseed_domain_summary.csv",
+        "iterations/iter_0017/h34_convexity_detour_multiseed_null_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Stratify by biological prior tiers to test whether incremental gain concentrates in high-consensus regulatory edges.",
+      "novelty_type": "refinement",
+      "lineage": "H32",
+      "retired": false
+    },
+    {
+      "id": "H35",
+      "name": "Local-linearity depth breakpoint asymmetry",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "other",
+      "method": "Computed per-layer edge AUROC from local reconstruction linearity scores, fit best piecewise depth breakpoints per domain/seed/split, and tested breakpoint/improvement against layer-order permutation nulls.",
+      "status": "tested",
+      "primary_metric": "mean_breakpoint_shift_source_minus_target",
+      "result_value": "external_lung shift +4.33 layers (p=0.0465); immune/lung shifts non-significant",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0017/h35_linearity_breakpoint_by_seed_domain_split.csv",
+        "iterations/iter_0017/h35_linearity_breakpoint_summary.csv",
+        "iterations/iter_0017/h35_linearity_breakpoint_null_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Replicate external_lung breakpoint shift under dual-axis disjoint and bootstrap robustness checks.",
+      "novelty_type": "new_method",
+      "lineage": "H22",
+      "retired": false
+    },
+    {
+      "id": "H36",
+      "name": "Anchor-regularized utility spectral alignment",
+      "family": "cross_model_alignment",
+      "split_regime": "source_disjoint",
+      "method": "Built mixed PCA+spectral scGPT/Geneformer spaces on 240 shared symbols per domain, selected lambda by source-split utility, evaluated held-out target-split AUROC with TRRUST-source weighted Procrustes; compared against lambda=0 baseline, iter_0016 cycle baseline, random-anchor, and label-permutation nulls.",
+      "status": "tested",
+      "primary_metric": "mean_delta_target_anchor_minus_baseline",
+      "result_value": "+0.2008 mean target AUROC delta vs baseline; label-permutation significant in 3/3 domains; random-anchor null non-discriminative",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0017/h36_anchor_spectral_alignment_domain_summary.csv",
+        "iterations/iter_0017/h36_anchor_spectral_alignment_map_quality.csv",
+        "iterations/iter_0017/h36_anchor_spectral_alignment_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Use anchor-dropout and anchor-mismatch utility controls to resolve anchor-specific attribution.",
+      "novelty_type": "new_method",
+      "lineage": "H33",
+      "retired": false,
+      "retirement_reason": "Cross-model branch is rescue-only after repeated inconclusive outcomes; this run used a materially changed utility-targeted method."
+    }
+  ]
+}

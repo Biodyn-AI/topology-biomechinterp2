@@ -1,0 +1,12 @@
+{
+  "domains_tested": 3,
+  "mean_spearman_rho": 0.8333333333333334,
+  "domains_with_positive_rho": 3,
+  "top_feature_match_count": 3,
+  "p_mean_rho_upper_exact_global": 0.03686635944700461,
+  "p_top_match_count_upper_exact_global": 0.041474654377880185,
+  "artifact_paths": {
+    "domain_summary": "iterations/iter_0011/h17_cross_model_transfer_domain_summary.csv",
+    "global_null": "iterations/iter_0011/h17_cross_model_transfer_global_null.csv"
+  }
+}

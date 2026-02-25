@@ -1,0 +1,7 @@
+domain,split_regime,n_rows,mean_tier_gap_high_minus_low,median_tier_gap_high_minus_low,fraction_tier_gap_positive,fraction_p_tier_gap_lt_0_05,combined_fisher_p_tier_gap,mean_overall_delta_auc_geometry
+external_lung,source_disjoint,4,,,0.0,0.0,,0.0012305452837104436
+external_lung,target_disjoint,4,,,0.0,0.0,,0.0010491750377015496
+immune,source_disjoint,4,-0.006136533687187584,-0.006340339003050088,0.0,0.0,0.9999922524413388,0.0005793682816557233
+immune,target_disjoint,4,-0.005029782980946244,-0.004786939530283141,0.0,0.0,0.9740594321953048,0.0030927984912376416
+lung,source_disjoint,4,,,0.0,0.0,,0.001350689473287675
+lung,target_disjoint,4,-0.01287359798757684,-0.008181903264932067,0.5,0.0,0.2923446281860374,0.0013719197084263168

@@ -1,0 +1,68 @@
+{
+  "iteration": "iter_0016",
+  "hypotheses": [
+    {
+      "id": "H31",
+      "name": "Diffusion incremental gain after covariate adjustment",
+      "family": "manifold_distance",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Fit baseline logistic models with covariates {source_degree, target_degree, coexpression, euclidean_distance, geodesic_distance} and extended models with diffusion-distance features at t={1,2,4,8} across immune/lung/external_lung (3 seeds, layers 0/3/7/11, source+target disjoint), then calibrated incremental gain with stratified diffusion-feature shuffles within degree x coexpression x geodesic strata.",
+      "status": "tested",
+      "primary_metric": "mean_delta_auc_diffusion_incremental",
+      "result_value": "+0.00346 mean delta AUROC overall; domain-split Fisher-significant groups 3/6; strongest immune source p=6.78e-08 and immune target p=3.84e-02",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0016/h31_diffusion_incremental_by_seed_layer_split.csv",
+        "iterations/iter_0016/h31_diffusion_incremental_domain_summary.csv",
+        "iterations/iter_0016/h31_diffusion_incremental_null_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Run a targeted immune/external_lung rescue with stronger nuisance controls and the same stratified null to test whether incremental diffusion signal survives additional confound adjustment.",
+      "novelty_type": "refinement",
+      "lineage": "H28",
+      "retired": false
+    },
+    {
+      "id": "H32",
+      "name": "Convexity-deficit and detour-ratio graph geometry",
+      "family": "graph_topology",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Computed edge detour ratio (geodesic/euclidean) and endpoint convexity-deficit (1 - geodesic-neighborhood Jaccard) on scGPT kNN manifolds (immune/lung/external_lung, seed42_main, layers 0/3/7/11, source+target disjoint), combined them with geodesic baseline via logistic scoring, and calibrated with degree x geodesic-length x coexpression matched label permutations.",
+      "status": "tested",
+      "primary_metric": "mean_delta_auc_combo_minus_geodesic",
+      "result_value": "+0.01706 mean delta AUROC (combo - geodesic); mean combo AUROC 0.5682; Fisher-significant delta in 4/6 domain-split groups",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0016/h32_convexity_detour_by_seed_layer_split.csv",
+        "iterations/iter_0016/h32_convexity_detour_domain_summary.csv",
+        "iterations/iter_0016/h32_convexity_detour_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Promote to multi-seed replication and test incremental value against diffusion-adjusted baselines.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": false
+    },
+    {
+      "id": "H33",
+      "name": "Tri-domain cycle-consistent cross-model alignment",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Aligned 260 shared gene symbols across immune/lung/external_lung using non-GW Procrustes maps from scGPT layer embeddings to Geneformer embeddings, then applied tri-domain consensus-regularized cycle-consistent refinement and evaluated cycle-return plus edge-transfer AUROC against random orthogonal-map nulls.",
+      "status": "tested",
+      "primary_metric": "delta_cycle_return",
+      "result_value": "+0.02692 cycle-return improvement (p=0.00621 vs random), but mean edge-transfer AUROC delta vs independent maps was -4.55e-05 with 0/3 domains significant",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0016/h33_cycle_consistent_alignment_domain_summary.csv",
+        "iterations/iter_0016/h33_cycle_consistent_alignment_map_quality.csv",
+        "iterations/iter_0016/h33_cycle_consistent_alignment_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Only continue this branch with biological-anchor regularization and a hard gate requiring positive edge-transfer delta, not cycle consistency alone.",
+      "novelty_type": "new_method",
+      "lineage": "H29",
+      "retired": false
+    }
+  ]
+}

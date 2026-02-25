@@ -1,0 +1,13 @@
+domain,split_regime,null_family,n_layer_tests,n_layer_tests_fisher_p_lt_0_05,frac_layer_tests_fisher_p_lt_0_05,mean_layer_delta,min_layer_delta,max_layer_delta
+external_lung,source_disjoint,distance_permutation,2,0,0.0,-1137.2968156387415,-1632.4727910856418,-642.1208401918412
+external_lung,source_disjoint,feature_shuffle,2,2,1.0,5.5500972524285315,1.7554292351007457,9.344765269756317
+external_lung,target_disjoint,distance_permutation,2,0,0.0,-1497.4113388185704,-2458.7495138645177,-536.0731637726229
+external_lung,target_disjoint,feature_shuffle,2,1,0.5,3.301162323355675,2.7454121689001725,3.856912477811177
+immune,source_disjoint,distance_permutation,2,0,0.0,-119.74562859783609,-130.624215861162,-108.86704133451015
+immune,source_disjoint,feature_shuffle,2,1,0.5,5.472061075766882,1.9493012110392254,8.994820940494538
+immune,target_disjoint,distance_permutation,2,0,0.0,3.056870778401693,2.86629851659139,3.2474430402119956
+immune,target_disjoint,feature_shuffle,2,1,0.5,0.7622328170885642,0.2926807165145873,1.231784917662541
+lung,source_disjoint,distance_permutation,2,0,0.0,-2285.0180769860744,-3320.3139349222183,-1249.7222190499306
+lung,source_disjoint,feature_shuffle,2,1,0.5,4.634405225515366,1.3155294060707086,7.953281044960022
+lung,target_disjoint,distance_permutation,2,0,0.0,-69.23719857633144,-129.02244242032427,-9.451954732338613
+lung,target_disjoint,feature_shuffle,2,2,1.0,4.26881534854571,2.156434267759323,6.381196429332097

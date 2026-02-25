@@ -1,0 +1,37 @@
+{
+  "iteration": "iter_0018",
+  "h37": {
+    "rows_tested": 24,
+    "mean_tier_gap": -0.00801330488523689,
+    "domain_split_positive_gap": 0,
+    "domain_split_fisher_sig": 0,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0018/h37_consensus_tier_geometry_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0018/h37_consensus_tier_geometry_domain_summary.csv",
+      "null_summary": "iterations/iter_0018/h37_consensus_tier_geometry_null_summary.csv"
+    }
+  },
+  "h38": {
+    "rows_tested": 18,
+    "mean_delta_r2": 0.35673002821923017,
+    "domain_split_positive_delta": 6,
+    "domain_split_fisher_sig": 0,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0018/h38_id_distribution_moments_by_seed_layer_split.csv",
+      "fit_by_seed_split": "iterations/iter_0018/h38_id_distribution_moments_fit_by_seed_split.csv",
+      "domain_summary": "iterations/iter_0018/h38_id_distribution_moments_domain_summary.csv",
+      "null_summary": "iterations/iter_0018/h38_id_distribution_moments_null_summary.csv"
+    }
+  },
+  "h39": {
+    "rows_tested": 24,
+    "mean_h1_z": 0.34579185196959744,
+    "domain_split_mean_h1_positive": 5,
+    "domain_split_fisher_sig_h1": 0,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0018/h39_ph_feature_shuffle_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0018/h39_ph_feature_shuffle_domain_summary.csv",
+      "null_summary": "iterations/iter_0018/h39_ph_feature_shuffle_null_summary.csv"
+    }
+  }
+}

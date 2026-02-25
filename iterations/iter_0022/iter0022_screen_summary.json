@@ -1,0 +1,43 @@
+{
+  "iteration": "iter_0022",
+  "h49": {
+    "rows_tested": 72,
+    "mean_delta_auc": 0.0059867562021810004,
+    "fraction_delta_positive": 0.9583333333333334,
+    "domain_split_fisher_sig": 6,
+    "domain_utility_positive": 1,
+    "domain_utility_placebo_sig": 0,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0022/h49_bifiltration_multiseed_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0022/h49_bifiltration_multiseed_domain_summary.csv",
+      "null_summary": "iterations/iter_0022/h49_bifiltration_multiseed_null_summary.csv"
+    }
+  },
+  "h50": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.01584664966267917,
+    "domain_split_positive_delta": 6,
+    "domain_split_fisher_sig": 6,
+    "artifact_paths": {
+      "by_domain_layer_split": "iterations/iter_0022/h50_directed_signed_topology_by_domain_layer_split.csv",
+      "domain_summary": "iterations/iter_0022/h50_directed_signed_topology_domain_summary.csv",
+      "null_summary": "iterations/iter_0022/h50_directed_signed_topology_null_summary.csv"
+    }
+  },
+  "h51": {
+    "rows_tested": 36,
+    "mean_delta_degree": 20.290123456790123,
+    "domain_variant_fisher_sig": 5,
+    "domain_with_any_sig_variant": 3,
+    "artifact_paths": {
+      "by_domain_layer_k": "iterations/iter_0022/h51_cross_model_motif_fingerprint_by_domain_layer_k.csv",
+      "summary": "iterations/iter_0022/h51_cross_model_motif_fingerprint_summary.csv",
+      "null_summary": "iterations/iter_0022/h51_cross_model_motif_fingerprint_null_summary.csv"
+    }
+  },
+  "environment": {
+    "python_env": "subproject40-topology",
+    "string_cache_used": "iterations/iter_0020/h43_string_network_api.tsv",
+    "geneformer_model": "ctheodoris/Geneformer"
+  }
+}

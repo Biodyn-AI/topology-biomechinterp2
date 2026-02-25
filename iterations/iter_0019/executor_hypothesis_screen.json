@@ -1,0 +1,68 @@
+{
+  "iteration": "iter_0019",
+  "hypotheses": [
+    {
+      "id": "H40",
+      "name": "Continuous biological-support interaction for geometric utility",
+      "family": "module_structure",
+      "split_regime": "other",
+      "method": "Across immune/lung/external_lung and seeds 42/43/44 with source/target disjoint splits at layers 0/3/7/11, fit baseline vs interaction logistic models using geometry features (euclidean/geodesic/diffusion/detour/convexity) and a leakage-safe continuous support score (DoRothEA + GO + OmniPath fallback), with support permutation nulls stratified by degree x coexpression x geodesic.",
+      "status": "tested",
+      "primary_metric": "mean_interaction_coef",
+      "result_value": "+0.13169 overall; 4/6 domain-split Fisher-significant interaction support; top-vs-bottom support-decile uplift gap positive in 4/6 domain-splits",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0019/h40_support_interaction_by_seed_layer_split.csv",
+        "iterations/iter_0019/h40_support_interaction_domain_summary.csv",
+        "iterations/iter_0019/h40_support_interaction_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Add true STRING edge-score priors and rerun with the same calibration to confirm whether lung catches up to immune/external-lung.",
+      "novelty_type": "new_method",
+      "lineage": "H37",
+      "retired": false
+    },
+    {
+      "id": "H41",
+      "name": "Split-zigzag persistence proxy with split-swap and layer-order controls",
+      "family": "topology_stability",
+      "split_regime": "other",
+      "method": "On seed42 across domains/splits/layers {0,3,7,11}, computed split-local neighborhood PH summaries, built edge-local split-zigzag proxy scores, and compared against geodesic baseline with split-swap and layer-order permutation controls (fallback because true zigzag persistence tooling was unavailable).",
+      "status": "partial",
+      "primary_metric": "mean_delta_auc_observed_minus_base",
+      "result_value": "+0.01153 overall; 5/6 domain-splits positive directionally, but 0/6 domain-split Fisher-significant under layer-order controls",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0019/h41_zigzag_persistence_by_seed_layer_split.csv",
+        "iterations/iter_0019/h41_zigzag_persistence_domain_summary.csv",
+        "iterations/iter_0019/h41_zigzag_persistence_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Install zigzag-capable TDA tooling and rerun this branch with true split-complex zigzag persistence instead of proxy local PH summaries.",
+      "novelty_type": "new_method",
+      "lineage": "H39",
+      "retired": false
+    },
+    {
+      "id": "H42",
+      "name": "Out-of-sample intrinsic-dimension moment validation",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "other",
+      "method": "Using H38 moment features, evaluated leave-one-layer-out and leave-one-seed-out predictions of layerwise local-linearity AUROC and tested out-of-sample delta R2 (full minus mean-only models) against permutation nulls.",
+      "status": "tested",
+      "primary_metric": "mean_observed_delta_r2",
+      "result_value": "-10.70017 overall; only 4/12 domain-split-evaluation rows with p<0.05, with large instability in several leave-seed-out settings",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0019/h42_id_oos_by_seed_split.csv",
+        "iterations/iter_0019/h42_id_oos_domain_summary.csv",
+        "iterations/iter_0019/h42_id_oos_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Treat H38 mechanism as non-promoted; only revisit with robust OOS metrics that control extreme holdout instability.",
+      "novelty_type": "new_method",
+      "lineage": "H38",
+      "retired": false
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+domain,split_regime,n_rows,mean_h1_delta_shift_constrained_minus_unconstrained,median_h1_delta_shift_constrained_minus_unconstrained,frac_rows_h1_shift_positive,mean_distortion_delta_shift_constrained_minus_unconstrained,frac_rows_distortion_shift_negative
+immune,source_disjoint,36,0.5561057726542158,0.588214099407196,0.6111111111111112,0.0012347632050436579,0.1111111111111111
+immune,target_disjoint,36,-1.1321413030546164,-0.6989545345306389,0.4166666666666667,-1.2720676567551998e-05,0.6666666666666666

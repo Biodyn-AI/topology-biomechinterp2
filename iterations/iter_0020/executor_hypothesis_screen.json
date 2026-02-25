@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0020",
+  "hypotheses": [
+    {
+      "id": "H43",
+      "name": "STRING + ontology support interaction for geometric utility",
+      "family": "module_structure",
+      "split_regime": "other",
+      "method": "On seed42 across immune/lung/external_lung and source/target-disjoint splits at layers {0,3,7,11}, fit baseline vs interaction logistic models using geometry features and a support score combining DoRothEA + STRING API score + GO overlap + OmniPath + ontology-profile similarity; used stratified support permutations within degree x coexpression x geodesic x ontology bins.",
+      "status": "tested",
+      "primary_metric": "mean_interaction_coef",
+      "result_value": "+0.23253 overall; 4/6 domain-splits Fisher-significant; mean AUROC delta ~ 0",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0020/h43_support_interaction_ontology_by_seed_layer_split.csv",
+        "iterations/iter_0020/h43_support_interaction_ontology_domain_summary.csv",
+        "iterations/iter_0020/h43_support_interaction_ontology_null_summary.csv",
+        "iterations/iter_0020/h43_string_network_api.tsv"
+      ],
+      "decision": "promising",
+      "next_action": "Replicate on seeds 43/44 and require non-negative held-out domain AUROC delta alongside positive interaction coefficients.",
+      "novelty_type": "new_method",
+      "lineage": "H40",
+      "retired": false
+    },
+    {
+      "id": "H44",
+      "name": "True split-zigzag persistence with target-set permutation controls",
+      "family": "topology_stability",
+      "split_regime": "other",
+      "method": "Using dionysus true zigzag persistence on source->union<-target kNN edge complexes for seed42 domains/layers {0,3,7,11}, computed H1 total lifetime and compared against target-set permutation nulls.",
+      "status": "tested",
+      "primary_metric": "mean_delta_h1_total_vs_null_mean",
+      "result_value": "+234.78 mean observed-minus-null H1 lifetime; 12/12 rows positive; 3/3 domains Fisher-significant",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0020/h44_true_zigzag_by_seed_layer_split.csv",
+        "iterations/iter_0020/h44_true_zigzag_domain_summary.csv",
+        "iterations/iter_0020/h44_true_zigzag_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Increase permutation budget (>=160) and test whether zigzag excess predicts downstream edge-utility uplift.",
+      "novelty_type": "new_method",
+      "lineage": "H41",
+      "retired": false
+    },
+    {
+      "id": "H45",
+      "name": "Robust OOS intrinsic-dimension/local-linearity validation",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "other",
+      "method": "From H38 moment features, evaluated leave-layer-out and leave-seed-out robust deltas (winsorized and trimmed R2) for full vs mean-only models, with permutation nulls and block sign-bootstrap nulls.",
+      "status": "tested",
+      "primary_metric": "winsorized_mean_delta_r2",
+      "result_value": "winsorized +10.8848 with 6/12 permutation-significant rows, but 0/12 block-bootstrap significant; trimmed mean -65.4611 with instability",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0020/h45_id_oos_robust_by_seed_split.csv",
+        "iterations/iter_0020/h45_id_oos_robust_domain_summary.csv",
+        "iterations/iter_0020/h45_id_oos_robust_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Do not promote; only revisit with materially changed robust target/holdout design and explicit handling of trimmed-metric underpowering.",
+      "novelty_type": "refinement",
+      "lineage": "H42",
+      "retired": false
+    }
+  ]
+}

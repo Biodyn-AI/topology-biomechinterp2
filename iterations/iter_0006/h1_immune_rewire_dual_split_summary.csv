@@ -1,0 +1,3 @@
+domain,null_family,n_layers,n_layers_both_splits_sig,frac_layers_both_splits_sig,n_layers_both_splits_positive_delta,frac_layers_both_splits_positive_delta
+immune,degree_preserving_geodesic_rewire,12,0,0.0,0,0.0
+immune,feature_shuffle,12,4,0.3333333333333333,9,0.75

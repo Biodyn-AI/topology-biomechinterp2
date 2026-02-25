@@ -1,0 +1,39 @@
+{
+  "iteration": "iter_0027",
+  "h64": {
+    "rows_tested": 36,
+    "mean_delta_auc": -0.03183501111085209,
+    "mean_delta_vs_one_axis": 0.00034080692769905243,
+    "domain_split_fisher_sig": 6,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0027/h64_support_margin_two_axis_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0027/h64_support_margin_two_axis_domain_summary.csv",
+      "null_summary": "iterations/iter_0027/h64_support_margin_two_axis_null_summary.csv"
+    }
+  },
+  "h65": {
+    "rows_tested": 12,
+    "mean_delta_auc": -0.1020357228271932,
+    "mean_null_gap_q95": 0.136710119911471,
+    "domain_split_fisher_sig": 6,
+    "artifact_paths": {
+      "by_domain_layer_split": "iterations/iter_0027/h65_codebook_transport_by_domain_layer_split.csv",
+      "domain_summary": "iterations/iter_0027/h65_codebook_transport_domain_summary.csv",
+      "null_summary": "iterations/iter_0027/h65_codebook_transport_null_summary.csv"
+    }
+  },
+  "h66": {
+    "rows_tested": 54,
+    "mean_delta_auc": -0.13176115789162968,
+    "domain_split_fisher_sig": 0,
+    "artifact_paths": {
+      "by_seed_transition_split": "iterations/iter_0027/h66_id_interaction_by_seed_transition_split.csv",
+      "domain_summary": "iterations/iter_0027/h66_id_interaction_domain_summary.csv",
+      "null_summary": "iterations/iter_0027/h66_id_interaction_null_summary.csv"
+    }
+  },
+  "environment": {
+    "python_env": "subproject40-topology",
+    "string_cache_used": "iterations/iter_0020/h43_string_network_api.tsv"
+  }
+}

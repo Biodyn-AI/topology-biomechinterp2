@@ -1,0 +1,43 @@
+{
+  "iteration": "iter_0008",
+  "hypotheses": [
+    {
+      "id": "H11",
+      "name": "Bridge-conditioned rewiring negativity explanation",
+      "family": "graph_topology",
+      "split_regime": "edge_stratified",
+      "method": "Stratified geodesic H1 delta analysis on immune seed-layer rows by bridging status and k-bucket using outputs from run_iter0008_screen.py.",
+      "status": "partial",
+      "primary_metric": "bridge_minus_nonbridge_h1_delta_gap",
+      "result_value": "unconstrained +16.147, quantile-constrained +17.496; split confounding severe (source 36/36 bridged, target 2/36 bridged)",
+      "result_direction": "inconclusive",
+      "artifact_paths": [
+        "iterations/iter_0008/h1_immune_constrained_rewire_bridge_gap_summary.csv",
+        "iterations/iter_0008/h1_immune_constrained_rewire_bridge_k_strata_summary.csv",
+        "iterations/iter_0008/h1_immune_constrained_rewire_by_seed_layer.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Force within-split bridged and non-bridged overlap via fixed-k schedules, then rerun bridge-conditioned test."
+    },
+    {
+      "id": "H12",
+      "name": "Edge-length-quantile constrained rewiring rescues topology under stronger null",
+      "family": "null_sensitivity",
+      "split_regime": "other",
+      "method": "Compared observed geodesic H1 and distortion against two metric-matched rewiring nulls (unconstrained degree-preserving vs quantile-constrained degree-preserving) across immune layers, seeds, and source/target-disjoint splits.",
+      "status": "tested",
+      "primary_metric": "n_layers_h1_sig (Fisher p<0.05) under quantile-constrained null",
+      "result_value": "0/24 significant; mean H1 delta -19.532 (vs -19.244 unconstrained); dual-split passes 0/12",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0008/h1_immune_constrained_rewire_layer_summary.csv",
+        "iterations/iter_0008/h1_immune_constrained_rewire_domain_summary.csv",
+        "iterations/iter_0008/h1_immune_constrained_rewire_pass_matrix.csv",
+        "iterations/iter_0008/h1_immune_constrained_rewire_paired_shift_summary.csv",
+        "iterations/iter_0008/iter0008_screen_summary.json"
+      ],
+      "decision": "negative",
+      "next_action": "Replicate this constrained-null packet in external-lung; if still uniformly negative, close rewiring-survival branch and prioritize biological anchoring."
+    }
+  ]
+}

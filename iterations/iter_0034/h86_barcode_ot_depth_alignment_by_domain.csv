@@ -1,0 +1,4 @@
+domain,split_regime,n_modules,mean_module_size,n_shared_genes,barcode_ot_depth_alignment_score,ot_depth_spearman,ot_transport_cost,q95_null_barcode_ot_depth_alignment_score,null_gap_q95_barcode_ot_depth_alignment_score,p_random_transport_upper,p_depth_permutation_upper,p_component_permutation_upper,p_best_upper
+external_lung,heldout_domain_seed42,40,48.225,220,0.5799007618505647,0.39999999999999997,5.353661174001771,0.6347599948740689,-0.05485923302350415,0.52,0.72,0.4,0.4
+immune,heldout_domain_seed42,40,48.525,220,0.576812137408172,-1.0,5.014275055600417,0.6405206263181129,-0.06370848890994085,0.52,0.52,0.52,0.52
+lung,heldout_domain_seed42,40,48.4,220,0.589057487389057,0.19999999999999998,5.095507797779766,0.6784615502373788,-0.0894040628483217,0.48,0.68,0.92,0.48

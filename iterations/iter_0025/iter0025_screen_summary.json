@@ -1,0 +1,40 @@
+{
+  "iteration": "iter_0025",
+  "h58": {
+    "rows_tested": 36,
+    "mean_delta_auc": 0.011371928063392179,
+    "mean_weight_gain_delta": -0.0005238837848689751,
+    "domain_split_fisher_sig": 4,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0025/h58_weighted_directed_signed_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0025/h58_weighted_directed_signed_domain_summary.csv",
+      "null_summary": "iterations/iter_0025/h58_weighted_directed_signed_null_summary.csv",
+      "failure_slice_summary": "iterations/iter_0025/h58_weighted_directed_signed_failure_slice_summary.csv"
+    }
+  },
+  "h59": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.024042329876509404,
+    "domain_fisher_sig": 0,
+    "artifact_paths": {
+      "by_domain_layer": "iterations/iter_0025/h59_cross_model_topology_signature_transfer_by_domain_layer.csv",
+      "summary": "iterations/iter_0025/h59_cross_model_topology_signature_transfer_summary.csv",
+      "null_summary": "iterations/iter_0025/h59_cross_model_topology_signature_transfer_null_summary.csv"
+    }
+  },
+  "h60": {
+    "rows_tested": 72,
+    "mean_delta_auc": -0.004349741899407818,
+    "fraction_delta_positive": 0.4305555555555556,
+    "domain_split_fisher_sig": 1,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0025/h60_id_jump_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0025/h60_id_jump_domain_summary.csv",
+      "null_summary": "iterations/iter_0025/h60_id_jump_null_summary.csv"
+    }
+  },
+  "environment": {
+    "python_env": "subproject40-topology",
+    "string_cache_used": "iterations/iter_0020/h43_string_network_api.tsv"
+  }
+}

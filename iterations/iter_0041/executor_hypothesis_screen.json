@@ -1,0 +1,70 @@
+{
+  "iteration": "iter_0041",
+  "hypotheses": [
+    {
+      "id": "H106",
+      "name": "STRING triad-closure weighted filtration",
+      "family": "persistent_homology",
+      "split_regime": "other",
+      "method": "Seed42 run across immune/lung/external_lung with source/target-disjoint splits and layers {7,11}; compared H93 backbone vs STRING triad-closure weighted filtration with nulls: STRING-weight shuffle, triad node permutation, label permutation.",
+      "status": "tested",
+      "primary_metric": "delta_auc_string_triad_weighted_minus_h93",
+      "result_value": "mean=-0.00118; positive mean null-gap domain-splits=0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0041/h106_string_triad_weighted_filtration_by_domain_split_layer.csv",
+        "iterations/iter_0041/h106_string_triad_weighted_filtration_domain_summary.csv",
+        "iterations/iter_0041/h106_string_triad_weighted_filtration_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this exact N538 formulation; only revisit with a materially changed filtration objective.",
+      "novelty_type": "new_method",
+      "lineage": "H93",
+      "retired": true,
+      "retirement_reason": "Fail-fast gate triggered: positive mean null-gap in 0/6 domain-splits."
+    },
+    {
+      "id": "H107",
+      "name": "Finite-state descriptor motif screen (2nd-order)",
+      "family": "topology_stability",
+      "split_regime": "other",
+      "method": "Seed42 breadth run across immune/lung/external_lung with source/target-disjoint splits over layers {0,3,7,11}; second-order sequence likelihood on quantized multi-descriptor states; nulls: layer-order permutation, token shuffle within layer, label permutation.",
+      "status": "tested",
+      "primary_metric": "delta_auc_dfa_motif_minus_h70",
+      "result_value": "mean=+0.04563; positive mean null-gap domain-splits=0/6",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0041/h107_finite_state_descriptor_motif_by_domain_split.csv",
+        "iterations/iter_0041/h107_finite_state_descriptor_motif_domain_summary.csv",
+        "iterations/iter_0041/h107_finite_state_descriptor_motif_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Allow at most one rescue with materially changed state construction or biologically anchored tokenization.",
+      "novelty_type": "new_method",
+      "lineage": "H104",
+      "retired": false
+    },
+    {
+      "id": "H108",
+      "name": "Cross-model perturbation-response rank alignment",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Seed42 pilot across immune/lung/external_lung on shared GO modules; perturbation panel includes module dropout, sign-flip, and local rewiring; compared scGPT vs Geneformer response-rank concordance with nulls: schedule permutation, module-label shuffle, random gene mapping.",
+      "status": "tested",
+      "primary_metric": "module_response_rank_spearman",
+      "result_value": "mean=+0.73159; positive domain null-gap count=2/3",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0041/h108_cross_model_perturbation_response_by_domain.csv",
+        "iterations/iter_0041/h108_cross_model_perturbation_response_domain_summary.csv",
+        "iterations/iter_0041/h108_cross_model_perturbation_response_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Promote to multi-seed robustness run and isolate immune-domain failure mode.",
+      "novelty_type": "new_method",
+      "lineage": "H102",
+      "retired": false,
+      "retirement_reason": "Static cross-model alignment was retired, but this perturbation-response endpoint is a rescue-once major change."
+    }
+  ]
+}

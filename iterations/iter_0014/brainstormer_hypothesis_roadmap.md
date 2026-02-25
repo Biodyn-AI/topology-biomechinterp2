@@ -1,0 +1,44 @@
+# Brainstormer Hypothesis Roadmap — iter_0014
+
+## Retire / Deprioritize
+| Direction | Evidence | Decision |
+|---|---|---|
+| Rewiring-null survival branch (`H07/H09/H12`) | Three consecutive calibrated negative packets with no rescue trend | `retire_now` |
+| Rewiring distortion-lower-tail rescue | Repeated non-significance and no sign correction | `retire_now` |
+| Raw Forman negative-curvature enrichment (`H23`) | Opposite-direction, below-chance behavior across all tested domains | `retire_now` |
+| Plain unsupervised correspondence-free map recovery (Hungarian OT, unseeded GW baseline) | `H20` OT and `H27` GW fail correspondence recovery despite strong coarse geometry | `retire_now` |
+| Raw confidence-tier monotonicity (`H19` form) | Direction failed in both splits and not rescued by follow-up interaction in `H26` | `rescue_once_with_major_change` |
+| Domain-invariant intrinsic coupling framing (`H04/H18/H21/H22` form) | Repeated split/domain sign flips | `rescue_once_with_major_change` |
+| Coarse disagreement-bin trend (`H15` style) | Domain-heterogeneous sign with coarse-bin confounding | `rescue_once_with_major_change` |
+| Unseeded transport as primary cross-model method | Geometry aligns but correspondence does not | `rescue_once_with_major_change` |
+
+## New Hypothesis Portfolio
+| ID | Theme | One-sentence hypothesis | Concrete test design | Expected signal if true | Null / control | Value | Cost |
+|---|---|---|---|---|---|---|---|
+| N113 | Topology | Diffusion-time persistence vineyards capture a stable topological signature that tracks the `H25` AUROC lift. | Compute H0/H1 barcodes on diffusion distances at `t={1,2,4,8}`, quantify inter-`t` barcode drift and relate drift to edge AUROC by layer/split/domain. | Layers with higher AUROC lift show lower vineyard drift and stronger positive-vs-null persistence deltas in `>=2/3` domains. | Label permutation plus diffusion-kernel row/column permutation preserving degree profile. | high | medium |
+| N114 | Topology | A bifiltration over geodesic radius and prior-support score reveals regulatory loops missed by single filtrations. | Build rank-invariant summaries on a 2D filtration (`distance`, `consensus prior support`) and test positive-edge enrichment in high-persistence regions. | High-support bifiltration regions show reproducible positive-edge enrichment across seeds and splits. | Prior-score permutation stratified by degree and TF status. | high | high |
+| N115 | Topology | Representative PH cycles are split-stable for true regulatory structure and unstable for negatives. | Extract representative cycles from source/target disjoint runs and score cycle gene-overlap consistency versus edge-label strata. | Positive-associated cycles have higher cross-split overlap than matched negatives in `>=2` domains. | Split-label shuffle and random cycle-membership controls with matched cycle length. | medium | medium |
+| N116 | Topology + Geometry | Diffusion-distance uplift remains significant under a coexpression-matched stronger null, not only random label permutation. | Re-run `H25` deltas with degree- and coexpression-bin-matched label shuffles across domains/splits/layers. | Positive domain mean delta with permutation-calibrated `p<0.05` in `>=2/3` domains. | Existing random-label null as secondary control and identity-distance baseline. | high | low |
+| N117 | Geometry (Curvature) | Curvature extremity (`|Ricci|`), not curvature sign alone, marks regulatory edges after degree/length adjustment. | Compute weighted Ollivier-Ricci curvature on kNN graphs; fit edge models using signed and absolute curvature with covariates. | `|curvature|` term is positive and significant while sign term is weak/inconsistent. | Degree-preserving rewiring and label permutation controls. | medium | medium |
+| N118 | Geometry (Geodesic) | Positive edges participate in more hyperbolic (thinner) geodesic triangles than matched negatives. | Compute triangle-thinness/hyperbolicity metrics around edge endpoints and evaluate edge discrimination by layer/split/domain. | Thinness-based scores exceed chance and align with high geodesic/diffusion-gain layers. | Endpoint shuffle matched by degree, distance, and expression. | medium | low |
+| N119 | Geometry (Local Linearity) | Regulatory edges cross neighborhoods with higher tangent-space rotation than non-regulatory edges. | Estimate local PCA tangent bases per gene; compute principal-angle rotation across edge endpoints; test predictive lift. | Tangent-rotation score provides independent AUROC lift beyond diffusion/geodesic distance. | Coordinate random-rotation preserving pairwise distances and label permutation controls. | medium | medium |
+| N120 | Intrinsic Dimension | Intrinsic-dimension anisotropy statistics explain the split/domain sign flips seen in `H21/H22`. | Compute local ID distribution features (tail, skew, spectral entropy) and fit domain x split interaction models for edge outcomes. | Interaction terms recover immune-vs-lung/external sign differences with stable bootstrapped coefficients. | Within-domain layer permutation and estimator-swap robustness checks. | medium | low |
+| N121 | Cross-Model Alignment | CCA-seeded, one-to-one-regularized GW can recover correspondences where unseeded GW fails. | Initialize GW using `H24` latent alignment, add one-to-one regularization/projection, evaluate top-1/mutual top-1 and edge transfer. | Top-1 and transfer AUROC beat null in `>=2/3` domains; map uniqueness rises sharply vs `H27`. | Correspondence permutation and random-seed CCA controls. | high | high |
+| N122 | Cross-Model Alignment | Cycle-consistent multi-domain alignment reduces spurious pairwise correspondences and improves transfer stability. | Jointly learn maps across immune/lung/external-lung with cycle-consistency penalty; compare to independent pairwise maps. | Lower cycle error and better edge-transfer stability across domains than pairwise-only alignment. | Random-cycle maps with matched sparsity and temperature controls. | high | high |
+| N123 | Cross-Model Structure Transfer | Spectral (Laplacian eigenbasis) alignment transfers graph structure better than direct point matching in low-signal domains. | Align top-k Laplacian eigenvectors between models and score kNN overlap, distance correlation, and edge-transfer AUROC. | Spectral alignment improves weak domains (lung/external-lung) where `H27` transfer failed. | Eigenvector permutation/sign-flip controls and identity baseline. | medium | medium |
+| N124 | Biological Anchoring | Geometry effects are strongest on edges with multi-prior consensus (STRING+GO+DoRothEA) and cell-ontology consistency. | Build edge models with geometry features, consensus-prior count (`0-3`), ontology strata, and interaction terms. | Geometry x consensus and geometry x ontology interactions are positive/significant in at least one stratum per domain. | Degree-stratified prior permutation and ontology-label shuffle. | high | medium |
+| N125 | Biological Anchoring | Diffusion/geodesic gains are concentrated in specific GO/STRING pathway modules rather than globally uniform. | Compute module-restricted AUROC deltas for curated pathway bins and test enrichment of high-gain modules. | A subset of pathways shows consistent positive deltas across splits/seeds with stronger-than-global effects. | Module-size- and degree-matched random gene-set controls. | medium | low |
+| N126 | Mechanistic Motifs | Feed-forward vs feedback regulatory motifs occupy separable geometric/topological regions that transfer across models. | Annotate motif classes from prior networks, train motif classifier on geometry/topology features in scGPT, transfer to Geneformer. | Motif separability is above null and cross-model transfer accuracy remains above chance. | Motif-label permutation and degree-preserving motif rewiring controls. | high | medium |
+
+## Top 3 for Immediate Execution
+1. High-probability discovery candidate: **N116 (diffusion uplift under coexpression-matched stronger null)**.
+- Why now: highest chance of a clean promotable result because `H25` is already positive in all domains.
+- Immediate gate: domain mean delta remains positive with permutation-calibrated `p<0.05` in `>=2/3` domains.
+
+2. High-risk/high-reward candidate: **N121 (CCA-seeded one-to-one-regularized GW rescue)**.
+- Why now: directly targets the `H27` failure mode (correspondence collapse) while using the strong `H24` latent structure.
+- Immediate gate: significant top-1/mutual-top-1 recovery and edge-transfer AUROC significance in `>=2/3` domains.
+
+3. Cheap broad-screen candidate: **N118 (triangle thinness / hyperbolicity edge screen)**.
+- Why now: low engineering cost, geometry-mechanism coverage, and strong orthogonality to distance-only metrics.
+- Immediate gate: thinness score AUROC above chance in both splits for at least two domains.

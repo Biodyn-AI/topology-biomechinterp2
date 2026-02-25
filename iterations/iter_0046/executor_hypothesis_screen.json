@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0046",
+  "hypotheses": [
+    {
+      "id": "H121",
+      "name": "Directional geodesic asymmetry over H70",
+      "family": "manifold_distance",
+      "split_regime": "other",
+      "method": "Seed42 across immune/lung/external_lung with source/target-disjoint splits and layers {7,11}; directed support-weighted geodesic asymmetry features (forward/reverse path distance ratio, hop-gap, support-gap) added over H70; nulls: direction-flip within path-length bins, endpoint swap within distance bins, label permutation.",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.03273 (12 rows); positive mean null-gap domain-splits=2/6",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0046/h121_directional_geodesic_asymmetry_by_domain_split_layer.csv",
+        "iterations/iter_0046/h121_directional_geodesic_asymmetry_domain_summary.csv",
+        "iterations/iter_0046/h121_directional_geodesic_asymmetry_null_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Run a higher-null-budget confirmation on layer 11 and enforce source-disjoint stress where null-gap is currently marginal.",
+      "novelty_type": "new_method",
+      "lineage": "H120",
+      "retired": false
+    },
+    {
+      "id": "H122",
+      "name": "Cross-model landscape transport alignment",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Seed42 across immune/lung/external_lung with source/target-disjoint splits and layers {7,11}; GO-module landscape vectors built from scGPT geodesic distances and Geneformer graph distances, then aligned by ridge transport map; metric is negative holdout MSE (higher is better); nulls: random module mapping and landscape-bin permutation.",
+      "status": "tested",
+      "primary_metric": "transport_score_neg_mse",
+      "result_value": "mean=-100.54990 (12 rows); positive mean null-gap domain-splits=0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0046/h122_landscape_transport_by_domain_split_layer.csv",
+        "iterations/iter_0046/h122_landscape_transport_domain_summary.csv",
+        "iterations/iter_0046/h122_landscape_transport_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this transport endpoint and only revisit cross-model alignment with a materially different objective and stronger biological conditioning.",
+      "novelty_type": "new_method",
+      "lineage": "H119",
+      "retired": true,
+      "retirement_reason": "Uniformly negative null-gaps across all tested domain/split slices after major objective reset."
+    },
+    {
+      "id": "H123",
+      "name": "Strict signed motif-community hardening",
+      "family": "module_structure",
+      "split_regime": "other",
+      "method": "Across immune/lung/external_lung with seeds {42,43,44}, source/target/dual-axis disjoint splits at layer 11; signed TRRUST motif x community interactions over H70 with stricter nulls: TF-identity-preserving sign shuffle, motif-decoy shuffle matched on TF/target degree strata, label permutation.",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.09351 (22 rows); positive mean null-gap domain-splits=8/8 observed",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0046/h123_signed_motif_module_hardening_by_seed_domain_split.csv",
+        "iterations/iter_0046/h123_signed_motif_module_hardening_domain_summary.csv",
+        "iterations/iter_0046/h123_signed_motif_module_hardening_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Backfill missing lung dual-axis rows with targeted sampling and then run one high-permutation confirmation packet for promotion.",
+      "novelty_type": "refinement",
+      "lineage": "H118",
+      "retired": false
+    }
+  ]
+}

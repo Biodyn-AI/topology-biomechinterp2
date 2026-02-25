@@ -1,0 +1,78 @@
+{
+  "iteration": "iter_0014",
+  "inputs": {
+    "scgpt_runs_by_domain": {
+      "immune": {
+        "seed42_main": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_main",
+        "seed43": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed43",
+        "seed44": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed44"
+      },
+      "lung": {
+        "seed42_main": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle6_lung_main",
+        "seed43": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle6_lung_seed43",
+        "seed44": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle6_lung_seed44"
+      },
+      "external_lung": {
+        "seed42_main": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle7_external_lung_main",
+        "seed43": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle7_external_lung_seed43",
+        "seed44": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle7_external_lung_seed44"
+      }
+    },
+    "geneformer_edge_by_domain": {
+      "immune": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle12_geneformer_immune_bootstrap/geneformer_edge_dataset.tsv",
+      "lung": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle12_geneformer_lung_bootstrap/geneformer_edge_dataset.tsv",
+      "external_lung": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle12_geneformer_external_lung_bootstrap/geneformer_edge_dataset.tsv"
+    },
+    "cross_model_layer_by_domain": {
+      "immune": 0,
+      "lung": 0,
+      "external_lung": 3
+    },
+    "trrust_path": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/single_cell_mechinterp/external/networks/trrust_human.tsv",
+    "dorothea_path": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/single_cell_mechinterp/external/networks/dorothea_human.tsv",
+    "gene2go_path": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/single_cell_mechinterp/data/perturb/gene2go_all.pkl",
+    "note": "TRRUST support is recorded for bookkeeping in H26 but excluded from interaction model terms because labels are TRRUST-defined."
+  },
+  "h25_diffusion_distance_sweep": {
+    "n_rows": 288,
+    "n_best_rows": 72,
+    "domains_tested": 3,
+    "domains_with_positive_mean_delta": 3,
+    "domains_with_sig_combined_fisher": 3,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0014/h25_diffusion_distance_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0014/h25_diffusion_distance_domain_summary.csv",
+      "null_summary": "iterations/iter_0014/h25_diffusion_distance_null_summary.csv"
+    }
+  },
+  "h26_biological_anchor_interaction": {
+    "n_edges": 13563,
+    "n_domain_split_rows": 6,
+    "rows_with_positive_interaction": 1,
+    "rows_with_p_interaction_lt_0_05": 0,
+    "rows_with_positive_auc_delta": 4,
+    "rows_with_p_auc_delta_lt_0_05": 2,
+    "artifact_paths": {
+      "edge_table": "iterations/iter_0014/h26_bio_anchor_edge_table.csv",
+      "model_summary": "iterations/iter_0014/h26_bio_anchor_model_summary.csv",
+      "permutation_null": "iterations/iter_0014/h26_bio_anchor_permutation_null.csv"
+    }
+  },
+  "h27_unseeded_gw_alignment": {
+    "domains_tested": 3,
+    "domains_with_sig_top1": 0,
+    "domains_with_sig_distance": 3,
+    "domains_with_sig_transfer_auc": 1,
+    "mean_top1_retrieval_gw": 0.0011904761904761904,
+    "mean_distance_spearman_gw": 0.8556298494137081,
+    "mean_edge_transfer_auc_gw": 0.5185746763223807,
+    "combined_fisher_top1_p": 0.9899829071308618,
+    "combined_fisher_distance_p": 2.3307116166145468e-05,
+    "combined_fisher_transfer_auc_p": 0.051115217130397524,
+    "artifact_paths": {
+      "domain_summary": "iterations/iter_0014/h27_gw_alignment_domain_summary.csv",
+      "null_summary": "iterations/iter_0014/h27_gw_alignment_null_summary.csv",
+      "map_quality": "iterations/iter_0014/h27_gw_alignment_map_quality.csv"
+    }
+  }
+}

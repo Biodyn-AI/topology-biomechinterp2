@@ -1,0 +1,70 @@
+{
+  "iteration": "iter_0024",
+  "hypotheses": [
+    {
+      "id": "H55",
+      "name": "Directed/signed topology high-permutation replication with failure-slice diagnostics",
+      "family": "topology_stability",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Across immune/lung/external_lung and seeds 42/43/44 on source/target-disjoint splits and layers {7,11}, compared directed/signed kNN topology scores against distance-only cycle baseline under 64-permutation degree-orientation, sign-shuffle, split-label placebo, and metric-matched kNN randomization nulls; added row-level graph-regime diagnostics.",
+      "status": "tested",
+      "primary_metric": "delta_auc_directed_minus_distance",
+      "result_value": "mean delta AUROC=+0.01169; positive rows 25/36; domain-split Fisher significant 6/6; failure slices: lung/source=-0.00315 and external_lung/source=-0.00440",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0024/h55_directed_signed_highperm_by_seed_layer_split.csv",
+        "iterations/iter_0024/h55_directed_signed_highperm_domain_summary.csv",
+        "iterations/iter_0024/h55_directed_signed_highperm_null_summary.csv",
+        "iterations/iter_0024/h55_directed_signed_failure_slice_diagnostics.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Run a biologically weighted failure-slice rescue (STRING/DoRothEA/GO stratification) and test whether source-disjoint negatives become non-negative while preserving global gains.",
+      "novelty_type": "refinement",
+      "lineage": "H52",
+      "retired": false
+    },
+    {
+      "id": "H56",
+      "name": "Densified directed path-homology v2 with utility-transfer endpoint",
+      "family": "topology_stability",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Seed42 pilot on immune/lung/external_lung and source/target-disjoint splits at layers {7,11}; built densified directed path-homology scores with kNN sweep (k=8,12), flag-complex Betti-1, and path-length 2/3 directional terms; evaluated discrimination and split-transfer F1 utility against distance-only baseline with directed degree-rewire, sign-shuffle, and random-map transfer controls.",
+      "status": "tested",
+      "primary_metric": "f1_utility_lift",
+      "result_value": "mean edge delta AUROC=+0.00757 (11/12 positive) but mean transfer F1 lift=0.00000 with significant transfer rows 0/12",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0024/h56_path_homology_v2_by_domain_layer_split.csv",
+        "iterations/iter_0024/h56_path_homology_v2_utility_transfer_summary.csv",
+        "iterations/iter_0024/h56_path_homology_v2_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this rescue formulation; only revisit path-homology with a materially different utility endpoint (not another discrimination-only or threshold-transfer variant).",
+      "novelty_type": "new_method",
+      "lineage": "H53",
+      "retired": true,
+      "retirement_reason": "Second consecutive path-homology attempt failed to deliver utility-transfer gains despite directional discrimination improvements."
+    },
+    {
+      "id": "H57",
+      "name": "Geodesic neighborhood anisotropy-tail manifold screen",
+      "family": "manifold_distance",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Across immune/lung/external_lung and seeds 42/43/44 on source/target-disjoint splits and layers {0,3,7,11}, computed per-node geodesic neighborhood anisotropy-tail scores from local covariance eigenvalue ratios and neighbor-distance tails, aggregated to edges, and compared to geodesic-distance baseline under distance-matched endpoint-swap, neighborhood-permutation, and label-permutation nulls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_anisotropy_minus_baseline",
+      "result_value": "mean delta AUROC=-0.01779; positive rows 25/72; positive domain-split means 3/6 (best external_lung/target=+0.03418, worst immune/source=-0.08534)",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0024/h57_geodesic_anisotropy_by_seed_layer_split.csv",
+        "iterations/iter_0024/h57_geodesic_anisotropy_domain_summary.csv",
+        "iterations/iter_0024/h57_geodesic_anisotropy_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Do not iterate this exact anisotropy-tail endpoint; if revisited, require a materially changed interaction model (e.g., anisotropy x biological support) before spending another full multiseed run.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": false
+    }
+  ]
+}

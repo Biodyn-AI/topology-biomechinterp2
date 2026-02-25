@@ -1,0 +1,36 @@
+{
+  "iteration": "iter_0045",
+  "h118": {
+    "rows_tested": 18,
+    "mean_delta_auc": 0.09885168373942808,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 3,
+    "artifact_paths": {
+      "by_seed_domain_split": "iterations/iter_0045/h118_signed_motif_module_by_seed_domain_split.csv",
+      "domain_summary": "iterations/iter_0045/h118_signed_motif_module_domain_summary.csv",
+      "null_summary": "iterations/iter_0045/h118_signed_motif_module_null_summary.csv"
+    }
+  },
+  "h119": {
+    "rows_tested": 6,
+    "mean_delta_auc": 0.0005997640507367693,
+    "positive_domain_splits": 3,
+    "positive_null_gap_domain_splits": 1,
+    "artifact_paths": {
+      "by_domain_split": "iterations/iter_0045/h119_disagreement_gated_transfer_by_domain_split.csv",
+      "domain_summary": "iterations/iter_0045/h119_disagreement_gated_transfer_domain_summary.csv",
+      "null_summary": "iterations/iter_0045/h119_disagreement_gated_transfer_null_summary.csv"
+    }
+  },
+  "h120": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.03853989249881801,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 3,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0045/h120_geodesic_curvature_drift_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0045/h120_geodesic_curvature_drift_domain_summary.csv",
+      "null_summary": "iterations/iter_0045/h120_geodesic_curvature_drift_null_summary.csv"
+    }
+  }
+}

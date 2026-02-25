@@ -1,0 +1,3 @@
+split_regime,n_layers,mean_delta_auc_geodesic_minus_euclidean,mean_delta_positive_fraction,n_layers_fisher_p_delta_upper_lt_0_05,combined_fisher_p_delta_upper,combined_fisher_p_delta_two_sided
+source_disjoint,12,0.0051872210621135865,0.8055555555555555,7,5.767125462366238e-10,1.7050131320623275e-05
+target_disjoint,12,0.013187274508680328,1.0,11,4.683672003227834e-28,6.6079868665867194e-24

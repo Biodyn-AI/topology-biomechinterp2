@@ -1,0 +1,71 @@
+{
+  "iteration": "iter_0051",
+  "hypotheses": [
+    {
+      "id": "H136",
+      "name": "Sectional anisotropy manifold screen",
+      "family": "manifold_distance",
+      "split_regime": "other",
+      "method": "Seed42 across immune/lung/external_lung; source/target-disjoint splits; layers 7 and 11. Added sectional anisotropy and tangent-orientation edge descriptors over H70, with endpoint-swap-within-distance-bins, tangent-basis random-rotation, and label-permutation nulls (24 each).",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.02572 (12 rows); positive mean delta domain-splits=5/6; positive mean null-gap domain-splits=2/6; row-level positive null-gap=2/12",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0051/h136_sectional_anisotropy_by_domain_split_layer.csv",
+        "iterations/iter_0051/h136_sectional_anisotropy_domain_split_summary.csv",
+        "iterations/iter_0051/h136_sectional_anisotropy_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Replicate on seeds 43/44 and extend to dual-axis disjoint slices with matched null budget to test stability of the two null-positive domain-splits.",
+      "novelty_type": "new_method",
+      "lineage": "H126",
+      "retired": false
+    },
+    {
+      "id": "H137",
+      "name": "Correspondence-free cross-model topology alignment",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Seed42 across immune/lung/external_lung; source/target-disjoint splits; layers 7 and 11. Built model-specific topology descriptors from scGPT and Geneformer signature manifolds and scored correspondence-free alignment delta vs random domain pairing, with cross-model pairing-shuffle and kernel-spectrum permutation nulls (32 each).",
+      "status": "tested",
+      "primary_metric": "alignment_delta_vs_random",
+      "result_value": "mean=+0.00194 (12 rows); positive domain mean delta=1/3; positive domain mean null-gap=0/3; immune mean null-gap=-0.09748",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0051/h137_correspondence_free_alignment_by_domain_split_layer.csv",
+        "iterations/iter_0051/h137_correspondence_free_alignment_domain_split_summary.csv",
+        "iterations/iter_0051/h137_correspondence_free_alignment_domain_summary.csv",
+        "iterations/iter_0051/h137_correspondence_free_alignment_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this correspondence-free descriptor endpoint; only revisit cross-model alignment with a materially different data source (residual-level Geneformer embeddings or perturbation-coupled anchors).",
+      "novelty_type": "new_method",
+      "lineage": "H131",
+      "retired": true,
+      "retirement_reason": "Major-method rescue still failed strict domain-level null-gap gates including immune non-negativity."
+    },
+    {
+      "id": "H138",
+      "name": "Ontology sheaf obstruction hardening",
+      "family": "module_structure",
+      "split_regime": "other",
+      "method": "Seeds 42/43/44 across immune/lung/external_lung; source/target/dual-axis disjoint splits at layer 11. Added ontology-chart sheaf obstruction and boundary-crossing features over signed motif-community backbone, with chart-relabel, section-shuffle-within-degree-strata, and label-permutation nulls (24 each).",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.13381 (27 rows); positive mean delta domain-splits=9/9; positive mean null-gap domain-splits=0/9; hard slices remain null-negative (immune/source=-0.00567, lung/dual_axis=-0.00476)",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0051/h138_ontology_sheaf_hardening_by_seed_domain_split.csv",
+        "iterations/iter_0051/h138_ontology_sheaf_hardening_domain_split_summary.csv",
+        "iterations/iter_0051/h138_ontology_sheaf_hardening_domain_summary.csv",
+        "iterations/iter_0051/h138_ontology_sheaf_hardening_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Do not continue additive ontology-sheaf hardening in this form; if revisited, require a materially changed causal mechanism and adversarial hard-slice-specific nulls.",
+      "novelty_type": "new_method",
+      "lineage": "H135",
+      "retired": false
+    }
+  ]
+}

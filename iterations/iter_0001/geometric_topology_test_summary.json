@@ -1,0 +1,17 @@
+{
+  "status": "blocked",
+  "reason": "Could not locate loadable residual/embedding artifacts for both models.",
+  "missing_models": [
+    "scgpt",
+    "geneformer"
+  ],
+  "candidates_found": {
+    "scgpt": [],
+    "geneformer": []
+  },
+  "used_paths": {
+    "scgpt": null,
+    "geneformer": null
+  },
+  "artifacts": []
+}

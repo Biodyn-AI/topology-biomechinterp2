@@ -1,0 +1,41 @@
+{
+  "iteration": "iter_0019",
+  "h40": {
+    "rows_tested": 72,
+    "mean_interaction_coef": 0.1316906295758547,
+    "domain_split_positive_interaction": 4,
+    "domain_split_fisher_sig": 4,
+    "domain_split_positive_top_bottom_uplift": 4,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0019/h40_support_interaction_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0019/h40_support_interaction_domain_summary.csv",
+      "null_summary": "iterations/iter_0019/h40_support_interaction_null_summary.csv"
+    },
+    "string_prior_available": false,
+    "string_fallback": "Used OmniPath interaction membership as a PPI prior proxy because a STRING edge-score table is not available in local inputs."
+  },
+  "h41": {
+    "rows_tested": 24,
+    "mean_delta_auc_observed_minus_base": 0.01152732621318863,
+    "domain_split_positive_delta": 5,
+    "domain_split_fisher_sig": 0,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0019/h41_zigzag_persistence_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0019/h41_zigzag_persistence_domain_summary.csv",
+      "null_summary": "iterations/iter_0019/h41_zigzag_persistence_null_summary.csv"
+    },
+    "zigzag_runtime_note": "True zigzag persistence libraries are unavailable in this environment; executed a split-local PH proxy with split-swap and layer-permutation controls as a bounded fallback."
+  },
+  "h42": {
+    "rows_tested": 12,
+    "mean_observed_delta_r2": -10.700170855239362,
+    "rows_positive_delta": 5,
+    "rows_p_lt_0_05": 4,
+    "artifact_paths": {
+      "by_seed_split": "iterations/iter_0019/h42_id_oos_by_seed_split.csv",
+      "domain_summary": "iterations/iter_0019/h42_id_oos_domain_summary.csv",
+      "null_summary": "iterations/iter_0019/h42_id_oos_null_summary.csv"
+    },
+    "source_h38_artifact": "iterations/iter_0018/h38_id_distribution_moments_by_seed_layer_split.csv"
+  }
+}

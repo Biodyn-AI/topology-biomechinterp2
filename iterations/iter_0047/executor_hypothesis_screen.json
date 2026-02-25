@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0047",
+  "hypotheses": [
+    {
+      "id": "H124",
+      "name": "Signed motif-community hardening with STRING conditioning",
+      "family": "module_structure",
+      "split_regime": "other",
+      "method": "N625 run across immune/lung/external_lung with seeds {42,43,44}, source/target/dual-axis disjoint splits at layer 11; H123 features extended with STRING-confidence interactions; nulls: TF-identity-preserving sign shuffle, motif-decoy shuffle matched by TF/target-degree strata, STRING-bin permutation within strata, label permutation (64 each).",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.13098 (27 rows); positive mean null-gap domain-splits=4/9; lung dual-axis mean null-gap=-0.00326",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0047/h124_signed_string_hardening_by_seed_domain_split.csv",
+        "iterations/iter_0047/h124_signed_string_hardening_domain_summary.csv",
+        "iterations/iter_0047/h124_signed_string_hardening_null_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Keep as active refinement but focus on null-gap calibration in immune/lung and explicit lung dual-axis recovery before promotion.",
+      "novelty_type": "refinement",
+      "lineage": "H123",
+      "retired": false
+    },
+    {
+      "id": "H125",
+      "name": "Anchor-constrained cycle-consistent cross-model alignment",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "N622 pilot on seed42 across immune/lung/external_lung, source/target-disjoint splits and layers {7,11}; cycle-consistent scGPT<->Geneformer mapping with TRRUST+GO anchor weights; nulls: anchor-label permutation preserving size, random correspondence baseline, label permutation (32 each).",
+      "status": "tested",
+      "primary_metric": "transfer_delta_auc_vs_h70",
+      "result_value": "mean=+0.09855 (12 rows) but positive domain null-gap=0/3; immune mean null-gap=-0.01894",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0047/h125_anchor_cycle_alignment_by_domain_split_layer.csv",
+        "iterations/iter_0047/h125_anchor_cycle_alignment_domain_summary.csv",
+        "iterations/iter_0047/h125_anchor_cycle_alignment_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this endpoint; revisit cross-model alignment only with a materially different objective or supervision target.",
+      "novelty_type": "new_method",
+      "lineage": "H122",
+      "retired": true,
+      "retirement_reason": "Failed pre-registered null-gap gate (0/3 domains positive, immune negative) after major objective reset."
+    },
+    {
+      "id": "H126",
+      "name": "Geodesic torsion and turning-angle asymmetry",
+      "family": "manifold_distance",
+      "split_regime": "other",
+      "method": "N620 screen on seed42 across immune/lung/external_lung, source/target-disjoint splits and layers {7,11}; directed geodesic path turning-angle and torsion asymmetry descriptors over H70; nulls: path reversal within length bins, endpoint swap within distance bins, label permutation (24 each).",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.04421 (12 rows); positive mean null-gap domain-splits=2/6; source-disjoint positive-null-gap count=1",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0047/h126_geodesic_torsion_by_domain_split_layer.csv",
+        "iterations/iter_0047/h126_geodesic_torsion_domain_summary.csv",
+        "iterations/iter_0047/h126_geodesic_torsion_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Run a focused higher-null-budget follow-up on source-disjoint slices, especially external_lung where null-gap remains negative.",
+      "novelty_type": "new_method",
+      "lineage": "H121",
+      "retired": false
+    }
+  ]
+}

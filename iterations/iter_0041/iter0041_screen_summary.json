@@ -1,0 +1,35 @@
+{
+  "iteration": "iter_0041",
+  "h106": {
+    "rows_tested": 12,
+    "mean_delta_auc": -0.0011758618492016166,
+    "positive_domain_splits": 2,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0041/h106_string_triad_weighted_filtration_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0041/h106_string_triad_weighted_filtration_domain_summary.csv",
+      "null_summary": "iterations/iter_0041/h106_string_triad_weighted_filtration_null_summary.csv"
+    }
+  },
+  "h107": {
+    "rows_tested": 6,
+    "mean_delta_auc": 0.04563125230039274,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split": "iterations/iter_0041/h107_finite_state_descriptor_motif_by_domain_split.csv",
+      "domain_summary": "iterations/iter_0041/h107_finite_state_descriptor_motif_domain_summary.csv",
+      "null_summary": "iterations/iter_0041/h107_finite_state_descriptor_motif_null_summary.csv"
+    }
+  },
+  "h108": {
+    "rows_tested": 3,
+    "mean_concordance": 0.7315942028985506,
+    "positive_domain_count": 2,
+    "artifact_paths": {
+      "by_domain": "iterations/iter_0041/h108_cross_model_perturbation_response_by_domain.csv",
+      "domain_summary": "iterations/iter_0041/h108_cross_model_perturbation_response_domain_summary.csv",
+      "null_summary": "iterations/iter_0041/h108_cross_model_perturbation_response_null_summary.csv"
+    }
+  }
+}

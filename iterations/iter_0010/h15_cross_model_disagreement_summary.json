@@ -1,0 +1,11 @@
+{
+  "domains_tested": 3,
+  "mean_spearman_rho": -0.35919007331967867,
+  "domains_negative_rho": 2,
+  "domains_two_sided_p_lt_0_05": 1,
+  "combined_fisher_p_two_sided": 0.0008986332358561238,
+  "combined_fisher_p_negative_tail": 0.0014085264153880458,
+  "artifact_paths": {
+    "trend_by_domain": "iterations/iter_0010/h15_cross_model_disagreement_trend.csv"
+  }
+}

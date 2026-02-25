@@ -1,0 +1,68 @@
+{
+  "iteration": "iter_0012",
+  "hypotheses": [
+    {
+      "id": "H19",
+      "name": "Confidence-stratified community enrichment",
+      "family": "module_structure",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Built immune scGPT kNN community graphs (3 seeds x 12 layers x source/target-disjoint splits), stratified edges by DoRothEA confidence tier, and tested tier-monotonic AUROC slope with 400 tier-label permutations per seed-layer-split.",
+      "status": "tested",
+      "primary_metric": "mean_auc_slope_across_confidence_tiers",
+      "result_value": "source=-0.0771, target=-0.0627; positive-slope layers 0/12 in both splits",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0012/h19_confidence_community_by_seed_layer_split_bin.csv",
+        "iterations/iter_0012/h19_confidence_community_layer_split_summary.csv",
+        "iterations/iter_0012/h19_confidence_community_monotonicity_tests.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Run one rescue with independent confidence anchors (e.g., STRING tiers) and prevalence-adjusted effect sizes; otherwise retire this monotonic-confidence branch.",
+      "novelty_type": "new_method",
+      "lineage": "H16",
+      "retired": false
+    },
+    {
+      "id": "H20",
+      "name": "Cross-model Procrustes/OT transfer",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Aligned matched scGPT and Geneformer gene embeddings by domain (immune/lung/external_lung) using supervised Procrustes and unsupervised Hungarian OT; evaluated top-1 retrieval, kNN neighborhood transfer, and transferred-edge AUROC versus 300 random-map nulls/domain.",
+      "status": "tested",
+      "primary_metric": "mean_transfer_auc_true_map",
+      "result_value": "0.5650 mean across domains (3/3 significant vs null); OT top1=0.0024 and non-significant",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0012/h20_cross_model_transfer_by_domain_layer.csv",
+        "iterations/iter_0012/h20_cross_model_transfer_null_summary.csv",
+        "iterations/iter_0012/h20_cross_model_transfer_alignment_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Keep map-aware transfer branch active and run a materially changed unsupervised alignment rescue (Sinkhorn or CCA-warm-start OT) with the same null protocol.",
+      "novelty_type": "new_method",
+      "lineage": "H17",
+      "retired": false
+    },
+    {
+      "id": "H21",
+      "name": "Local reconstruction-error mechanistic screen",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Computed per-gene local linear reconstruction errors on immune scGPT embeddings (3 seeds x 12 layers x 2 splits), aggregated to edge features, tested edge-label signal with 400 label permutations/row, and coupled row-level metrics to H13 geodesic lift using 3000 layer permutations.",
+      "status": "tested",
+      "primary_metric": "mean_auc_edge_recon_mean_by_split",
+      "result_value": "source=0.5331 (Fisher p=5.64e-23), target=0.4780 (Fisher p~1.0); target coupling to H13 mean rho=-0.4079 (p=0.0190)",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0012/h21_local_reconstruction_edge_features.csv",
+        "iterations/iter_0012/h21_local_reconstruction_trend_summary.csv",
+        "iterations/iter_0012/h21_local_reconstruction_coupling_by_seed.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Recast as inverse-coupling hypothesis and replicate across lung/external-lung before promoting or retiring.",
+      "novelty_type": "new_method",
+      "lineage": "H18",
+      "retired": false
+    }
+  ]
+}

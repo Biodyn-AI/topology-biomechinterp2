@@ -1,0 +1,55 @@
+{
+  "iteration": "iter_0010",
+  "inputs": {
+    "scgpt_immune_runs": {
+      "seed42_main": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_main/layer_gene_embeddings.npy",
+      "seed43": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed43/layer_gene_embeddings.npy",
+      "seed44": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed44/layer_gene_embeddings.npy"
+    },
+    "immune_edge_dataset": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_main/cycle1_edge_dataset.tsv",
+    "cross_model_disagreement_bins": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle15_cross_model_disagreement_stratification/disagreement_quantile_label_rates.csv"
+  },
+  "h13_manifold_distance": {
+    "n_rows_by_seed_layer_split": 72,
+    "n_layers_tested": 12,
+    "source_split_mean_delta_auc": 0.0051872210621135865,
+    "target_split_mean_delta_auc": 0.013187274508680328,
+    "source_layers_sig_count": 7,
+    "target_layers_sig_count": 11,
+    "dual_split_positive_layers": 12,
+    "dual_split_significant_layers": 7,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0010/h13_manifold_distance_by_seed_layer_split.csv",
+      "layer_summary": "iterations/iter_0010/h13_manifold_distance_layer_summary.csv",
+      "split_summary": "iterations/iter_0010/h13_manifold_distance_split_summary.csv",
+      "pass_matrix": "iterations/iter_0010/h13_manifold_distance_pass_matrix.csv"
+    }
+  },
+  "h14_topology_stability": {
+    "n_bootstrap_rows": 576,
+    "n_seed_layer_setting_rows": 144,
+    "n_layers_tested": 12,
+    "mean_layer_delta": 3.8696659030669225,
+    "layers_with_positive_mean_delta": 12,
+    "layers_combined_fisher_p_lt_0_05": 12,
+    "mean_all_settings_positive_fraction": 1.0,
+    "artifact_paths": {
+      "bootstrap_records": "iterations/iter_0010/h14_topology_stability_bootstrap_records.csv",
+      "seed_layer_setting_summary": "iterations/iter_0010/h14_topology_stability_seed_layer_setting_summary.csv",
+      "layer_summary": "iterations/iter_0010/h14_topology_stability_layer_summary.csv",
+      "filtration_sensitivity": "iterations/iter_0010/h14_topology_stability_filtration_sensitivity.csv",
+      "filtration_layer_summary": "iterations/iter_0010/h14_topology_stability_filtration_layer_summary.csv"
+    }
+  },
+  "h15_cross_model_alignment": {
+    "domains_tested": 3,
+    "mean_spearman_rho": -0.35919007331967867,
+    "domains_negative_rho": 2,
+    "domains_two_sided_p_lt_0_05": 1,
+    "combined_fisher_p_two_sided": 0.0008986332358561238,
+    "combined_fisher_p_negative_tail": 0.0014085264153880458,
+    "artifact_paths": {
+      "trend_by_domain": "iterations/iter_0010/h15_cross_model_disagreement_trend.csv"
+    }
+  }
+}

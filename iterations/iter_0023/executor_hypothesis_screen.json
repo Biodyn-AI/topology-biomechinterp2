@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0023",
+  "hypotheses": [
+    {
+      "id": "H52",
+      "name": "Directed and signed topology multiseed replication",
+      "family": "topology_stability",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Replicated H50 across immune/lung/external_lung with seeds 42/43/44, source/target-disjoint splits, and layers {0,3,7,11}; built directed/signed kNN topology scores from support-direction margins and compared against distance-only cycle baseline under degree-orientation, sign-shuffle, and split-label-placebo nulls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_directed_minus_distance",
+      "result_value": "mean delta AUROC=+0.01461; positive rows 58/72; domain-split Fisher significant 6/6; one domain-split mean delta negative (lung source_disjoint=-0.00359)",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0023/h52_directed_signed_multiseed_by_seed_layer_split.csv",
+        "iterations/iter_0023/h52_directed_signed_multiseed_domain_summary.csv",
+        "iterations/iter_0023/h52_directed_signed_multiseed_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Promote to stricter directed nulls with higher permutation budget and investigate why lung source_disjoint is negative while other domain-splits remain positive.",
+      "novelty_type": "refinement",
+      "lineage": "H50",
+      "retired": false
+    },
+    {
+      "id": "H53",
+      "name": "Directed path-homology surrogate pilot",
+      "family": "topology_stability",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Seed42 pilot on immune/lung/external_lung with source/target-disjoint splits and layers {7,11}; computed directed flag-complex path-homology surrogate scores (Betti-1 over distance+margin filtrations) vs distance-only cycle baseline with degree-orientation, sign-shuffle, and random-map nulls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_path_minus_distance",
+      "result_value": "mean delta AUROC=+0.00276; positive rows 8/12; domain-split Fisher significant 0/6",
+      "result_direction": "inconclusive",
+      "artifact_paths": [
+        "iterations/iter_0023/h53_directed_path_homology_by_domain_layer_split.csv",
+        "iterations/iter_0023/h53_directed_path_homology_domain_summary.csv",
+        "iterations/iter_0023/h53_directed_path_homology_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Stop expansion of this exact pilot and only revisit path homology with a materially changed transfer/utility objective or denser directed complex construction.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": false
+    },
+    {
+      "id": "H54",
+      "name": "Local linearity rupture index screen",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Across immune/lung/external_lung and seeds 42/43/44 on source/target-disjoint splits and layers {0,3,7,11}, computed per-gene local reconstruction-error trajectories and rupture indices, then compared rupture edge scores against local-linearity baseline under layer-order shuffle, endpoint-swap (degree-bin), and label-permutation nulls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_rupture_minus_baseline",
+      "result_value": "mean delta AUROC=-0.04527; positive rows 20/72; domain-split mean delta positive 1/6; domain-split Fisher significant 1/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0023/h54_linearity_rupture_by_seed_layer_split.csv",
+        "iterations/iter_0023/h54_linearity_rupture_domain_summary.csv",
+        "iterations/iter_0023/h54_linearity_rupture_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this rupture-index formulation and avoid further intrinsic-dimension spend unless a materially different endpoint or causal anchor is introduced.",
+      "novelty_type": "new_method",
+      "lineage": "H35",
+      "retired": true,
+      "retirement_reason": "Rupture-index formulation is strongly negative and intrinsic-dimension family already has repeated inconclusive/negative outcomes under prior controls."
+    }
+  ]
+}

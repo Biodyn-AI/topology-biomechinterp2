@@ -1,0 +1,37 @@
+{
+  "iteration": "iter_0042",
+  "h109": {
+    "rows_tested": 9,
+    "mean_response_concordance": 0.7911442504019299,
+    "mean_jacobian_subspace_cosine": 0.5221109685874655,
+    "positive_response_null_gap_rows": 2,
+    "positive_jacobian_null_gap_rows": 0,
+    "artifact_paths": {
+      "by_seed_domain": "iterations/iter_0042/h109_cross_model_jacobian_alignment_by_seed_domain.csv",
+      "domain_summary": "iterations/iter_0042/h109_cross_model_jacobian_alignment_domain_summary.csv",
+      "null_summary": "iterations/iter_0042/h109_cross_model_jacobian_alignment_null_summary.csv"
+    }
+  },
+  "h110": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.0009059460245491221,
+    "positive_domain_splits": 4,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0042/h110_persistence_vineyard_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0042/h110_persistence_vineyard_domain_summary.csv",
+      "null_summary": "iterations/iter_0042/h110_persistence_vineyard_null_summary.csv"
+    }
+  },
+  "h111": {
+    "rows_tested": 6,
+    "mean_delta_auc": 0.11201938707287623,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 1,
+    "artifact_paths": {
+      "by_domain_split": "iterations/iter_0042/h111_bio_anchored_fsm_by_domain_split.csv",
+      "domain_summary": "iterations/iter_0042/h111_bio_anchored_fsm_domain_summary.csv",
+      "null_summary": "iterations/iter_0042/h111_bio_anchored_fsm_null_summary.csv"
+    }
+  }
+}

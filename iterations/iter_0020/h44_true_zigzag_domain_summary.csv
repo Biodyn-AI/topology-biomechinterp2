@@ -1,0 +1,4 @@
+domain,split_regime,n_rows,mean_h1_total_lifetime,mean_delta_h1_total_vs_null_mean,fraction_delta_positive,fraction_p_h1_total_lt_0_05,combined_fisher_p_h1_total
+external_lung,paired_source_target,4,4221.75,251.03750000000002,1.0,1.0,0.00023796965912420198
+immune,paired_source_target,4,4008.75,219.00625000000014,1.0,1.0,0.00023796965912420198
+lung,paired_source_target,4,4428.25,234.30625000000032,1.0,1.0,0.00023796965912420198

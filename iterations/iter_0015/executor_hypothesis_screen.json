@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0015",
+  "hypotheses": [
+    {
+      "id": "H28",
+      "name": "Diffusion uplift under coexpression-degree matched null",
+      "family": "manifold_distance",
+      "split_regime": "other",
+      "method": "Recomputed diffusion-vs-baseline AUROC deltas across immune/lung/external_lung (3 seeds, layers 0/3/7/11, source+target disjoint splits) and calibrated with both random-label permutations and coexpression+degree matched label permutations using processed h5ad-derived Pearson coexpression bins.",
+      "status": "tested",
+      "primary_metric": "mean_delta_best_diffusion_minus_baseline",
+      "result_value": "+0.00774 mean AUROC delta overall; matched-null Fisher p-values: immune=0.0749, lung=0.1878, external_lung=0.99999",
+      "result_direction": "inconclusive",
+      "artifact_paths": [
+        "iterations/iter_0015/h28_diffusion_coexp_by_seed_layer_split.csv",
+        "iterations/iter_0015/h28_diffusion_coexp_domain_summary.csv",
+        "iterations/iter_0015/h28_diffusion_coexp_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Test diffusion incremental value after explicit coexpression+degree covariate adjustment rather than raw AUROC delta under matched null.",
+      "novelty_type": "refinement",
+      "lineage": "H25",
+      "retired": false
+    },
+    {
+      "id": "H29",
+      "name": "CCA-seeded one-to-one GW correspondence rescue",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Aligned matched scGPT/Geneformer genes (280/domain) with PCA+CCA seed map, annealed entropic GW, then one-to-one Hungarian projection; evaluated top-1/mutual-top1 and edge-transfer AUROC against random-correspondence nulls and compared to H27 unseeded GW plus CCA-seed baseline.",
+      "status": "tested",
+      "primary_metric": "top1_seeded_gw",
+      "result_value": "mean top-1=0.00833 (combined Fisher p=0.1248), mean transfer AUROC=0.5008 (combined Fisher p=0.4345), mean delta AUC vs H27=-0.0178",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0015/h29_seeded_gw_domain_summary.csv",
+        "iterations/iter_0015/h29_seeded_gw_null_summary.csv",
+        "iterations/iter_0015/h29_seeded_gw_map_quality.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire GW-based correspondence mapping as primary path and pivot cross-model mapping to CCA/spectral families unless a materially different supervised-anchor GW variant is introduced.",
+      "novelty_type": "new_method",
+      "lineage": "H27",
+      "retired": true,
+      "retirement_reason": "Two consecutive GW variants (unseeded H27, seeded+one-to-one H29) failed correspondence/transfer significance despite strong controls."
+    },
+    {
+      "id": "H30",
+      "name": "Triangle-thinness hyperbolicity edge screen",
+      "family": "topology_stability",
+      "split_regime": "other",
+      "method": "Computed endpoint-local geodesic triangle-thinness scores on scGPT kNN manifolds across immune/lung/external_lung (seed42, layers 0/3/7/11, source+target disjoint) and calibrated AUROC with degree+distance matched label permutations.",
+      "status": "tested",
+      "primary_metric": "mean_auc_thinness",
+      "result_value": "mean thinness AUROC=0.4657 vs geodesic baseline 0.5508; significant rows 1/24; significant domain-split groups 1/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0015/h30_hyperbolicity_by_seed_layer_split.csv",
+        "iterations/iter_0015/h30_hyperbolicity_domain_summary.csv",
+        "iterations/iter_0015/h30_hyperbolicity_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Do not refine this exact thinness formulation; replace with a different topology mechanism (e.g., diffusion-time persistence vineyards) before revisiting hyperbolicity claims.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": false
+    }
+  ]
+}

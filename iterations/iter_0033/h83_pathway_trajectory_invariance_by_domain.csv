@@ -1,0 +1,4 @@
+domain,split_regime,n_modules,mean_module_size,n_shared_genes,trajectory_spearman_mean,trajectory_cka,trajectory_top1_profile_retrieval,q95_null_trajectory_spearman,null_gap_q95_trajectory_spearman,p_label_perm_upper,p_depth_perm_upper,p_signature_destroy_upper,p_best_upper
+external_lung,heldout_domain_seed42,40,48.225,220,-0.018717948717948716,0.05630382108894986,0.55,0.0628205128205128,-0.08153846153846152,0.32,0.52,0.4,0.32
+immune,heldout_domain_seed42,40,48.525,220,-0.08615384615384616,0.04076877820714272,0.36874999999999997,0.15216666666666676,-0.23832051282051292,0.16,0.84,0.36,0.16
+lung,heldout_domain_seed42,40,48.4,220,-0.1064102564102564,0.134523180543359,0.45625,0.08642307692307692,-0.19283333333333333,0.92,0.84,0.92,0.84

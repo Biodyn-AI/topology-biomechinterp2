@@ -1,0 +1,36 @@
+{
+  "iteration": "iter_0043",
+  "h112": {
+    "rows_tested": 6,
+    "mean_delta_auc": -0.038053554441205985,
+    "positive_domain_splits": 0,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split": "iterations/iter_0043/h112_semimarkov_biogrammar_by_domain_split.csv",
+      "domain_summary": "iterations/iter_0043/h112_semimarkov_biogrammar_domain_summary.csv",
+      "null_summary": "iterations/iter_0043/h112_semimarkov_biogrammar_null_summary.csv"
+    }
+  },
+  "h113": {
+    "rows_tested": 6,
+    "mean_delta_long_bar_mass": -155.38888888888889,
+    "positive_domain_splits": 2,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split": "iterations/iter_0043/h113_depth_zigzag_longbar_by_domain_split.csv",
+      "domain_summary": "iterations/iter_0043/h113_depth_zigzag_longbar_domain_summary.csv",
+      "null_summary": "iterations/iter_0043/h113_depth_zigzag_longbar_null_summary.csv"
+    }
+  },
+  "h114": {
+    "rows_tested": 24,
+    "mean_delta_auc": 0.0002552218690015003,
+    "positive_domain_splits": 4,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0043/h114_id_hysteresis_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0043/h114_id_hysteresis_domain_summary.csv",
+      "null_summary": "iterations/iter_0043/h114_id_hysteresis_null_summary.csv"
+    }
+  }
+}

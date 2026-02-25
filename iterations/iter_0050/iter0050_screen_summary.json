@@ -1,0 +1,38 @@
+{
+  "iteration": "iter_0050",
+  "h133_rank_surface_persistence": {
+    "rows_tested": 6,
+    "mean_delta_auc": -0.04611177609173419,
+    "positive_domain_splits": 0,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split": "iterations/iter_0050/h133_rank_surface_persistence_by_domain_split.csv",
+      "domain_summary": "iterations/iter_0050/h133_rank_surface_persistence_domain_summary.csv",
+      "null_summary": "iterations/iter_0050/h133_rank_surface_persistence_null_summary.csv"
+    }
+  },
+  "h134_id_phase_descriptor": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.011321140915377448,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0050/h134_id_phase_descriptor_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0050/h134_id_phase_descriptor_domain_summary.csv",
+      "null_summary": "iterations/iter_0050/h134_id_phase_descriptor_null_summary.csv"
+    }
+  },
+  "h135_hard_slice_semantic_refinement": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.13869714116323448,
+    "positive_domain_splits": 4,
+    "positive_null_gap_domain_splits": 0,
+    "lung_dual_axis_mean_null_gap": -0.0050178201975042,
+    "immune_source_mean_null_gap": -0.014734525704653898,
+    "artifact_paths": {
+      "by_seed_domain_split": "iterations/iter_0050/h135_hard_slice_semantic_refinement_by_seed_domain_split.csv",
+      "domain_summary": "iterations/iter_0050/h135_hard_slice_semantic_refinement_domain_summary.csv",
+      "null_summary": "iterations/iter_0050/h135_hard_slice_semantic_refinement_null_summary.csv"
+    }
+  }
+}

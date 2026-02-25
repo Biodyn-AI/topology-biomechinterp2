@@ -1,0 +1,45 @@
+{
+  "iteration": "iter_0021",
+  "h46": {
+    "rows_tested": 36,
+    "mean_excess_weighted_h1_total": 103.18634259259257,
+    "mean_excess_unweighted_h1_total": 211.39891975308643,
+    "domain_weighted_better_count": 1,
+    "loo_r2_weighted": -0.5185592134759232,
+    "loo_r2_unweighted": -1.0049191804084465,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0021/h46_weighted_zigzag_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0021/h46_weighted_zigzag_domain_summary.csv",
+      "null_summary": "iterations/iter_0021/h46_weighted_zigzag_null_summary.csv"
+    }
+  },
+  "h47": {
+    "rows_tested": 24,
+    "mean_delta_auc": 0.005657041436889655,
+    "domain_split_positive_delta": 6,
+    "domain_split_fisher_sig": 6,
+    "artifact_paths": {
+      "by_domain_layer_split": "iterations/iter_0021/h47_bifiltration_by_domain_layer_split.csv",
+      "domain_summary": "iterations/iter_0021/h47_bifiltration_domain_summary.csv",
+      "null_summary": "iterations/iter_0021/h47_bifiltration_null_summary.csv"
+    }
+  },
+  "h48": {
+    "rows_tested": 18,
+    "mean_delta_overlap_total": 0.3333333333333333,
+    "mean_z_overlap_total": 0.0,
+    "domain_positive_delta": 1,
+    "domain_positive_z": 0,
+    "domain_fisher_sig": 1,
+    "artifact_paths": {
+      "by_domain_layer": "iterations/iter_0021/h48_cross_model_motif_overlap_by_domain_layer.csv",
+      "summary": "iterations/iter_0021/h48_cross_model_motif_overlap_summary.csv",
+      "null_summary": "iterations/iter_0021/h48_cross_model_motif_overlap_null_summary.csv"
+    }
+  },
+  "environment": {
+    "python_env": "subproject40-topology",
+    "string_cache_used": "iterations/iter_0020/h43_string_network_api.tsv",
+    "geneformer_model": "ctheodoris/Geneformer"
+  }
+}

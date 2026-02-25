@@ -1,0 +1,3 @@
+domain,split_regime,n_rows,mean_delta_auc_weighted_minus_distance,mean_delta_auc_weighted_minus_unweighted,fraction_weight_gain_positive,fraction_delta_positive
+external_lung,source_disjoint,6,-0.004326126798772654,-0.0005016106775824758,0.3333333333333333,0.3333333333333333
+lung,source_disjoint,6,-0.0019292742880809566,-0.0005841417303262634,0.8333333333333334,0.3333333333333333

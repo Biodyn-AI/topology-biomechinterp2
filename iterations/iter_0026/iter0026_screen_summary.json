@@ -1,0 +1,38 @@
+{
+  "iteration": "iter_0026",
+  "h61": {
+    "rows_tested": 36,
+    "mean_delta_auc": -0.007189361404934636,
+    "domain_split_fisher_sig": 1,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0026/h61_graph_curvature_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0026/h61_graph_curvature_domain_summary.csv",
+      "null_summary": "iterations/iter_0026/h61_graph_curvature_null_summary.csv"
+    }
+  },
+  "h62": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.04756702688331402,
+    "mean_null_gap_q95": -0.12923025587202022,
+    "domain_split_fisher_sig": 2,
+    "artifact_paths": {
+      "by_domain_layer_split": "iterations/iter_0026/h62_anchor_alignment_by_domain_layer_split.csv",
+      "domain_summary": "iterations/iter_0026/h62_anchor_alignment_domain_summary.csv",
+      "null_summary": "iterations/iter_0026/h62_anchor_alignment_null_summary.csv"
+    }
+  },
+  "h63": {
+    "rows_tested": 54,
+    "mean_delta_auc": -0.02061376333279539,
+    "domain_split_fisher_sig": 4,
+    "artifact_paths": {
+      "by_seed_transition_split": "iterations/iter_0026/h63_transition_id_gradient_by_seed_transition_split.csv",
+      "domain_summary": "iterations/iter_0026/h63_transition_id_gradient_domain_summary.csv",
+      "null_summary": "iterations/iter_0026/h63_transition_id_gradient_null_summary.csv"
+    }
+  },
+  "environment": {
+    "python_env": "subproject40-topology",
+    "string_cache_used": "iterations/iter_0020/h43_string_network_api.tsv"
+  }
+}

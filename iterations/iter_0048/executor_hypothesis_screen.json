@@ -1,0 +1,70 @@
+{
+  "iteration": "iter_0048",
+  "hypotheses": [
+    {
+      "id": "H127",
+      "name": "Signed motif-community + STRING hardening with GO interactions",
+      "family": "module_structure",
+      "split_regime": "other",
+      "method": "Seed42 run across immune/lung/external_lung, source/target/dual-axis disjoint splits at layer 11; H124-style signed motif-community + STRING model augmented with explicit GO co-membership features and GO-membership permutation null; nulls: TF-identity-preserving sign shuffle, motif-decoy shuffle matched by TF/target-degree strata, STRING-bin permutation within strata, GO-membership permutation within strata, label permutation (32 each).",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.13222 (9 rows); positive mean null-gap domain-splits=2/9; lung dual-axis mean null-gap=-0.00596",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0048/h127_signed_string_go_hardening_by_seed_domain_split.csv",
+        "iterations/iter_0048/h127_signed_string_go_hardening_domain_summary.csv",
+        "iterations/iter_0048/h127_signed_string_go_hardening_null_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Keep as active refinement but run a higher-null-budget hard-slice follow-up focused on lung dual-axis and immune source-disjoint splits.",
+      "novelty_type": "refinement",
+      "lineage": "H124",
+      "retired": false
+    },
+    {
+      "id": "H128",
+      "name": "Graph-topology curvature/community surrogate",
+      "family": "graph_topology",
+      "split_regime": "other",
+      "method": "Seed42 run across immune/lung/external_lung, source/target-disjoint splits, layers {7,11}; model adds curvature/community/assortativity edge surrogates over H70; nulls: curvature shuffle within degree bins, community-topology feature shuffle, degree-bin edge-feature rewiring, label permutation (24 each).",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.00753 (12 rows); positive mean null-gap domain-splits=0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0048/h128_graph_topology_surrogate_by_domain_split_layer.csv",
+        "iterations/iter_0048/h128_graph_topology_surrogate_domain_summary.csv",
+        "iterations/iter_0048/h128_graph_topology_surrogate_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this surrogate endpoint and only revisit graph topology with a materially different representation.",
+      "novelty_type": "new_family",
+      "lineage": "none",
+      "retired": true,
+      "retirement_reason": "Null robustness failed in every domain-split (0/6 positive mean null-gap)."
+    },
+    {
+      "id": "H129",
+      "name": "Multi-scale geodesic torsion spectrum",
+      "family": "manifold_distance",
+      "split_regime": "other",
+      "method": "Seed42 run across immune/lung/external_lung, source/target-disjoint splits, layers {7,11}; H126 lineage upgraded to multi-scale torsion stack (k={8,12,16}) with scale-consistency/slope descriptors over H70; nulls: path reversal within length bins, endpoint swap within distance bins, scale-order permutation, label permutation (24 each).",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.02100 (12 rows); positive mean null-gap domain-splits=0/6",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0048/h129_multiscale_torsion_by_domain_split_layer.csv",
+        "iterations/iter_0048/h129_multiscale_torsion_domain_summary.csv",
+        "iterations/iter_0048/h129_multiscale_torsion_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Treat this manifold endpoint as negative; only re-open with a major representation change, not additional parameter tuning.",
+      "novelty_type": "new_method",
+      "lineage": "H126",
+      "retired": true,
+      "retirement_reason": "Second manifold-distance endpoint in this lineage fails strict null-gap gate despite directional lift."
+    }
+  ]
+}

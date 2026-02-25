@@ -1,0 +1,4 @@
+domain,n_rows,mean_module_persistence_ot_concordance,mean_warped_ot_transport_cost,mean_null_gap_q95_concordance,fraction_null_gap_positive,fraction_p_best_lt_0_05,combined_fisher_p_best
+external_lung,1,0.5929498647060659,1.61171802850756,-0.04392847718900461,0.0,1.0,0.03030303030303031
+immune,1,0.4275286189919068,1.8999256547416095,-0.2469852778178579,0.0,0.0,0.2121212121212121
+lung,1,0.6914643262389036,1.5814096661916435,0.0,0.0,1.0,0.03030303030303031

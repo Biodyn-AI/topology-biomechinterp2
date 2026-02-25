@@ -1,0 +1,71 @@
+{
+  "iteration": "iter_0027",
+  "hypotheses": [
+    {
+      "id": "H64",
+      "name": "Support-margin two-axis filtration topology screen",
+      "family": "persistent_homology",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Across immune/lung/external_lung and seeds 42/43/44 on source/target-disjoint splits and layers {7,11}, computed a two-axis filtration surrogate over Euclidean distance and directed-support margin, then tested two-axis edge connectivity summaries against a directed baseline and a one-axis ablation with margin-shuffle, support-shuffle, and label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_two_axis_minus_baseline",
+      "result_value": "mean delta AUROC=-0.03184; lung/source=-0.02633; external_lung/source=-0.02928; positive mean domain-splits 0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0027/h64_support_margin_two_axis_by_seed_layer_split.csv",
+        "iterations/iter_0027/h64_support_margin_two_axis_domain_summary.csv",
+        "iterations/iter_0027/h64_support_margin_two_axis_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this AUROC-lift form of the two-axis filtration branch; only reopen with a materially different endpoint (e.g., calibration/ranking utility instead of direct AUROC lift).",
+      "novelty_type": "new_method",
+      "lineage": "H49",
+      "retired": true,
+      "retirement_reason": "Second major-change utility test remained negative in both source-disjoint failure slices and all domain-split means."
+    },
+    {
+      "id": "H65",
+      "name": "Cross-model topology codebook transport",
+      "family": "cross_model_alignment",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Seed42 pilot on immune/lung/external_lung with source/target-disjoint splits at layers {7,11}; learned scGPT/Geneformer topology codebooks and a GF->scGPT transport matrix on two held-in domains, then evaluated held-out-domain edge transfer against GF baseline with random-codebook, token-frequency, and signature-destroy nulls.",
+      "status": "tested",
+      "primary_metric": "null_gap_q95",
+      "result_value": "mean null_gap_q95=+0.13671 (immune mean +0.16157; non-immune positive null-gap 4/4), but mean transfer delta AUROC=-0.10204 with positive mean delta domain-splits 0/6",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0027/h65_codebook_transport_by_domain_layer_split.csv",
+        "iterations/iter_0027/h65_codebook_transport_domain_summary.csv",
+        "iterations/iter_0027/h65_codebook_transport_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire cross-model alignment in this loop after this major-change rescue; only revisit with a new downstream objective that explicitly rewards utility, not null-gap alone.",
+      "novelty_type": "new_method",
+      "lineage": "H62",
+      "retired": true,
+      "retirement_reason": "Major-change rescue produced robust null-gap but uniformly negative transfer-vs-baseline utility across all domain-splits."
+    },
+    {
+      "id": "H66",
+      "name": "Intrinsic-dimension interaction-only screen",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Across immune/lung/external_lung and seeds 42/43/44 on source/target-disjoint splits, tested ID-transition interaction terms (0->3, 3->7, 7->11) with directed support/margin against a directed-geodesic baseline, with interaction-partner shuffle, layer-order permutation, and label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_id_interaction_minus_baseline",
+      "result_value": "mean delta AUROC=-0.13176; positive mean domain-splits 0/6; Fisher-significant domain-splits 0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0027/h66_id_interaction_by_seed_transition_split.csv",
+        "iterations/iter_0027/h66_id_interaction_domain_summary.csv",
+        "iterations/iter_0027/h66_id_interaction_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire intrinsic-dimensionality interaction scoring for this loop and shift manifold tests toward non-ID geometric families.",
+      "novelty_type": "new_method",
+      "lineage": "H63",
+      "retired": true,
+      "retirement_reason": "Interaction-only rescue failed globally with large negative deltas and no significant domain-split aggregates."
+    }
+  ]
+}

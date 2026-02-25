@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0031",
+  "hypotheses": [
+    {
+      "id": "H76",
+      "name": "Coexpression-aware support-concordance interaction v2",
+      "family": "module_structure",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Across immune/lung/external_lung with seeds 42/43/44, source/target-disjoint splits, and layers {7,11}, retained H70 triangle-defect scoring and tested high-vs-low support interaction using strata geodesic x degree x coexpression-proxy x ontology-overlap with support-shuffle, matched-random-support, and label-shuffle controls.",
+      "status": "tested",
+      "primary_metric": "interaction_delta_high_minus_low",
+      "result_value": "mean interaction=+0.00041; mean delta_AUROC(triangle-baseline)=+0.02323; interaction>0 rows 18/36; rows with null_gap_q95(interaction)>0: 11/36; null-surviving interaction mean domain-splits: 1/6; immune/source mean delta_AUROC=-0.00460",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0031/h76_coexpression_support_interaction_by_seed_layer_split.csv",
+        "iterations/iter_0031/h76_coexpression_support_interaction_domain_summary.csv",
+        "iterations/iter_0031/h76_coexpression_support_interaction_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Do not scale this recipe; only rescue with a materially stronger biological anchor that directly improves immune/source and requires >=3/6 null-surviving domain-splits.",
+      "novelty_type": "refinement",
+      "lineage": "H73",
+      "retired": false
+    },
+    {
+      "id": "H77",
+      "name": "Cross-model relational rank agreement endpoint",
+      "family": "cross_model_alignment",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Seed42 held-out-domain pilot on immune/lung/external_lung with source/target-disjoint splits and layers {7,11}; mapped Geneformer spectral signatures to scGPT via source-domain orthogonal alignment and evaluated non-edge relational agreement (delta Spearman and top-k overlap) against symbol-permutation, random-basis, and signature-destroy controls.",
+      "status": "tested",
+      "primary_metric": "delta_spearman_mapped_minus_baseline",
+      "result_value": "mean delta_spearman=+5.65e-06; mean delta_topk_overlap=+3.56e-05; mean null_gap_q95=-0.01897; delta_spearman>0 rows 5/12; rows with null_gap_q95>0: 0/12",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0031/h77_relational_rank_agreement_by_domain_layer_split.csv",
+        "iterations/iter_0031/h77_relational_rank_agreement_domain_summary.csv",
+        "iterations/iter_0031/h77_relational_rank_agreement_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this cross-model mapping form; if revisited, switch to biology-stratified or motif-level invariants rather than global relational transfer.",
+      "novelty_type": "new_method",
+      "lineage": "H74",
+      "retired": true,
+      "retirement_reason": "Major endpoint change still produced near-zero effect and uniformly negative null-gap support."
+    },
+    {
+      "id": "H78",
+      "name": "Geodesic detour-elasticity neighborhood-scale screen",
+      "family": "manifold_distance",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Seed42 screen across immune/lung/external_lung and source/target-disjoint splits using layers {0,3,7,11}; computed detour-elasticity features from kNN geodesics at k={8,12,16} and tested incremental lift over geodesic/support baseline with endpoint-swap, feature-shuffle-within-bins, and label-shuffle controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_elasticity_minus_baseline",
+      "result_value": "mean delta_AUROC=+0.00193; positive rows 14/24; positive mean domain-splits 4/6; rows with p_best<0.05: 11/24; mean null_gap_q95 negative in all domain-splits (0/6 positive)",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0031/h78_geodesic_detour_elasticity_by_domain_split_layer.csv",
+        "iterations/iter_0031/h78_geodesic_detour_elasticity_domain_summary.csv",
+        "iterations/iter_0031/h78_geodesic_detour_elasticity_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Keep only as a cheap probe with a materially changed perturbation mechanism (explicit neighbor dropout) and require positive null-gap in at least one domain-split before promotion.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": false
+    }
+  ]
+}

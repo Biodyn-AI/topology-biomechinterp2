@@ -1,0 +1,39 @@
+{
+  "iteration": "iter_0052",
+  "h139": {
+    "rows_tested": 25,
+    "mean_delta_auc": 0.03135456472031566,
+    "positive_domain_splits": 8,
+    "positive_null_gap_domain_splits": 6,
+    "positive_rows_strict": 16,
+    "artifact_paths": {
+      "by_seed_domain_split": "iterations/iter_0052/h139_sectional_seed_robustness_by_seed_domain_split.csv",
+      "domain_split_summary": "iterations/iter_0052/h139_sectional_seed_robustness_domain_split_summary.csv",
+      "domain_summary": "iterations/iter_0052/h139_sectional_seed_robustness_domain_summary.csv",
+      "null_summary": "iterations/iter_0052/h139_sectional_seed_robustness_null_summary.csv"
+    }
+  },
+  "h140": {
+    "rows_tested": 24,
+    "mean_delta_auc": 0.02692630184197695,
+    "mean_gain_vs_swap": 0.03374056957049457,
+    "positive_split_gains": 6,
+    "artifact_paths": {
+      "by_domain_split_k": "iterations/iter_0052/h140_neighborhood_scaling_by_domain_split_k.csv",
+      "domain_split_summary": "iterations/iter_0052/h140_neighborhood_scaling_domain_split_summary.csv",
+      "domain_summary": "iterations/iter_0052/h140_neighborhood_scaling_domain_summary.csv"
+    }
+  },
+  "h141": {
+    "rows_tested": 25,
+    "strict_positive_rows": 15,
+    "strict_positive_domain_splits": 3,
+    "mean_strict_margin": -0.0052342293819947604,
+    "artifact_paths": {
+      "row_summary": "iterations/iter_0052/h141_strict_null_sensitivity_row_summary.csv",
+      "domain_split_summary": "iterations/iter_0052/h141_strict_null_sensitivity_domain_split_summary.csv",
+      "domain_summary": "iterations/iter_0052/h141_strict_null_sensitivity_domain_summary.csv",
+      "nullkind_summary": "iterations/iter_0052/h141_strict_null_sensitivity_nullkind_summary.csv"
+    }
+  }
+}

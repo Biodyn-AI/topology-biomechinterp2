@@ -1,0 +1,70 @@
+{
+  "iteration": "iter_0050",
+  "hypotheses": [
+    {
+      "id": "H133",
+      "name": "Rank-surface persistent filtration surrogate",
+      "family": "persistent_homology",
+      "split_regime": "other",
+      "method": "Seed42 across immune/lung/external_lung; source/target-disjoint splits at layer 11; H70 baseline augmented with rank-surface filtration connectivity/cycle descriptors (Betti-style surrogate) and tested against axis-rank-permutation and label-permutation nulls (20 each).",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=-0.04611 (6 rows); positive mean null-gap domain-splits=0/6; row-level positive null-gap=0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0050/h133_rank_surface_persistence_by_domain_split.csv",
+        "iterations/iter_0050/h133_rank_surface_persistence_domain_summary.csv",
+        "iterations/iter_0050/h133_rank_surface_persistence_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this rank-surface surrogate in current form and only revisit persistent-homology family with materially different constructions.",
+      "novelty_type": "new_family",
+      "lineage": "none",
+      "retired": true,
+      "retirement_reason": "Decisive negative outcome under both directional and null-gap criteria across all tested domain-splits."
+    },
+    {
+      "id": "H134",
+      "name": "TWO-NN intrinsic-dimension path-phase descriptors",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "other",
+      "method": "Seed42 across immune/lung/external_lung; source/target-disjoint splits, layers 7 and 11; directed-path ID phase descriptors (sign-flip count, hysteresis, slope asymmetry) over H70, with id-profile permutation, endpoint-swap within strata, and label-permutation nulls (18 each).",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.01132 (12 rows); positive mean null-gap domain-splits=0/6; row-level positive null-gap=0/12",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0050/h134_id_phase_descriptor_by_domain_split_layer.csv",
+        "iterations/iter_0050/h134_id_phase_descriptor_domain_summary.csv",
+        "iterations/iter_0050/h134_id_phase_descriptor_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Do not continue this descriptor set without a materially changed asymmetry-sensitive formulation and stronger null resilience.",
+      "novelty_type": "new_method",
+      "lineage": "H114",
+      "retired": false
+    },
+    {
+      "id": "H135",
+      "name": "Hard-slice semantic motif-community refinement",
+      "family": "module_structure",
+      "split_regime": "other",
+      "method": "Carry-over refinement of H130 using seeds 42/43/44 on immune and lung hard slices (source-disjoint + dual-axis-disjoint) at layer 11; semantic motif-community stack with increased null budget (32 per null family).",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.13870 (12 rows); positive mean null-gap domain-splits=0/4; lung dual-axis mean null-gap=-0.00502; immune source mean null-gap=-0.01473",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0050/h135_hard_slice_semantic_refinement_by_seed_domain_split.csv",
+        "iterations/iter_0050/h135_hard_slice_semantic_refinement_domain_summary.csv",
+        "iterations/iter_0050/h135_hard_slice_semantic_refinement_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this H130-style hard-slice rescue endpoint and pivot to a materially changed module/topology biological anchor formulation.",
+      "novelty_type": "refinement",
+      "lineage": "H130",
+      "retired": true,
+      "retirement_reason": "Second targeted hard-slice run still fails strict null-gap gate on both designated hard slices."
+    }
+  ]
+}

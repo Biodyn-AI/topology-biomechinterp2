@@ -1,0 +1,40 @@
+{
+  "iteration": "iter_0023",
+  "h52": {
+    "rows_tested": 72,
+    "mean_delta_auc": 0.014609398971166246,
+    "fraction_delta_positive": 0.8055555555555556,
+    "domain_split_fisher_sig": 6,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0023/h52_directed_signed_multiseed_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0023/h52_directed_signed_multiseed_domain_summary.csv",
+      "null_summary": "iterations/iter_0023/h52_directed_signed_multiseed_null_summary.csv"
+    }
+  },
+  "h53": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.0027585291901971267,
+    "fraction_delta_positive": 0.6666666666666666,
+    "domain_split_fisher_sig": 0,
+    "artifact_paths": {
+      "by_domain_layer_split": "iterations/iter_0023/h53_directed_path_homology_by_domain_layer_split.csv",
+      "domain_summary": "iterations/iter_0023/h53_directed_path_homology_domain_summary.csv",
+      "null_summary": "iterations/iter_0023/h53_directed_path_homology_null_summary.csv"
+    }
+  },
+  "h54": {
+    "rows_tested": 72,
+    "mean_delta_auc": -0.04527208996014785,
+    "fraction_delta_positive": 0.2777777777777778,
+    "domain_split_fisher_sig": 1,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0023/h54_linearity_rupture_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0023/h54_linearity_rupture_domain_summary.csv",
+      "null_summary": "iterations/iter_0023/h54_linearity_rupture_null_summary.csv"
+    }
+  },
+  "environment": {
+    "python_env": "subproject40-topology",
+    "string_cache_used": "iterations/iter_0020/h43_string_network_api.tsv"
+  }
+}

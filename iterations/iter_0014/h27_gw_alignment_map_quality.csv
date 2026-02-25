@@ -1,0 +1,4 @@
+domain,n_matched_genes,top1_retrieval_gw,mutual_top1_gw,truth_mass_gw,p_top1_retrieval_upper,p_mutual_top1_upper
+external_lung,280,0.0,0.0,0.003916287605220448,1.0,1.0
+immune,280,0.0035714285714285713,0.0,0.003575400249693869,0.6464088397790055,1.0
+lung,280,0.0,0.0,0.0038638366031659697,1.0,1.0

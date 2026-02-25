@@ -1,0 +1,71 @@
+{
+  "iteration": "iter_0038",
+  "hypotheses": [
+    {
+      "id": "H97",
+      "name": "Calibrated bridge-curvature rewiring rescue",
+      "family": "graph_topology",
+      "split_regime": "other",
+      "method": "Seed42 breadth run across immune/lung/external_lung with source/target-disjoint splits and layers {0,3,7,11}; added bridge-curvature descriptors on top of H70 and evaluated degree-preserving, degree+length-bin, degree+length+bridge-strata rewiring, plus label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_graph_bridge_calibrated_minus_h70",
+      "result_value": "mean=+0.07852; positive rows=24/24; positive mean domain-splits=6/6; positive mean null-gap domain-splits=0/6",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0038/h97_graph_bridge_calibrated_by_domain_split_layer.csv",
+        "iterations/iter_0038/h97_graph_bridge_calibrated_domain_summary.csv",
+        "iterations/iter_0038/h97_graph_bridge_calibrated_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this additive bridge-curvature utility lineage as a primary branch unless a materially different endpoint (non-additive, non-AUROC-lift objective) is introduced.",
+      "novelty_type": "refinement",
+      "lineage": "H95",
+      "retired": true,
+      "retirement_reason": "Two consecutive runs (H95 then stricter H97) show strong directional lift but 0/6 positive mean null-gap domain-splits."
+    },
+    {
+      "id": "H98",
+      "name": "Multi-radius ID heterogeneity entropy screen",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "other",
+      "method": "Seed42 breadth run across immune/lung/external_lung with source/target-disjoint splits and layers {0,3,7,11}; added node/edge ID entropy and heterogeneity features over radii k={4,6,8,10,12} on top of H70, with radius-order permutation, neighborhood-assignment shuffle, and label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_id_entropy_minus_h70",
+      "result_value": "mean=-0.00773; positive rows=5/24; positive mean domain-splits=1/6; positive mean null-gap domain-splits=0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0038/h98_id_entropy_by_domain_split_layer.csv",
+        "iterations/iter_0038/h98_id_entropy_domain_summary.csv",
+        "iterations/iter_0038/h98_id_entropy_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Do not continue standalone/additive ID-entropy utility screens; if revisited, test interaction-only terms on top of robust topology features.",
+      "novelty_type": "new_method",
+      "lineage": "H89",
+      "retired": true,
+      "retirement_reason": "Current standalone/additive intrinsic-dimensionality utility formulation remains non-robust and below baseline."
+    },
+    {
+      "id": "H99",
+      "name": "Cross-model GO-module role-graph alignment",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Seed42 pilot across immune/lung/external_lung and layers {7,11}; built GO-module role vectors from scGPT and Geneformer, compared module role-graph transition concordance, and tested module-membership permutation, role-label permutation, and random-subspace rotation nulls.",
+      "status": "tested",
+      "primary_metric": "module_role_graph_concordance",
+      "result_value": "mean=+0.03934; positive concordance rows=5/6; mean null-gap(q95)=-0.02497; positive null-gap domains=0/3",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0038/h99_cross_model_role_graph_by_domain_layer.csv",
+        "iterations/iter_0038/h99_cross_model_role_graph_domain_summary.csv",
+        "iterations/iter_0038/h99_cross_model_role_graph_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Keep cross-model alignment retired unless a fundamentally new shared residual-level supervision view is available.",
+      "novelty_type": "new_method",
+      "lineage": "H96",
+      "retired": true,
+      "retirement_reason": "Structural-reset rescue still failed null robustness in all domains (0/3 positive mean null-gap)."
+    }
+  ]
+}

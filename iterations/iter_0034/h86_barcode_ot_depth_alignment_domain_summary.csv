@@ -1,0 +1,2 @@
+n_domains,mean_barcode_ot_depth_alignment_score,mean_ot_depth_spearman,mean_ot_transport_cost,mean_null_gap_q95_barcode_ot_depth_alignment_score,positive_null_gap_domains,fraction_p_best_lt_0_05,combined_fisher_p_best
+3,0.5819234622159313,-0.1333333333333334,5.1544813424606515,-0.0693239282605889,0,0.0,0.5949289680179299

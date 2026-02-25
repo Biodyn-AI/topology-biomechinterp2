@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0045",
+  "hypotheses": [
+    {
+      "id": "H118",
+      "name": "Signed TRRUST motif x module-structure robustness",
+      "family": "module_structure",
+      "split_regime": "other",
+      "method": "Across immune/lung/external_lung with seeds 42/43/44 and source/target-disjoint splits at layer 11; graph community label propagation on kNN graph plus true signed TRRUST motif-consistency interactions over H70; nulls: community label shuffle, TRRUST-sign shuffle within TF-degree bins, label permutation.",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.09885 (18 rows); positive mean null-gap domain-splits=3/6",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0045/h118_signed_motif_module_by_seed_domain_split.csv",
+        "iterations/iter_0045/h118_signed_motif_module_domain_summary.csv",
+        "iterations/iter_0045/h118_signed_motif_module_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Run higher-null-budget confirmation and dual-axis-disjoint robustness before promotion to core claim.",
+      "novelty_type": "refinement",
+      "lineage": "H116",
+      "retired": false
+    },
+    {
+      "id": "H119",
+      "name": "Disagreement-conditioned cross-model transfer",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Seed42 across immune/lung/external_lung with source/target-disjoint splits at layer 11; aligned Geneformer role signatures to scGPT and evaluated disagreement-quantile-gated transfer model vs ungated baseline; nulls: disagreement-bin permutation within edge strata, random gene mapping, label permutation.",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.00060 (6 rows); positive mean null-gap domain-splits=1/6",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0045/h119_disagreement_gated_transfer_by_domain_split.csv",
+        "iterations/iter_0045/h119_disagreement_gated_transfer_domain_summary.csv",
+        "iterations/iter_0045/h119_disagreement_gated_transfer_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this endpoint and only revisit cross-model transfer with a materially different objective.",
+      "novelty_type": "new_method",
+      "lineage": "H109",
+      "retired": true,
+      "retirement_reason": "Near-zero utility and null-gap support in only 1/6 domain-splits after major method change."
+    },
+    {
+      "id": "H120",
+      "name": "Geodesic-path curvature drift descriptors",
+      "family": "manifold_distance",
+      "split_regime": "other",
+      "method": "Seed42 across immune/lung/external_lung with source/target-disjoint splits and layers {7,11}; Forman-curvature path descriptors on weighted kNN geodesics added to H70; nulls: distance-bin feature shuffle, degree-bin feature shuffle, label permutation.",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.03854 (12 rows); positive mean null-gap domain-splits=3/6",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0045/h120_geodesic_curvature_drift_by_domain_split_layer.csv",
+        "iterations/iter_0045/h120_geodesic_curvature_drift_domain_summary.csv",
+        "iterations/iter_0045/h120_geodesic_curvature_drift_null_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Increase null resolution and test interaction-only curvature terms before promotion.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": false
+    }
+  ]
+}

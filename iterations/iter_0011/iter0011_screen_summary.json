@@ -1,0 +1,63 @@
+{
+  "iteration": "iter_0011",
+  "inputs": {
+    "scgpt_immune_runs": {
+      "seed42_main": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_main/layer_gene_embeddings.npy",
+      "seed43": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed43/layer_gene_embeddings.npy",
+      "seed44": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed44/layer_gene_embeddings.npy"
+    },
+    "immune_edge_dataset": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_main/cycle1_edge_dataset.tsv",
+    "scgpt_alt_feature_tables": {
+      "immune": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_main/alt_geometry_metrics_layer0_immune_pca.csv",
+      "lung": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle6_lung_main/alt_geometry_metrics_layer0_lung_pca.csv",
+      "external_lung": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle7_external_lung_main/alt_geometry_metrics_layer3_external_lung_pca.csv"
+    },
+    "geneformer_feature_tables": {
+      "immune": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle12_geneformer_immune_bootstrap/geneformer_feature_metrics.csv",
+      "lung": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle12_geneformer_lung_bootstrap/geneformer_feature_metrics.csv",
+      "external_lung": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle12_geneformer_external_lung_bootstrap/geneformer_feature_metrics.csv"
+    },
+    "h13_reference": "iterations/iter_0010/h13_manifold_distance_by_seed_layer_split.csv"
+  },
+  "h16_module_structure": {
+    "n_rows_by_seed_layer_split": 72,
+    "n_layers_tested": 12,
+    "source_mean_auc": 0.5387103581428602,
+    "target_mean_auc": 0.5413151572301604,
+    "source_layers_auc_gt_0_5": 12,
+    "target_layers_auc_gt_0_5": 12,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0011/h16_module_structure_by_seed_layer_split.csv",
+      "layer_summary": "iterations/iter_0011/h16_module_structure_layer_summary.csv",
+      "split_summary": "iterations/iter_0011/h16_module_structure_split_summary.csv"
+    }
+  },
+  "h17_cross_model_transfer": {
+    "domains_tested": 3,
+    "mean_spearman_rho": 0.8333333333333334,
+    "domains_with_positive_rho": 3,
+    "top_feature_match_count": 3,
+    "p_mean_rho_upper_exact_global": 0.03686635944700461,
+    "p_top_match_count_upper_exact_global": 0.041474654377880185,
+    "artifact_paths": {
+      "domain_summary": "iterations/iter_0011/h17_cross_model_transfer_domain_summary.csv",
+      "global_null": "iterations/iter_0011/h17_cross_model_transfer_global_null.csv"
+    }
+  },
+  "h18_intrinsic_geodesic_coupling": {
+    "n_rows_seed_layer_split": 72,
+    "metrics_tested": [
+      "participation_ratio_dim",
+      "local_linearity_top5"
+    ],
+    "source_participation_mean_rho": -0.23543123543123548,
+    "target_participation_mean_rho": -0.407925407925408,
+    "source_linearity_mean_rho": 0.23543123543123548,
+    "target_linearity_mean_rho": 0.407925407925408,
+    "artifact_paths": {
+      "metrics_by_seed_layer_split": "iterations/iter_0011/h18_intrinsic_geodesic_metrics_by_seed_layer_split.csv",
+      "coupling_by_seed": "iterations/iter_0011/h18_intrinsic_geodesic_coupling_by_seed.csv",
+      "coupling_summary": "iterations/iter_0011/h18_intrinsic_geodesic_coupling_summary.csv"
+    }
+  }
+}

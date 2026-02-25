@@ -1,0 +1,48 @@
+{
+  "iteration": "iter_0044",
+  "hypotheses": [
+    {
+      "id": "H115",
+      "name": "Layerwise tangent-subspace acceleration screen",
+      "family": "manifold_distance",
+      "split_regime": "other",
+      "method": "Compute source-target principal-angle profiles across layers {0,3,7,11}; derive slope/acceleration/jerk proxies; evaluate additive AUROC over H70 with layer-order and label-permutation nulls.",
+      "status": "tested",
+      "primary_metric": "mean_delta_auc_vs_h70",
+      "result_value": -0.006224631972929551,
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0044/h115_tangent_acceleration_by_domain_split.csv",
+        "iterations/iter_0044/h115_tangent_acceleration_domain_summary.csv",
+        "iterations/iter_0044/h115_tangent_acceleration_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this exact formulation; if revisited, switch to materially different manifold descriptor family.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": true,
+      "retirement_reason": "Directional support only 2/6 splits with negative global mean delta."
+    },
+    {
+      "id": "H116",
+      "name": "TRRUST sign-motif interaction with geometry",
+      "family": "module_structure",
+      "split_regime": "other",
+      "method": "At deep layer (11), augment H70 with TRRUST motif-presence and sign-consistency interactions; evaluate via CV logistic model with motif-sign permutation and label-permutation nulls.",
+      "status": "tested",
+      "primary_metric": "mean_delta_auc_vs_h70",
+      "result_value": 0.07809568727484216,
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0044/h116_trrust_sign_motif_by_domain_split.csv",
+        "iterations/iter_0044/h116_trrust_sign_motif_domain_summary.csv",
+        "iterations/iter_0044/h116_trrust_sign_motif_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Replicate on seeds 43/44 and add support-matched decoy motif controls.",
+      "novelty_type": "new_family",
+      "lineage": "none",
+      "retired": false
+    }
+  ]
+}

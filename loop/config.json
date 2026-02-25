@@ -1,0 +1,8 @@
+{
+  "project_root": ".",
+  "executor_prompt_file": "prompts/executor_prompt_topology_hypothesis_screening.md",
+  "brainstormer_prompt_template_file": "prompts/brainstormer_prompt_template.md",
+  "brainstormer_reference_root": "(external — see README for details)",
+  "executor_workdir": ".",
+  "codex_bin": "codex"
+}

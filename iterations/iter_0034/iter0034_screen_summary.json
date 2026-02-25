@@ -1,0 +1,35 @@
+{
+  "iteration": "iter_0034",
+  "h85": {
+    "rows_tested": 36,
+    "mean_delta_auc": 0.0035962153891906778,
+    "positive_domain_splits": 5,
+    "positive_null_gap_domain_splits": 3,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0034/h85_dual_filtration_witness_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0034/h85_dual_filtration_witness_domain_summary.csv",
+      "null_summary": "iterations/iter_0034/h85_dual_filtration_witness_null_summary.csv"
+    }
+  },
+  "h86": {
+    "rows_tested": 3,
+    "mean_barcode_ot_depth_alignment_score": 0.5819234622159313,
+    "positive_null_gap_domains": 0,
+    "artifact_paths": {
+      "by_domain": "iterations/iter_0034/h86_barcode_ot_depth_alignment_by_domain.csv",
+      "domain_summary": "iterations/iter_0034/h86_barcode_ot_depth_alignment_domain_summary.csv",
+      "null_summary": "iterations/iter_0034/h86_barcode_ot_depth_alignment_null_summary.csv"
+    }
+  },
+  "h87": {
+    "rows_tested": 24,
+    "mean_delta_auc": 0.08034962078238783,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 4,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0034/h87_sparse_descriptor_blend_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0034/h87_sparse_descriptor_blend_domain_summary.csv",
+      "null_summary": "iterations/iter_0034/h87_sparse_descriptor_blend_null_summary.csv"
+    }
+  }
+}

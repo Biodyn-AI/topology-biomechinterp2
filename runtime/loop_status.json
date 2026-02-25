@@ -1,0 +1,14 @@
+{
+  "codex_timeout_seconds": 0,
+  "completed_iterations": 8,
+  "current_iteration": 53,
+  "last_iteration_dir": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_40_topology_hypothesis_screening_autoloop/iterations/iter_0053",
+  "max_iterations": null,
+  "model": "gpt-5.3-codex",
+  "phase": "executor",
+  "reasoning_effort": "xhigh",
+  "running": true,
+  "sleep_seconds": 2,
+  "test_mode": false,
+  "ts": "2026-02-23T16:54:45.992127+00:00"
+}

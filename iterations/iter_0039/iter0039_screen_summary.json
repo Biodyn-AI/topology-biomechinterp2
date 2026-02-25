@@ -1,0 +1,35 @@
+{
+  "iteration": "iter_0039",
+  "h100": {
+    "rows_tested": 12,
+    "mean_delta_auc": -0.001882166264814587,
+    "positive_domain_splits": 2,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0039/h100_relative_persistence_contrast_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0039/h100_relative_persistence_contrast_domain_summary.csv",
+      "null_summary": "iterations/iter_0039/h100_relative_persistence_contrast_null_summary.csv"
+    }
+  },
+  "h101": {
+    "rows_tested": 24,
+    "mean_delta_auc": 0.0062139046388636765,
+    "positive_domain_splits": 4,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0039/h101_persistence_derivative_spectrum_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0039/h101_persistence_derivative_spectrum_domain_summary.csv",
+      "null_summary": "iterations/iter_0039/h101_persistence_derivative_spectrum_null_summary.csv"
+    }
+  },
+  "h102": {
+    "rows_tested": 3,
+    "mean_concordance": 0.5706476033122921,
+    "positive_domain_count": 0,
+    "artifact_paths": {
+      "by_domain": "iterations/iter_0039/h102_ot_monotone_depth_warp_by_domain.csv",
+      "domain_summary": "iterations/iter_0039/h102_ot_monotone_depth_warp_domain_summary.csv",
+      "null_summary": "iterations/iter_0039/h102_ot_monotone_depth_warp_null_summary.csv"
+    }
+  }
+}

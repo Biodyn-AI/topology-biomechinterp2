@@ -1,0 +1,70 @@
+{
+  "iteration": "iter_0032",
+  "hypotheses": [
+    {
+      "id": "H79",
+      "name": "TF-module conditioned support calibration",
+      "family": "module_structure",
+      "split_regime": "other",
+      "method": "Across immune/lung/external_lung with seeds 42/43/44, source/target-disjoint splits, and layers {7,11}, fit module-conditioned support weights (TF module membership + STRING density tier) on top of H70-style triangle-defect baseline with module-label permutation, matched-random-weight, and label-shuffle nulls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_module_minus_defect",
+      "result_value": "mean=+0.03458; immune/source=+0.03198; positive null-gap domain-splits=1/6",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0032/h79_tf_module_conditioned_by_seed_layer_split.csv",
+        "iterations/iter_0032/h79_tf_module_conditioned_domain_summary.csv",
+        "iterations/iter_0032/h79_tf_module_conditioned_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "If pursued once more, restrict to a depth-conditional layer-11 module model with pre-registered gate requiring >=2/6 positive null-gap domain-splits.",
+      "novelty_type": "new_method",
+      "lineage": "H76",
+      "retired": false
+    },
+    {
+      "id": "H80",
+      "name": "Pathway-centroid cross-model alignment",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Seed42 pilot across immune/lung/external_lung and layers {7,11}; construct TRRUST+GO pathway centroids in scGPT and Geneformer spectral signature spaces and evaluate distance-rank concordance with module-label, module-membership, and signature-destroy nulls.",
+      "status": "tested",
+      "primary_metric": "spearman_centroid_distance",
+      "result_value": "mean=+0.15032; mean CKA=0.21263; domain mean null-gap>0 in 0/3",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0032/h80_pathway_centroid_alignment_by_domain_layer.csv",
+        "iterations/iter_0032/h80_pathway_centroid_alignment_domain_summary.csv",
+        "iterations/iter_0032/h80_pathway_centroid_alignment_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this endpoint for utility claims; only reopen with a materially different, pre-registered pathway-trajectory invariance objective.",
+      "novelty_type": "new_method",
+      "lineage": "H77",
+      "retired": true,
+      "retirement_reason": "Repeated cross-model formulations remain null-gap negative despite endpoint redesign."
+    },
+    {
+      "id": "H81",
+      "name": "Neighbor-dropout detour elasticity v2",
+      "family": "manifold_distance",
+      "split_regime": "other",
+      "method": "Seed42 screen across immune/lung/external_lung, source/target-disjoint splits, and layers {0,3,7,11}; remove top local-betweenness nodes at dropout rates {10%,20%,30%}, compare targeted vs matched-random detour inflation features against baseline with endpoint-swap, feature-shuffle, and label-shuffle nulls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_dropout_minus_baseline",
+      "result_value": "mean=-0.01199; positive rows=1/24; positive mean domain-splits=0/6; positive null-gap domain-splits=0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0032/h81_neighbor_dropout_detour_elasticity_by_domain_split_layer.csv",
+        "iterations/iter_0032/h81_neighbor_dropout_detour_elasticity_domain_summary.csv",
+        "iterations/iter_0032/h81_neighbor_dropout_detour_elasticity_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this global-dropout utility formulation; if revisited, require edge-local witness-path perturbation with explicit path survival metrics.",
+      "novelty_type": "new_method",
+      "lineage": "H78",
+      "retired": true,
+      "retirement_reason": "Major-change rescue still produced uniformly negative utility and null-gap outcomes."
+    }
+  ]
+}

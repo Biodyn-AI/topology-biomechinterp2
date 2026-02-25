@@ -1,0 +1,42 @@
+{
+  "iteration": "iter_0004",
+  "hypotheses": [
+    {
+      "id": "H03",
+      "name": "Cross-domain scGPT H1 persistence replication",
+      "family": "persistent_homology",
+      "split_regime": "other",
+      "method": "Executed conda run -n subproject40-topology python iterations/iter_0004/run_iter0004_screen.py to compute ripser H1 lifetime sums on immune/external-lung layer embeddings (3 seeds/domain, 350 genes/layer, PCA20) with 20 feature-shuffle null replicates per seed-layer and Fisher-combined p-values per layer.",
+      "status": "tested",
+      "primary_metric": "frac_layers_fisher_p_lt_0_05",
+      "result_value": "immune=12/12 layers (1.00), external_lung=12/12 layers (1.00); mean layer delta immune=12.074, external_lung=12.482",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0004/scgpt_cross_domain_h1_by_seed_layer.csv",
+        "iterations/iter_0004/scgpt_cross_domain_h1_layer_summary.csv",
+        "iterations/iter_0004/scgpt_cross_domain_h1_domain_summary.csv",
+        "iterations/iter_0004/iter0004_screen_summary.json"
+      ],
+      "decision": "promising",
+      "next_action": "Stress-test top layers with stronger nulls (distance permutation and kNN rewiring) and then run source/target-disjoint split robustness."
+    },
+    {
+      "id": "H04",
+      "name": "Intrinsic-dimensionality coupling with H1 topology by layer",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "other",
+      "method": "Within the same run, computed per seed-layer participation-ratio dimension, top-5 linearity ratio, and Levina-Bickel MLE intrinsic dimension, then tested layer-wise Spearman correlations to H1 delta with 2000 layer-permutation nulls and Fisher combination across seeds.",
+      "status": "tested",
+      "primary_metric": "fisher_p",
+      "result_value": "external_lung: participation_ratio rho=0.508 (p=0.0229), linearity_top5 rho=-0.510 (p=0.0178); immune metrics p>=0.147",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0004/intrinsic_dimensionality_h1_correlation_by_seed.csv",
+        "iterations/iter_0004/intrinsic_dimensionality_h1_correlation_summary.csv",
+        "iterations/iter_0004/iter0004_screen_summary.json"
+      ],
+      "decision": "neutral",
+      "next_action": "Replace unstable local-ID estimator, include lung in the same protocol, and test robustness of sign/magnitude under stronger neighborhood definitions."
+    }
+  ]
+}

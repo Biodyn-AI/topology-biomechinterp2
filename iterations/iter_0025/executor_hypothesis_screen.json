@@ -1,0 +1,71 @@
+{
+  "iteration": "iter_0025",
+  "hypotheses": [
+    {
+      "id": "H58",
+      "name": "Biologically weighted directed/signed failure-slice rescue",
+      "family": "topology_stability",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Across immune/lung/external_lung and seeds 42/43/44 on source/target-disjoint splits and layers {7,11}, computed weighted directed/signed topology scores using support-aware edge weights (DoRothEA+OmniPath+STRING+GO) and compared against unweighted directed/signed and distance-only baselines with biological-weight shuffle, random-strata placebo, and label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_weighted_minus_unweighted",
+      "result_value": "mean weighted-vs-unweighted delta AUROC=-0.00052; weighted-vs-distance mean delta=+0.01137; failure slices remained negative (lung/source=-0.00193, external_lung/source=-0.00433)",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0025/h58_weighted_directed_signed_by_seed_layer_split.csv",
+        "iterations/iter_0025/h58_weighted_directed_signed_domain_summary.csv",
+        "iterations/iter_0025/h58_weighted_directed_signed_null_summary.csv",
+        "iterations/iter_0025/h58_weighted_directed_signed_failure_slice_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this weighting-tweak formulation and pivot to a materially changed topology method (e.g., support-margin multiparameter filtration) if continuing the branch.",
+      "novelty_type": "refinement",
+      "lineage": "H55",
+      "retired": true,
+      "retirement_reason": "Second-stage weighting tweak failed to rescue source-disjoint failures and slightly regressed vs unweighted directed/signed."
+    },
+    {
+      "id": "H59",
+      "name": "Cross-model topology-signature transfer pilot",
+      "family": "cross_model_alignment",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Seed42 pilot on immune/lung/external_lung with held-out-domain transfer over source/target-disjoint splits and layers {7,11}; built per-gene topology signatures in scGPT and Geneformer, learned Procrustes maps on source domains, and evaluated target edge AUROC from mapped Geneformer-to-scGPT compatibility with random-map and signature-destroy permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_transfer_minus_baseline",
+      "result_value": "mean transfer delta AUROC=+0.02404 with positive rows 10/12, but null-robust support failed (rows p_best<0.05: 0/12; domain Fisher-significant: 0/3)",
+      "result_direction": "inconclusive",
+      "artifact_paths": [
+        "iterations/iter_0025/h59_cross_model_topology_signature_transfer_by_domain_layer.csv",
+        "iterations/iter_0025/h59_cross_model_topology_signature_transfer_summary.csv",
+        "iterations/iter_0025/h59_cross_model_topology_signature_transfer_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Do not expand this pilot until a stronger transfer objective or stricter null calibration is introduced.",
+      "novelty_type": "new_method",
+      "lineage": "H51",
+      "retired": false
+    },
+    {
+      "id": "H60",
+      "name": "Endpoint intrinsic-dimension jump broad screen",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Across immune/lung/external_lung and seeds 42/43/44 on source/target-disjoint splits and layers {0,3,7,11}, estimated local ID with TWO-NN and local MLE, built edge ID-jump features, and compared combined ID-jump score against geodesic baseline with endpoint-swap, estimator-randomization, and label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_combined_minus_baseline",
+      "result_value": "mean delta AUROC=-0.00435; positive rows 31/72; positive mean domain-splits 3/6; Fisher-significant domain-splits 1/6 (immune/source, negative direction)",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0025/h60_id_jump_by_seed_layer_split.csv",
+        "iterations/iter_0025/h60_id_jump_domain_summary.csv",
+        "iterations/iter_0025/h60_id_jump_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire standalone endpoint ID-jump formulation and deprioritize ID-family endpoint screens unless objective is materially changed.",
+      "novelty_type": "new_method",
+      "lineage": "H54",
+      "retired": true,
+      "retirement_reason": "Repeated intrinsic-dimension endpoint formulations are now net negative under multiseed controls."
+    }
+  ]
+}

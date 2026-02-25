@@ -1,0 +1,3 @@
+split_regime,n_layers,mean_auc_same_community,mean_delta_positive_rate_same_minus_diff,layers_auc_gt_0_5,layers_delta_gt_0,layers_fisher_auc_sig,layers_fisher_delta_sig,mean_graph_modularity
+source_disjoint,12,0.5387103581428602,0.07273314475209182,12,12,12,12,0.3893265686652784
+target_disjoint,12,0.5413151572301604,0.07776933088534481,12,12,12,12,0.29712254252563425

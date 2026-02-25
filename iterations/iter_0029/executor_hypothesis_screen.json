@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0029",
+  "hypotheses": [
+    {
+      "id": "H70",
+      "name": "Triangle-defect hard-null robustness expansion",
+      "family": "manifold_distance",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Across immune/lung/external_lung and seeds 42/43/44 on source/target-disjoint splits and layers {7,11}, reran H69 triangle-defect scoring (k={8,12,16}) with 48 permutations per null family (endpoint swap, matched random third node, label permutation) and bootstrap CIs on domain-split means.",
+      "status": "tested",
+      "primary_metric": "delta_auc_triangle_defect_minus_baseline",
+      "result_value": "mean delta AUROC=+0.02637 (std 0.02687); positive rows 29/36; p_best<0.05 in 36/36; mean matched-random-third null-gap q95=+0.01010; positive mean domain-splits 6/6",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0029/h70_triangle_defect_robust_by_seed_layer_split.csv",
+        "iterations/iter_0029/h70_triangle_defect_robust_domain_summary.csv",
+        "iterations/iter_0029/h70_triangle_defect_robust_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Run a confirmatory pass with stronger biological/coexpression controls and stress-test the weaker immune slices.",
+      "novelty_type": "refinement",
+      "lineage": "H69",
+      "retired": false
+    },
+    {
+      "id": "H71",
+      "name": "Cross-model topology-signature distillation transfer",
+      "family": "cross_model_alignment",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Seed42 held-out-domain pilot on immune/lung/external_lung with source/target-disjoint splits and layers {7,11}; trained weighted ridge distillation maps from Geneformer signatures to scGPT topology signatures on two source domains, then evaluated held-out transfer utility against Geneformer baseline with random teacher-signature assignment, anchor-label shuffle, and signature-destroy controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_transfer_minus_baseline",
+      "result_value": "mean delta AUROC=-0.42758 (std 0.17687); positive rows 0/12; mean null_gap_q95=-0.14795; mean mapped-to-sc cosine=+0.00634",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0029/h71_topology_signature_distill_by_domain_layer_split.csv",
+        "iterations/iter_0029/h71_topology_signature_distill_domain_summary.csv",
+        "iterations/iter_0029/h71_topology_signature_distill_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this cross-model transfer endpoint for the current loop and reallocate budget to non-retired families.",
+      "novelty_type": "new_method",
+      "lineage": "H68",
+      "retired": true,
+      "retirement_reason": "Second major-change rescue still produced strongly negative transfer utility and negative null-gap across held-out domains."
+    },
+    {
+      "id": "H72",
+      "name": "Edge trajectory motif class scan",
+      "family": "topology_stability",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Seed42 pilot across immune/lung/external_lung and source/target-disjoint splits; built edge trajectory features across layers {0,3,7,11}, clustered into motif classes, and tested motif-augmented scoring against baseline under layer-order permutation and degree-bin motif-label shuffle controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_motif_minus_baseline",
+      "result_value": "mean delta AUROC=+0.00008 (std 0.00593); positive rows 4/6 but p_best<0.05 in 0/6; enrichment p<0.05 in 0/6",
+      "result_direction": "inconclusive",
+      "artifact_paths": [
+        "iterations/iter_0029/h72_edge_trajectory_motif_by_domain_split.csv",
+        "iterations/iter_0029/h72_edge_trajectory_motif_domain_summary.csv",
+        "iterations/iter_0029/h72_edge_trajectory_motif_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "If retained for one more pass, increase null permutations and add multiseed coverage; otherwise retire as low-yield.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": false
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "config": {
+    "domain": "immune",
+    "split_regimes": [
+      "source_disjoint",
+      "target_disjoint"
+    ],
+    "n_points_per_test": 180,
+    "pca_dim": 14,
+    "knn_k_initial": 12,
+    "knn_k_max": 30,
+    "n_null_feature_shuffle": 20,
+    "n_null_degree_preserving_geodesic_rewire": 8,
+    "rewire_swap_multiplier": 1.5,
+    "rewire_retry_per_null": 10,
+    "rewire_attempt_multiplier": 6
+  },
+  "inputs": {
+    "immune": {
+      "seed42_main": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_main/layer_gene_embeddings.npy",
+      "seed43": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed43/layer_gene_embeddings.npy",
+      "seed44": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_seed44/layer_gene_embeddings.npy"
+    }
+  },
+  "domain_summary": [
+    {
+      "domain": "immune",
+      "split_regime": "source_disjoint",
+      "null_family": "degree_preserving_geodesic_rewire",
+      "n_layer_tests": 12,
+      "n_layer_tests_fisher_p_lt_0_05": 0,
+      "frac_layer_tests_fisher_p_lt_0_05": 0.0,
+      "n_layer_tests_positive_delta": 0,
+      "frac_layer_tests_positive_delta": 0.0,
+      "mean_layer_delta": -140.51919213987665,
+      "median_layer_delta": -142.5708543817858,
+      "min_layer_delta": -194.52749357620874,
+      "max_layer_delta": -70.5274941076835,
+      "mean_layer_z": -9.875216337334928
+    },
+    {
+      "domain": "immune",
+      "split_regime": "source_disjoint",
+      "null_family": "feature_shuffle",
+      "n_layer_tests": 12,
+      "n_layer_tests_fisher_p_lt_0_05": 12,
+      "frac_layer_tests_fisher_p_lt_0_05": 1.0,
+      "n_layer_tests_positive_delta": 12,
+      "frac_layer_tests_positive_delta": 1.0,
+      "mean_layer_delta": 6.64629839360714,
+      "median_layer_delta": 6.4451555232206985,
+      "min_layer_delta": 2.807957061131795,
+      "max_layer_delta": 10.673782988389334,
+      "mean_layer_z": 2.7397790193584988
+    },
+    {
+      "domain": "immune",
+      "split_regime": "target_disjoint",
+      "null_family": "degree_preserving_geodesic_rewire",
+      "n_layer_tests": 12,
+      "n_layer_tests_fisher_p_lt_0_05": 0,
+      "frac_layer_tests_fisher_p_lt_0_05": 0.0,
+      "n_layer_tests_positive_delta": 0,
+      "frac_layer_tests_positive_delta": 0.0,
+      "mean_layer_delta": -129.7021025965611,
+      "median_layer_delta": -140.68328710397086,
+      "min_layer_delta": -155.4364142815272,
+      "max_layer_delta": -86.88551661372185,
+      "mean_layer_z": -5.4122514634719145
+    },
+    {
+      "domain": "immune",
+      "split_regime": "target_disjoint",
+      "null_family": "feature_shuffle",
+      "n_layer_tests": 12,
+      "n_layer_tests_fisher_p_lt_0_05": 4,
+      "frac_layer_tests_fisher_p_lt_0_05": 0.3333333333333333,
+      "n_layer_tests_positive_delta": 9,
+      "frac_layer_tests_positive_delta": 0.75,
+      "mean_layer_delta": 0.8748822069209483,
+      "median_layer_delta": 1.0462226850291092,
+      "min_layer_delta": -0.8535657137632371,
+      "max_layer_delta": 2.6009337817629175,
+      "mean_layer_z": 1.2248402257537603
+    }
+  ],
+  "dual_split_summary": [
+    {
+      "domain": "immune",
+      "null_family": "degree_preserving_geodesic_rewire",
+      "n_layers": 12,
+      "n_layers_both_splits_sig": 0,
+      "frac_layers_both_splits_sig": 0.0,
+      "n_layers_both_splits_positive_delta": 0,
+      "frac_layers_both_splits_positive_delta": 0.0
+    },
+    {
+      "domain": "immune",
+      "null_family": "feature_shuffle",
+      "n_layers": 12,
+      "n_layers_both_splits_sig": 4,
+      "frac_layers_both_splits_sig": 0.3333333333333333,
+      "n_layers_both_splits_positive_delta": 9,
+      "frac_layers_both_splits_positive_delta": 0.75
+    }
+  ],
+  "artifacts": {
+    "by_seed": "iterations/iter_0006/h1_immune_rewire_split_by_seed_layer.csv",
+    "layer_summary": "iterations/iter_0006/h1_immune_rewire_split_layer_summary.csv",
+    "pass_matrix": "iterations/iter_0006/h1_immune_rewire_split_pass_matrix.csv",
+    "domain_summary": "iterations/iter_0006/h1_immune_rewire_split_domain_summary.csv",
+    "dual_split_summary": "iterations/iter_0006/h1_immune_rewire_dual_split_summary.csv"
+  }
+}

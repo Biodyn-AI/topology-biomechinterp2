@@ -1,0 +1,35 @@
+{
+  "iteration": "iter_0033",
+  "h82": {
+    "rows_tested": 36,
+    "mean_delta_auc": 0.015951148992264425,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 4,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0033/h82_local_witness_cycle_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0033/h82_local_witness_cycle_domain_summary.csv",
+      "null_summary": "iterations/iter_0033/h82_local_witness_cycle_null_summary.csv"
+    }
+  },
+  "h83": {
+    "rows_tested": 3,
+    "mean_trajectory_spearman": -0.07042735042735043,
+    "positive_null_gap_domains": 0,
+    "artifact_paths": {
+      "by_domain": "iterations/iter_0033/h83_pathway_trajectory_invariance_by_domain.csv",
+      "domain_summary": "iterations/iter_0033/h83_pathway_trajectory_invariance_domain_summary.csv",
+      "null_summary": "iterations/iter_0033/h83_pathway_trajectory_invariance_null_summary.csv"
+    }
+  },
+  "h84": {
+    "rows_tested": 24,
+    "mean_delta_auc": -0.028028702792672555,
+    "positive_domain_splits": 0,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0033/h84_shortcut_bridge_competition_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0033/h84_shortcut_bridge_competition_domain_summary.csv",
+      "null_summary": "iterations/iter_0033/h84_shortcut_bridge_competition_null_summary.csv"
+    }
+  }
+}

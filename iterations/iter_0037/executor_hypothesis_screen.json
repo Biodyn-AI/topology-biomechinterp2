@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0037",
+  "hypotheses": [
+    {
+      "id": "H94",
+      "name": "GO-ontology-stratified weighted filtration",
+      "family": "persistent_homology",
+      "split_regime": "other",
+      "method": "Across immune/lung/external_lung with seeds 42/43/44, source/target-disjoint splits, and layers {7,11}, compared GO-ontology-stratified weighted-filtration features against the global weighted-filtration model, with stratum-shuffle, confidence-feature shuffle, and label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_ontology_weighted_minus_global_weighted",
+      "result_value": "mean=-0.00933; positive rows=9/36; positive mean domain-splits=0/6; positive mean null-gap domain-splits=0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0037/h94_ontology_stratified_weighted_filtration_by_seed_split_layer.csv",
+        "iterations/iter_0037/h94_ontology_stratified_weighted_filtration_domain_summary.csv",
+        "iterations/iter_0037/h94_ontology_stratified_weighted_filtration_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this GO-overlap stratified additive formulation and keep the simpler global weighted filtration as the active persistent-homology branch.",
+      "novelty_type": "refinement",
+      "lineage": "H93",
+      "retired": false
+    },
+    {
+      "id": "H95",
+      "name": "Bridge-curvature graph descriptor blend",
+      "family": "graph_topology",
+      "split_regime": "other",
+      "method": "Seed42 breadth run across immune/lung/external_lung with source/target-disjoint splits and layers {0,3,7,11}; added edge bridge-curvature descriptors to H70 and tested degree-preserving edge-swap, descriptor-shuffle, and label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_graph_bridge_curvature_minus_h70",
+      "result_value": "mean=+0.07710; positive rows=24/24; positive mean domain-splits=6/6; positive mean null-gap domain-splits=0/6",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0037/h95_graph_bridge_curvature_by_domain_split_layer.csv",
+        "iterations/iter_0037/h95_graph_bridge_curvature_domain_summary.csv",
+        "iterations/iter_0037/h95_graph_bridge_curvature_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Run one higher-null-resolution pass with tighter degree-preserving rewiring calibration before deciding promotion versus retirement.",
+      "novelty_type": "new_method",
+      "lineage": "H84",
+      "retired": false
+    },
+    {
+      "id": "H96",
+      "name": "Cross-model GO-module topology-rank concordance",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Seed42 pilot across immune/lung/external_lung and layers {7,11}; computed module-level topology scores for scGPT and Geneformer over GO modules and tested module-score permutation nulls for Spearman/top-module overlap concordance.",
+      "status": "tested",
+      "primary_metric": "module_spearman_scgpt_geneformer",
+      "result_value": "mean=-0.00555; mean null-gap(q95 Spearman)=-0.21467; positive null-gap rows=0/6; positive null-gap domains=0/3",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0037/h96_cross_model_module_topology_by_domain_layer.csv",
+        "iterations/iter_0037/h96_cross_model_module_topology_domain_summary.csv",
+        "iterations/iter_0037/h96_cross_model_module_topology_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Keep cross-model alignment retired unless a fundamentally different data view (shared residual-tensor supervision) becomes available.",
+      "novelty_type": "new_method",
+      "lineage": "H86",
+      "retired": true,
+      "retirement_reason": "Repeated cross-model negatives persisted after a major objective change and null-robustness remained 0/3 domains."
+    }
+  ]
+}

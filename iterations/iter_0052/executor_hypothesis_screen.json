@@ -1,0 +1,70 @@
+{
+  "iteration": "iter_0052",
+  "hypotheses": [
+    {
+      "id": "H139",
+      "name": "Sectional anisotropy seed robustness expansion",
+      "family": "manifold_distance",
+      "split_regime": "other",
+      "method": "Seeds 42/43/44 across immune/lung/external_lung; source/target/dual-axis disjoint splits at layer 11. Added sectional anisotropy and tangent-orientation edge descriptors over H70 with endpoint-swap, sectional-row-shuffle, and stratified label-permutation nulls (8 each).",
+      "status": "tested",
+      "primary_metric": "delta_vs_h70",
+      "result_value": "mean=+0.03135 (25 rows); positive mean null-gap domain-splits=6/9; strict-positive rows=16/25",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0052/h139_sectional_seed_robustness_by_seed_domain_split.csv",
+        "iterations/iter_0052/h139_sectional_seed_robustness_domain_split_summary.csv",
+        "iterations/iter_0052/h139_sectional_seed_robustness_domain_summary.csv",
+        "iterations/iter_0052/h139_sectional_seed_robustness_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Recover external_lung dual-axis seed coverage and rerun only that hard slice with relaxed gene/sample thresholds to verify whether the negative single-row result persists.",
+      "novelty_type": "refinement",
+      "lineage": "H136",
+      "retired": false
+    },
+    {
+      "id": "H140",
+      "name": "Neighborhood-size scaling stability of anisotropy signal",
+      "family": "topology_stability",
+      "split_regime": "other",
+      "method": "Seed42 across immune/lung/external_lung at layer 11; source/target/dual-axis disjoint where evaluable. Computed H139-style deltas for kNN sizes {8,12,16} and compared each to endpoint-swap control to obtain delta-gain-vs-swap.",
+      "status": "tested",
+      "primary_metric": "delta_gain_vs_swap",
+      "result_value": "mean=+0.03374 (24 rows); positive gain rows=19/24; positive split gains=6/8",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0052/h140_neighborhood_scaling_by_domain_split_k.csv",
+        "iterations/iter_0052/h140_neighborhood_scaling_domain_split_summary.csv",
+        "iterations/iter_0052/h140_neighborhood_scaling_domain_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Replicate k-scaling gains on seeds 43/44 and require cross-seed sign consistency before promoting this stability claim.",
+      "novelty_type": "new_family",
+      "lineage": "none",
+      "retired": false
+    },
+    {
+      "id": "H141",
+      "name": "Strict max-null fragility audit for H139",
+      "family": "null_sensitivity",
+      "split_regime": "other",
+      "method": "Computed per-row strict margins against the maximum q95 across H139 null families (endpoint-swap, sectional-row-shuffle, label-permutation), then aggregated by domain and split.",
+      "status": "tested",
+      "primary_metric": "strict_margin",
+      "result_value": "mean=-0.00523 (25 rows); strict-positive rows=15/25; strict-positive domain-splits=3/9",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0052/h141_strict_null_sensitivity_row_summary.csv",
+        "iterations/iter_0052/h141_strict_null_sensitivity_domain_split_summary.csv",
+        "iterations/iter_0052/h141_strict_null_sensitivity_domain_summary.csv",
+        "iterations/iter_0052/h141_strict_null_sensitivity_nullkind_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Use strict-margin negatives to define a fail-slice rescue packet (external_lung plus lung source/target) rather than broad global tuning.",
+      "novelty_type": "new_method",
+      "lineage": "H139",
+      "retired": false
+    }
+  ]
+}

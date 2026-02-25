@@ -1,0 +1,2 @@
+n_domains,mean_trajectory_spearman,mean_trajectory_cka,mean_top1_profile_retrieval,mean_null_gap_q95_trajectory_spearman,positive_null_gap_domains,fraction_p_best_lt_0_05,combined_fisher_p_best
+3,-0.07042735042735043,0.0771985932798172,0.4583333333333333,-0.17089743589743592,0,0.0,0.3912088749233469

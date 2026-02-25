@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0034",
+  "hypotheses": [
+    {
+      "id": "H85",
+      "name": "Dual-filtration local witness persistence",
+      "family": "persistent_homology",
+      "split_regime": "other",
+      "method": "Across immune/lung/external_lung with seeds 42/43/44, source/target-disjoint splits, and layers {7,11}, computed edge-local cycle surrogates under joint geodesic-distance and support-margin filtrations, added to H70 baseline, and evaluated against matched-random hotspot, feature-shuffle, and label-permutation nulls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_local_dual_filtration_plus_h70_minus_h70",
+      "result_value": "mean=+0.00360; positive mean domain-splits=5/6; positive mean null-gap domain-splits=3/6",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0034/h85_dual_filtration_witness_by_seed_layer_split.csv",
+        "iterations/iter_0034/h85_dual_filtration_witness_domain_summary.csv",
+        "iterations/iter_0034/h85_dual_filtration_witness_null_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Run one targeted repair pass on failing domain-splits with calibrated local neighborhoods; keep only if null-gap-positive means reach >=4/6.",
+      "novelty_type": "refinement",
+      "lineage": "H82",
+      "retired": false
+    },
+    {
+      "id": "H86",
+      "name": "Cross-model barcode OT depth alignment",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Seed42 pilot on immune/lung/external_lung with scGPT layers {0,3,7,11} and Geneformer token-rank quartile strata; built TRRUST+GO module distance barcodes per depth, solved OT alignment, and tested against random-transport, depth-order permutation, and barcode-component permutation nulls.",
+      "status": "tested",
+      "primary_metric": "barcode_ot_depth_alignment_score",
+      "result_value": "mean=0.58192; positive null-gap domains=0/3",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0034/h86_barcode_ot_depth_alignment_by_domain.csv",
+        "iterations/iter_0034/h86_barcode_ot_depth_alignment_domain_summary.csv",
+        "iterations/iter_0034/h86_barcode_ot_depth_alignment_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this cross-model formulation; reopen only with a materially changed topology-level anchor and explicit domain matching constraints.",
+      "novelty_type": "new_method",
+      "lineage": "H83",
+      "retired": true,
+      "retirement_reason": "Null-gap remained negative in all pilot domains (0/3)."
+    },
+    {
+      "id": "H87",
+      "name": "Sparse descriptor blend breadth screen",
+      "family": "manifold_distance",
+      "split_regime": "other",
+      "method": "Seed42 breadth screen across immune/lung/external_lung, source/target-disjoint splits, and layers {0,3,7,11}; fit cross-validated sparse logistic blend over geodesic/topology descriptors on top of H70 baseline and tested descriptor-shuffle, endpoint-swap, and label-permutation nulls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_descriptor_blend_minus_h70",
+      "result_value": "mean=+0.08035; positive rows=24/24; positive mean domain-splits=6/6; positive mean null-gap domain-splits=4/6",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0034/h87_sparse_descriptor_blend_by_domain_split_layer.csv",
+        "iterations/iter_0034/h87_sparse_descriptor_blend_domain_summary.csv",
+        "iterations/iter_0034/h87_sparse_descriptor_blend_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Promote to multiseed robustness validation with increased null resolution and pre-registered split-level gate.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": false
+    }
+  ]
+}

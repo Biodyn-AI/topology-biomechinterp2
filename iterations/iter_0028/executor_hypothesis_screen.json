@@ -1,0 +1,70 @@
+{
+  "iteration": "iter_0028",
+  "hypotheses": [
+    {
+      "id": "H67",
+      "name": "Rank-based multiparameter persistence surface",
+      "family": "persistent_homology",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Across immune/lung/external_lung and seeds 42/43/44 on source/target-disjoint splits and layers {7,11}, transformed distance and support-margin axes to rank coordinates, built rank-bifiltration connectivity surfaces, and compared rank-surface scoring against directed baseline and one-axis ablation with axis-rank permutation and label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_rank_surface_minus_baseline",
+      "result_value": "mean delta AUROC=-0.03048 (std 0.01348); lung/source=-0.03243; external_lung/source=-0.03453; positive mean domain-splits 0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0028/h67_rank_surface_by_seed_layer_split.csv",
+        "iterations/iter_0028/h67_rank_surface_domain_summary.csv",
+        "iterations/iter_0028/h67_rank_surface_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this utility endpoint form for persistent-homology rank surfaces in this loop; reopen only with a materially changed endpoint (e.g., calibration/ranking objective rather than direct AUROC lift).",
+      "novelty_type": "new_method",
+      "lineage": "H64",
+      "retired": true,
+      "retirement_reason": "Major-change rescue still failed all domain-split mean utility gates and did not recover source-disjoint failure slices."
+    },
+    {
+      "id": "H68",
+      "name": "Cycle-consistent utility-regularized cross-model mapping",
+      "family": "cross_model_alignment",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Seed42 pilot on immune/lung/external_lung with source/target-disjoint splits at layers {7,11}; learned utility-weighted cycle-consistent GF<->scGPT maps on two held-in domains, then evaluated held-out-domain mapped transfer against GF baseline with random linear map, anchor-pair shuffle, and signature-destroy controls.",
+      "status": "tested",
+      "primary_metric": "null_gap_q95",
+      "result_value": "mean delta AUROC(transfer-baseline)=-0.30464; mean null_gap_q95=-0.03847; mean mapped-to-sc cosine=+0.00560; immune mean null_gap_q95=-0.10658; non-immune rows meeting (null_gap>0 and delta>=0): 0/8",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0028/h68_cycle_utility_ot_by_domain_layer_split.csv",
+        "iterations/iter_0028/h68_cycle_utility_ot_domain_summary.csv",
+        "iterations/iter_0028/h68_cycle_utility_ot_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this cross-model utility-transfer endpoint for this loop; only revisit cross-model alignment with a fundamentally different representation objective tied directly to held-out utility gains.",
+      "novelty_type": "new_method",
+      "lineage": "H65",
+      "retired": true,
+      "retirement_reason": "Major-change rescue failed both utility and null-gap criteria across immune and non-immune held-out evaluations."
+    },
+    {
+      "id": "H69",
+      "name": "Multiscale geodesic triangle-defect spectrum",
+      "family": "manifold_distance",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Across immune/lung/external_lung and seeds 42/43/44 on source/target-disjoint splits and layers {7,11}, computed edge-level multiscale geodesic triangle-defect summaries at k={8,12,16} and tested incremental value over directed-geodesic baseline with endpoint-swap, matched-random-third-node, and label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_triangle_defect_minus_baseline",
+      "result_value": "mean delta AUROC=+0.02617 (std 0.02707); positive rows 30/36; positive mean domain-splits 6/6; all domain-split means positive (immune/source +0.00162 to lung/target +0.05308)",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0028/h69_triangle_defect_by_seed_layer_split.csv",
+        "iterations/iter_0028/h69_triangle_defect_domain_summary.csv",
+        "iterations/iter_0028/h69_triangle_defect_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Run one robustness expansion with higher null resolution (>=32 permutations/family) and seed-layer bootstrap CIs to test whether gains survive the matched-random-third null at row level.",
+      "novelty_type": "new_method",
+      "lineage": "H57",
+      "retired": false
+    }
+  ]
+}

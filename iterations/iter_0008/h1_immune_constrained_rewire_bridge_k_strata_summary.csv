@@ -1,0 +1,9 @@
+domain,null_family,used_component_bridging,knn_bucket,n_rows,mean_h1_delta_observed_minus_null,median_h1_delta_observed_minus_null,frac_rows_h1_positive_delta,mean_distortion_delta_observed_minus_null,mean_edge_hist_l1_ratio
+immune,degree_preserving_geodesic_rewire,False,k_21_30,13,-31.549547448450628,-33.978951930999756,0.0,0.17894874675177444,0.13325654744941978
+immune,degree_preserving_geodesic_rewire,False,k_gt_30,18,-23.30353986491625,-21.433059692382812,0.0,0.13185580605170338,0.15470576526849722
+immune,degree_preserving_geodesic_rewire,False,k_le_20,3,-38.1477765083313,-27.645105934143068,0.0,0.18161344385316283,0.1119003156859701
+immune,degree_preserving_geodesic_rewire,True,k_gt_30,38,-11.618748391929426,-11.163559412956237,0.0,0.201312085938992,0.31856225376746744
+immune,quantile_constrained_geodesic_rewire,False,k_21_30,13,-32.594288415100785,-27.53285436630249,0.0,0.17878554795858578,0.13352110367335046
+immune,quantile_constrained_geodesic_rewire,False,k_gt_30,18,-23.39113134420206,-22.339915323257443,0.0,0.13105821100761347,0.15572134206249283
+immune,quantile_constrained_geodesic_rewire,False,k_le_20,3,-44.42750679651896,-33.49220027923584,0.0,0.18680848622148938,0.11238741987712646
+immune,quantile_constrained_geodesic_rewire,True,k_gt_30,38,-11.269795998146657,-11.385097742080688,0.0,0.20249331486070865,0.306980530549112

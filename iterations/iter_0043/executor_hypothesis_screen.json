@@ -1,0 +1,71 @@
+{
+  "iteration": "iter_0043",
+  "hypotheses": [
+    {
+      "id": "H112",
+      "name": "Semi-Markov biologically anchored grammar rescue",
+      "family": "topology_stability",
+      "split_regime": "other",
+      "method": "Seed42 run across immune/lung/external_lung with source/target-disjoint splits; semi-Markov sequence scoring with dwell bins, transition-entropy likelihood terms, and forbidden-transition penalties vs second-order FSM baseline; nulls: signature-preserving sequence permutation, layer-order permutation, label permutation.",
+      "status": "tested",
+      "primary_metric": "delta_auc_semimarkov_minus_second_order",
+      "result_value": "mean=-0.03805 (6 domain-split rows); positive null-gap domain-splits=0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0043/h112_semimarkov_biogrammar_by_domain_split.csv",
+        "iterations/iter_0043/h112_semimarkov_biogrammar_domain_summary.csv",
+        "iterations/iter_0043/h112_semimarkov_biogrammar_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this rescue endpoint; do not spend another loop on sequence-AUC additive motif rescue without a materially different objective.",
+      "novelty_type": "refinement",
+      "lineage": "H111",
+      "retired": true,
+      "retirement_reason": "Rescue-once major-change attempt failed directionality and all null-gap checks."
+    },
+    {
+      "id": "H113",
+      "name": "Depth-transition zigzag long-bar mass screen",
+      "family": "persistent_homology",
+      "split_regime": "other",
+      "method": "Seed42 run across immune/lung/external_lung with source/target-disjoint splits; pairwise depth zigzag persistence over layers {0,3,7,11} for positive-vs-negative gene pools; metrics: long-bar mass contrast and birth-depth entropy gap; nulls: layer-order permutation, degree-bin node relabeling, label permutation.",
+      "status": "tested",
+      "primary_metric": "delta_long_bar_mass_positive_minus_negative",
+      "result_value": "mean=-155.38889 (6 domain-split rows); positive null-gap domain-splits=0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0043/h113_depth_zigzag_longbar_by_domain_split.csv",
+        "iterations/iter_0043/h113_depth_zigzag_longbar_domain_summary.csv",
+        "iterations/iter_0043/h113_depth_zigzag_longbar_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this zigzag long-bar formulation; revisit persistent_homology only with a materially different endpoint and external biological anchor.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": true,
+      "retirement_reason": "Direction and null robustness both failed under bounded controls."
+    },
+    {
+      "id": "H114",
+      "name": "Intrinsic-dimension hysteresis broad screen",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "other",
+      "method": "Seed42 run across immune/lung/external_lung with source/target-disjoint splits and layers {0,3,7,11}; forward-vs-reverse local-ID hysteresis features blended on top of H70; nulls: radius-order permutation, neighborhood reshuffle, label permutation.",
+      "status": "tested",
+      "primary_metric": "delta_auc_id_hysteresis_minus_h70",
+      "result_value": "mean=+0.00026 (24 rows); positive mean null-gap domain-splits=0/6",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0043/h114_id_hysteresis_by_domain_split_layer.csv",
+        "iterations/iter_0043/h114_id_hysteresis_domain_summary.csv",
+        "iterations/iter_0043/h114_id_hysteresis_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Do not continue this additive ID-hysteresis variant; only allow a future revisit with a non-additive endpoint and stronger biological anchoring.",
+      "novelty_type": "new_method",
+      "lineage": "H98",
+      "retired": true,
+      "retirement_reason": "Near-zero utility and no domain-split null-gap support."
+    }
+  ]
+}

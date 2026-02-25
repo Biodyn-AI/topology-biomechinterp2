@@ -1,0 +1,38 @@
+{
+  "iteration": "iter_0048",
+  "h127": {
+    "rows_tested": 9,
+    "mean_delta_auc": 0.13222059273469697,
+    "positive_domain_splits": 9,
+    "positive_null_gap_domain_splits": 2,
+    "lung_dual_axis_rows": 1,
+    "lung_dual_axis_mean_null_gap": -0.005957200694042791,
+    "artifact_paths": {
+      "by_seed_domain_split": "iterations/iter_0048/h127_signed_string_go_hardening_by_seed_domain_split.csv",
+      "domain_summary": "iterations/iter_0048/h127_signed_string_go_hardening_domain_summary.csv",
+      "null_summary": "iterations/iter_0048/h127_signed_string_go_hardening_null_summary.csv"
+    }
+  },
+  "h128": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.007528571446728666,
+    "positive_domain_splits": 4,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0048/h128_graph_topology_surrogate_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0048/h128_graph_topology_surrogate_domain_summary.csv",
+      "null_summary": "iterations/iter_0048/h128_graph_topology_surrogate_null_summary.csv"
+    }
+  },
+  "h129": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.0209998112832617,
+    "positive_domain_splits": 5,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0048/h129_multiscale_torsion_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0048/h129_multiscale_torsion_domain_summary.csv",
+      "null_summary": "iterations/iter_0048/h129_multiscale_torsion_null_summary.csv"
+    }
+  }
+}

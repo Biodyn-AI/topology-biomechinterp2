@@ -1,0 +1,41 @@
+{
+  "iteration": "iter_0031",
+  "h76": {
+    "rows_tested": 36,
+    "mean_delta_auc": 0.023234333311420795,
+    "mean_interaction": 0.00040589992839603256,
+    "positive_interaction_domain_splits": 4,
+    "null_surviving_domain_splits": 1,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0031/h76_coexpression_support_interaction_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0031/h76_coexpression_support_interaction_domain_summary.csv",
+      "null_summary": "iterations/iter_0031/h76_coexpression_support_interaction_null_summary.csv"
+    }
+  },
+  "h77": {
+    "rows_tested": 12,
+    "mean_delta_spearman": 5.652422125959905e-06,
+    "mean_null_gap_q95": -0.018966193899844535,
+    "mean_delta_topk_overlap": 3.555176336746355e-05,
+    "artifact_paths": {
+      "by_domain_layer_split": "iterations/iter_0031/h77_relational_rank_agreement_by_domain_layer_split.csv",
+      "domain_summary": "iterations/iter_0031/h77_relational_rank_agreement_domain_summary.csv",
+      "null_summary": "iterations/iter_0031/h77_relational_rank_agreement_null_summary.csv"
+    }
+  },
+  "h78": {
+    "rows_tested": 24,
+    "mean_delta_auc": 0.0019287562470846574,
+    "positive_domain_splits": 4,
+    "significant_domain_splits": 4,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0031/h78_geodesic_detour_elasticity_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0031/h78_geodesic_detour_elasticity_domain_summary.csv",
+      "null_summary": "iterations/iter_0031/h78_geodesic_detour_elasticity_null_summary.csv"
+    }
+  },
+  "environment": {
+    "python_env": "subproject40-topology",
+    "string_cache_used": "iterations/iter_0020/h43_string_network_api.tsv"
+  }
+}

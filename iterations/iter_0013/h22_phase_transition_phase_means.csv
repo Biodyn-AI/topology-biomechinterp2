@@ -1,0 +1,10 @@
+domain,phase,mean_diff_target_minus_source
+external_lung,early,-0.0018056772449165
+external_lung,late,0.01122920803870959
+external_lung,mid,-0.009505736830108358
+immune,early,-0.04148509888691033
+immune,late,-0.021531296811711485
+immune,mid,-0.07144892733729151
+lung,early,0.012882523342202523
+lung,late,0.003698918770073454
+lung,mid,0.0106221887134208

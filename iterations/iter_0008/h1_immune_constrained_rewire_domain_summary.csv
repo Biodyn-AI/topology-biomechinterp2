@@ -1,0 +1,5 @@
+domain,split_regime,null_family,n_layers,n_layers_h1_sig,frac_layers_h1_sig,n_layers_h1_positive_delta,frac_layers_h1_positive_delta,mean_h1_delta_observed_minus_null,median_h1_delta_observed_minus_null,n_layers_distortion_lower_sig,frac_layers_distortion_lower_sig,mean_distortion_delta_observed_minus_null,mean_knn_k,total_bridged_runs,mean_edge_hist_l1_ratio
+immune,source_disjoint,degree_preserving_geodesic_rewire,12,0,0.0,0,0.0,-11.344610478480655,-11.610329270362854,0,0.0,0.20268157128237255,40.0,36,0.3249164112038182
+immune,source_disjoint,quantile_constrained_geodesic_rewire,12,0,0.0,0,0.0,-10.78850470582644,-11.632307887077332,0,0.0,0.20391633448741617,40.0,36,0.31287109860100076
+immune,target_disjoint,degree_preserving_geodesic_rewire,12,0,0.0,0,0.0,-27.14326737753775,-27.633116030693053,0,0.0,0.15549725688276392,31.194444444444443,2,0.14614207440443402
+immune,target_disjoint,quantile_constrained_geodesic_rewire,12,0,0.0,0,0.0,-28.275408680592367,-28.56455324177592,0,0.0,0.1554845362061964,31.194444444444443,2,0.1466061493261121

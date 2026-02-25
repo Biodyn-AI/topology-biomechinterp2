@@ -1,0 +1,5 @@
+domain,split_regime,null_family,n_layer_tests,n_layer_tests_fisher_p_lt_0_05,frac_layer_tests_fisher_p_lt_0_05,n_layer_tests_positive_delta,frac_layer_tests_positive_delta,mean_layer_delta,median_layer_delta,min_layer_delta,max_layer_delta,mean_layer_z
+immune,source_disjoint,degree_preserving_geodesic_rewire,12,0,0.0,0,0.0,-140.51919213987665,-142.5708543817858,-194.52749357620874,-70.5274941076835,-9.875216337334928
+immune,source_disjoint,feature_shuffle,12,12,1.0,12,1.0,6.64629839360714,6.4451555232206985,2.807957061131795,10.673782988389334,2.7397790193584988
+immune,target_disjoint,degree_preserving_geodesic_rewire,12,0,0.0,0,0.0,-129.7021025965611,-140.68328710397086,-155.4364142815272,-86.88551661372185,-5.4122514634719145
+immune,target_disjoint,feature_shuffle,12,4,0.3333333333333333,9,0.75,0.8748822069209483,1.0462226850291092,-0.8535657137632371,2.6009337817629175,1.2248402257537603

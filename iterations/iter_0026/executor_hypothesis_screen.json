@@ -1,0 +1,70 @@
+{
+  "iteration": "iter_0026",
+  "hypotheses": [
+    {
+      "id": "H61",
+      "name": "Graph curvature-assortativity surrogate broad screen",
+      "family": "graph_topology",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Across immune/lung/external_lung and seeds 42/43/44 on source/target-disjoint splits and layers {7,11}, built kNN graph-topology surrogates (Forman-like node curvature, local clustering, assortativity residual) and tested incremental AUROC over Euclidean-distance baseline with degree-bin curvature shuffle, topology-feature shuffle, and label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_topology_minus_baseline",
+      "result_value": "mean delta AUROC=-0.00719; positive mean domain-splits 2/6; Fisher-significant domain-splits 1/6 (lung/target only)",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0026/h61_graph_curvature_by_seed_layer_split.csv",
+        "iterations/iter_0026/h61_graph_curvature_domain_summary.csv",
+        "iterations/iter_0026/h61_graph_curvature_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this undirected curvature-surrogate variant; only revisit with materially changed directed/signed topology tied to biological support.",
+      "novelty_type": "new_family",
+      "lineage": "H23",
+      "retired": true,
+      "retirement_reason": "Second curvature-surrogate attempt remained net negative and split-fragile under null controls."
+    },
+    {
+      "id": "H62",
+      "name": "Biologically anchored contrastive cross-model alignment",
+      "family": "cross_model_alignment",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Seed42 pilot on immune/lung/external_lung with source/target-disjoint splits and layers {7,11}; fit anchor-restricted Procrustes mappings between Geneformer and scGPT topology signatures using DoRothEA+OmniPath+STRING+GO anchors, then scored held-out target-domain edges and evaluated null-gap against random-map, signature-destroy, and anchor-label-shuffle controls.",
+      "status": "tested",
+      "primary_metric": "null_gap_q95",
+      "result_value": "mean transfer delta AUROC=+0.04757 but mean null_gap_q95=-0.12923; robust support concentrated in immune only (domain Fisher p=0.00116)",
+      "result_direction": "inconclusive",
+      "artifact_paths": [
+        "iterations/iter_0026/h62_anchor_alignment_by_domain_layer_split.csv",
+        "iterations/iter_0026/h62_anchor_alignment_domain_summary.csv",
+        "iterations/iter_0026/h62_anchor_alignment_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Run at most one immune-focused rescue with explicit null-gap optimization; otherwise retire cross-model alignment branch for this loop.",
+      "novelty_type": "new_method",
+      "lineage": "H59",
+      "retired": false
+    },
+    {
+      "id": "H63",
+      "name": "Layer-transition intrinsic-dimension gradient screen",
+      "family": "intrinsic_dimensionality",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Across immune/lung/external_lung and seeds 42/43/44 on source/target-disjoint splits, computed local ID at layer transitions (0->3, 3->7, 7->11), built transition-gradient edge features, and tested incremental AUROC over geodesic-distance baseline with layer-order swap, endpoint-swap-within-geodesic-bins, and label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_transition_minus_baseline",
+      "result_value": "mean delta AUROC=-0.02061; positive mean domain-splits 1/6; all transition aggregates negative (0->3=-0.01843, 3->7=-0.02018, 7->11=-0.02324)",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0026/h63_transition_id_gradient_by_seed_transition_split.csv",
+        "iterations/iter_0026/h63_transition_id_gradient_domain_summary.csv",
+        "iterations/iter_0026/h63_transition_id_gradient_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire intrinsic-dimension AUROC-lift branch unless the endpoint is materially changed to perturbation-grounded calibration.",
+      "novelty_type": "new_method",
+      "lineage": "H60",
+      "retired": true,
+      "retirement_reason": "Both endpoint and transition ID formulations are now net negative under multiseed controls."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0036",
+  "hypotheses": [
+    {
+      "id": "H91",
+      "name": "Stability-selected sparse-descriptor consensus",
+      "family": "split_robustness",
+      "split_regime": "other",
+      "method": "Across immune/lung/external_lung with seeds 42/43/44, source/target-disjoint splits, and layers {0,3,7,11}, fit H70+sparse descriptor blends with bootstrap stability selection, then tested random-feature-subset, descriptor-shuffle, endpoint-swap, and label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_stability_selected_blend_minus_h70",
+      "result_value": "mean=+0.07424; positive rows=72/72; positive mean domain-splits=6/6; positive mean null-gap domain-splits=6/6; mean descriptor Jaccard=0.65046",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0036/h91_stability_selected_sparse_descriptor_by_seed_split_layer.csv",
+        "iterations/iter_0036/h91_stability_selected_sparse_descriptor_domain_summary.csv",
+        "iterations/iter_0036/h91_stability_selected_sparse_descriptor_null_summary.csv",
+        "iterations/iter_0036/h91_stability_selected_sparse_descriptor_stability.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Run one confirmatory pass with higher null resolution and freeze a compact stable descriptor core for mechanistic interpretation.",
+      "novelty_type": "refinement",
+      "lineage": "H88",
+      "retired": false
+    },
+    {
+      "id": "H92",
+      "name": "Scale-space lifetime trajectory descriptors",
+      "family": "topology_stability",
+      "split_regime": "other",
+      "method": "Seed42 breadth screen across immune/lung/external_lung, source/target-disjoint splits, and layers {0,3,7,11}; computed edge lifetime trajectories over kNN scales {8,10,12,14,16}, added trajectory-shape features to H70 baseline, and tested scale-order permutation, trajectory-feature shuffle, and label permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_scale_trajectory_minus_h70",
+      "result_value": "mean=+0.00386; positive mean domain-splits=5/6; positive mean null-gap domain-splits=0/6",
+      "result_direction": "negative",
+      "artifact_paths": [
+        "iterations/iter_0036/h92_scale_space_lifetime_by_domain_split_layer.csv",
+        "iterations/iter_0036/h92_scale_space_lifetime_domain_summary.csv",
+        "iterations/iter_0036/h92_scale_space_lifetime_null_summary.csv"
+      ],
+      "decision": "negative",
+      "next_action": "Retire this exact additive trajectory formulation and reuse scale-space descriptors only as diagnostics on stronger backbones.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": false
+    },
+    {
+      "id": "H93",
+      "name": "Confidence/sign-weighted filtration rescue",
+      "family": "persistent_homology",
+      "split_regime": "other",
+      "method": "Seed42 breadth run across immune/lung/external_lung, source/target-disjoint splits, and layers {7,11}; reweighted geodesic filtration by biological confidence and directed-support sign, blended weighted descriptors with H70 baseline, and tested confidence-shuffle, sign-flip, and label-permutation controls.",
+      "status": "tested",
+      "primary_metric": "delta_auc_weighted_filtration_minus_h70",
+      "result_value": "mean=+0.08443; positive rows=12/12; positive mean domain-splits=6/6; positive mean null-gap domain-splits=6/6",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0036/h93_confidence_sign_weighted_filtration_by_domain_split_layer.csv",
+        "iterations/iter_0036/h93_confidence_sign_weighted_filtration_domain_summary.csv",
+        "iterations/iter_0036/h93_confidence_sign_weighted_filtration_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Replicate on seeds 43/44 with higher null draws and test adaptive weighted-threshold calibration.",
+      "novelty_type": "new_method",
+      "lineage": "H85",
+      "retired": false
+    }
+  ]
+}

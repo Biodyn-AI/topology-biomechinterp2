@@ -1,0 +1,69 @@
+{
+  "iteration": "iter_0022",
+  "hypotheses": [
+    {
+      "id": "H49",
+      "name": "Multiseed bifiltration robustness and utility coupling",
+      "family": "persistent_homology",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Expanded H47 to 3 seeds (42/43/44) across immune/lung/external_lung, source/target disjoint splits, and layers {0,3,7,11}; computed distance x support cycle-rank scores vs distance-only baseline with distance-stratified support-shuffle nulls, then evaluated utility coupling to iter_0016 diffusion incremental deltas with layer-order placebo permutations.",
+      "status": "tested",
+      "primary_metric": "delta_auc_bif_minus_distance",
+      "result_value": "mean delta AUROC=+0.00599; positive rows 69/72; p<0.05 rows 48/72; domain-split Fisher significant 6/6; utility coupling positive in 1/3 domains and layer-placebo significant 0/3",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0022/h49_bifiltration_multiseed_by_seed_layer_split.csv",
+        "iterations/iter_0022/h49_bifiltration_multiseed_domain_summary.csv",
+        "iterations/iter_0022/h49_bifiltration_multiseed_null_summary.csv"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Keep the bifiltration branch active but reframe utility linkage with an explicit held-out utility target and split-specific utility models before promotion.",
+      "novelty_type": "refinement",
+      "lineage": "H47",
+      "retired": false
+    },
+    {
+      "id": "H50",
+      "name": "Directed and signed topology pilot",
+      "family": "topology_stability",
+      "split_regime": "dual_axis_disjoint",
+      "method": "Built directed/signed kNN topology features from support-direction margins (DoRothEA/OmniPath/STRING/GO) on seed42 across 3 domains, both disjoint splits, and layers {7,11}; compared AUROC against distance-only cycle baseline with node-relabel degree-orientation null and sign-shuffle null.",
+      "status": "tested",
+      "primary_metric": "delta_auc_directed_minus_distance",
+      "result_value": "mean delta AUROC=+0.01585; positive rows 11/12; p_degree<0.05 rows 7/12; p_sign<0.05 rows 8/12; domain-split Fisher significant 6/6",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0022/h50_directed_signed_topology_by_domain_layer_split.csv",
+        "iterations/iter_0022/h50_directed_signed_topology_domain_summary.csv",
+        "iterations/iter_0022/h50_directed_signed_topology_null_summary.csv"
+      ],
+      "decision": "promising",
+      "next_action": "Promote to multiseed replication and tighten the directed null family with degree-preserving edge swaps plus split-holdout calibration.",
+      "novelty_type": "new_method",
+      "lineage": "none",
+      "retired": false
+    },
+    {
+      "id": "H51",
+      "name": "Cross-model expanded motif fingerprint with module collapse",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Computed scGPT vs Geneformer top-k overlap (k={100,200,400}, layers {7,11}) with expanded motif panel {FFL, bifan, feedback triad, feedforward chain, multi-input}; evaluated both gene-level and GO-module-collapsed variants under degree-preserving rewiring and module-membership shuffle nulls.",
+      "status": "tested",
+      "primary_metric": "combined_fisher_p_best",
+      "result_value": "rows 36; degree-null p<0.05 rows 16/36; domain-variant Fisher significant 5/6 and at least one significant variant in 3/3 domains; module-shuffle p<0.05 rows 0/18",
+      "result_direction": "mixed",
+      "artifact_paths": [
+        "iterations/iter_0022/h51_cross_model_motif_fingerprint_by_domain_layer_k.csv",
+        "iterations/iter_0022/h51_cross_model_motif_fingerprint_summary.csv",
+        "iterations/iter_0022/h51_cross_model_motif_fingerprint_null_summary.csv"
+      ],
+      "decision": "neutral",
+      "next_action": "Retire this motif-overlap formulation unless redesigned around utility/topology transfer with non-degenerate null variance and module-shuffle robustness.",
+      "novelty_type": "new_method",
+      "lineage": "H48",
+      "retired": true,
+      "retirement_reason": "Cross-model motif overlap remains mixed after anti-sparsity redesign: degree-null enrichment is broad but module-shuffle control fails (0/18), and this branch already has repeated inconclusive history."
+    }
+  ]
+}

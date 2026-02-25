@@ -1,0 +1,4 @@
+null_kind,n_rows,mean_margin,fraction_positive_margin
+endpoint_swap_within_distance_bins,25,0.018590302369277736,0.76
+label_permutation,25,0.0034942447120814447,0.72
+sectional_row_shuffle,25,0.020726903339401394,0.68

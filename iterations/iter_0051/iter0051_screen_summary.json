@@ -1,0 +1,41 @@
+{
+  "iteration": "iter_0051",
+  "h136": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.02571597552421906,
+    "positive_domain_splits": 5,
+    "positive_null_gap_domain_splits": 2,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0051/h136_sectional_anisotropy_by_domain_split_layer.csv",
+      "domain_split_summary": "iterations/iter_0051/h136_sectional_anisotropy_domain_split_summary.csv",
+      "null_summary": "iterations/iter_0051/h136_sectional_anisotropy_null_summary.csv"
+    }
+  },
+  "h137": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.0019379332412481555,
+    "positive_domain_count": 1,
+    "positive_null_gap_domain_count": 0,
+    "immune_mean_null_gap": -0.09748421681915129,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0051/h137_correspondence_free_alignment_by_domain_split_layer.csv",
+      "domain_split_summary": "iterations/iter_0051/h137_correspondence_free_alignment_domain_split_summary.csv",
+      "domain_summary": "iterations/iter_0051/h137_correspondence_free_alignment_domain_summary.csv",
+      "null_summary": "iterations/iter_0051/h137_correspondence_free_alignment_null_summary.csv"
+    }
+  },
+  "h138": {
+    "rows_tested": 27,
+    "mean_delta_auc": 0.13380636724971046,
+    "positive_domain_splits": 9,
+    "positive_null_gap_domain_splits": 0,
+    "immune_source_null_gap": -0.005671329426483,
+    "lung_dual_null_gap": -0.004764915687206124,
+    "artifact_paths": {
+      "by_seed_domain_split": "iterations/iter_0051/h138_ontology_sheaf_hardening_by_seed_domain_split.csv",
+      "domain_split_summary": "iterations/iter_0051/h138_ontology_sheaf_hardening_domain_split_summary.csv",
+      "domain_summary": "iterations/iter_0051/h138_ontology_sheaf_hardening_domain_summary.csv",
+      "null_summary": "iterations/iter_0051/h138_ontology_sheaf_hardening_null_summary.csv"
+    }
+  }
+}

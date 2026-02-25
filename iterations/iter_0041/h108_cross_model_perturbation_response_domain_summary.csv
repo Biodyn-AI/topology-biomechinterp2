@@ -1,0 +1,4 @@
+domain,n_rows,mean_module_response_rank_spearman,mean_null_gap_q95_response_concordance,fraction_null_gap_positive,fraction_p_best_lt_0_05,combined_fisher_p_best
+external_lung,1,0.7834782608695651,0.03452173913043477,1.0,1.0,0.010309278350515464
+immune,1,0.6026086956521738,-0.21491304347826068,0.0,1.0,0.010309278350515464
+lung,1,0.8086956521739129,0.014217391304347848,1.0,1.0,0.010309278350515464

@@ -1,0 +1,41 @@
+{
+  "iteration": "iter_0003",
+  "hypotheses": [
+    {
+      "id": "H01",
+      "name": "scGPT lung H1 persistence exceeds feature-shuffle null",
+      "family": "persistent_homology",
+      "split_regime": "other",
+      "method": "Computed ripser H1 persistence on PCA-reduced (20D) scGPT layer gene embeddings (350 genes/layer) for 3 seeds with 20 feature-shuffle null replicates per seed-layer via conda run -n subproject40-topology python iterations/iter_0003/run_iter0003_screen.py",
+      "status": "tested",
+      "primary_metric": "mean_h1_sum_delta",
+      "result_value": "L0 delta=18.603, z=3.213, Fisher p=0.0056; 11/12 layers Fisher p<0.05",
+      "result_direction": "positive",
+      "artifact_paths": [
+        "iterations/iter_0003/scgpt_lung_h1_persistence_by_seed_layer.csv",
+        "iterations/iter_0003/scgpt_lung_h1_persistence_layer_summary.csv",
+        "iterations/iter_0003/iter0003_screen_summary.json"
+      ],
+      "decision": "promising",
+      "next_action": "Replicate the same persistent-homology null protocol on immune and external-lung runs, then enforce source/target-disjoint robustness."
+    },
+    {
+      "id": "H02",
+      "name": "Cross-model feature-effect alignment across domains",
+      "family": "cross_model_alignment",
+      "split_regime": "other",
+      "method": "Aligned scGPT and Geneformer delta_cv_auroc vectors for centered_cosine/dot/cosine in immune, lung, external_lung and evaluated exact permutation null over feature index assignments.",
+      "status": "tested",
+      "primary_metric": "combined_p_cosine_fisher",
+      "result_value": "mean cosine=0.825, mean Spearman=0.833, combined cosine Fisher p=0.349",
+      "result_direction": "inconclusive",
+      "artifact_paths": [
+        "iterations/iter_0003/cross_model_feature_alignment_by_domain.csv",
+        "iterations/iter_0003/cross_model_feature_alignment_summary.json",
+        "iterations/iter_0003/iter0003_screen_summary.json"
+      ],
+      "decision": "inconclusive",
+      "next_action": "Materialize matched-gene residual embeddings for Geneformer and rerun alignment at residual-vector level with CKA/Procrustes and stronger nulls."
+    }
+  ]
+}

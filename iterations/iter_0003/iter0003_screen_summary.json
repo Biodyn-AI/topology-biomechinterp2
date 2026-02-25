@@ -1,0 +1,52 @@
+{
+  "inputs": {
+    "scgpt_embedding_runs": {
+      "seed42_main": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle6_lung_main/layer_gene_embeddings.npy",
+      "seed43": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle6_lung_seed43/layer_gene_embeddings.npy",
+      "seed44": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle6_lung_seed44/layer_gene_embeddings.npy"
+    },
+    "cross_model_domains": [
+      {
+        "domain": "immune",
+        "scgpt_csv": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle4_immune_main/alt_geometry_metrics_layer0_immune.csv",
+        "geneformer_csv": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle12_geneformer_immune_bootstrap/geneformer_feature_metrics.csv"
+      },
+      {
+        "domain": "lung",
+        "scgpt_csv": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle6_lung_main/alt_geometry_metrics_layer0_lung.csv",
+        "geneformer_csv": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle12_geneformer_lung_bootstrap/geneformer_feature_metrics.csv"
+      },
+      {
+        "domain": "external_lung",
+        "scgpt_csv": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle7_external_lung_main/alt_geometry_metrics_layer3_external_lung.csv",
+        "geneformer_csv": "/Volumes/Crucial X6/MacBook/biomechinterp/biodyn-work/subproject_38_geometric_residual_stream_interpretability/implementation/outputs/cycle12_geneformer_external_lung_bootstrap/geneformer_feature_metrics.csv"
+      }
+    ]
+  },
+  "h1_test": {
+    "n_layers": 12,
+    "n_seed_runs": 3,
+    "n_null_per_seed_layer": 20,
+    "top_layer": 0,
+    "top_layer_mean_delta": 18.602848652998606,
+    "top_layer_mean_z": 3.212986576804776,
+    "top_layer_fisher_p": 0.005598163615730096
+  },
+  "cross_model_alignment": {
+    "domains_evaluated": 3,
+    "mean_spearman_rho": 0.8333333333333334,
+    "mean_cosine_similarity": 0.8247899533736538,
+    "max_cosine_similarity": 0.9977328536281844,
+    "min_cosine_similarity": 0.7302708164080246,
+    "combined_p_spearman_fisher": 0.40875515437284266,
+    "combined_p_cosine_fisher": 0.3489284258487412,
+    "combined_stat_spearman_fisher": 6.1302834498523175,
+    "combined_stat_cosine_fisher": 6.705647594755879
+  },
+  "artifacts": {
+    "h1_by_seed_layer": "iterations/iter_0003/scgpt_lung_h1_persistence_by_seed_layer.csv",
+    "h1_layer_summary": "iterations/iter_0003/scgpt_lung_h1_persistence_layer_summary.csv",
+    "alignment_by_domain": "iterations/iter_0003/cross_model_feature_alignment_by_domain.csv",
+    "alignment_summary": "iterations/iter_0003/cross_model_feature_alignment_summary.json"
+  }
+}

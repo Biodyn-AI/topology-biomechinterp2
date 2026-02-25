@@ -1,0 +1,38 @@
+{
+  "iteration": "iter_0035",
+  "h88": {
+    "rows_tested": 72,
+    "mean_delta_auc": 0.07603435823067511,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 5,
+    "mean_descriptor_jaccard": 0.4926256613756614,
+    "artifact_paths": {
+      "by_seed_split_layer": "iterations/iter_0035/h88_multiseed_sparse_descriptor_by_seed_split_layer.csv",
+      "domain_summary": "iterations/iter_0035/h88_multiseed_sparse_descriptor_domain_summary.csv",
+      "null_summary": "iterations/iter_0035/h88_multiseed_sparse_descriptor_null_summary.csv",
+      "stability": "iterations/iter_0035/h88_multiseed_sparse_descriptor_stability.csv"
+    }
+  },
+  "h89": {
+    "rows_tested": 24,
+    "mean_delta_auc": 0.016763127466012856,
+    "positive_domain_splits": 6,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0035/h89_phase_boundary_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0035/h89_phase_boundary_domain_summary.csv",
+      "null_summary": "iterations/iter_0035/h89_phase_boundary_null_summary.csv"
+    }
+  },
+  "h90": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.004489143766537973,
+    "positive_domain_splits": 4,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0035/h90_topology_stability_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0035/h90_topology_stability_domain_summary.csv",
+      "null_summary": "iterations/iter_0035/h90_topology_stability_null_summary.csv"
+    }
+  }
+}

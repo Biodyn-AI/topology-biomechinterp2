@@ -1,0 +1,36 @@
+{
+  "iteration": "iter_0040",
+  "h103": {
+    "rows_tested": 24,
+    "mean_delta_auc": -0.003038537294162799,
+    "positive_domain_splits": 2,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0040/h103_interaction_derivative_rescue_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0040/h103_interaction_derivative_rescue_domain_summary.csv",
+      "null_summary": "iterations/iter_0040/h103_interaction_derivative_rescue_null_summary.csv"
+    }
+  },
+  "h104": {
+    "rows_tested": 6,
+    "mean_delta_auc": -0.009082386451108537,
+    "positive_domain_splits": 4,
+    "positive_null_gap_domain_splits": 0,
+    "artifact_paths": {
+      "by_domain_split": "iterations/iter_0040/h104_depth_motif_grammar_by_domain_split.csv",
+      "domain_summary": "iterations/iter_0040/h104_depth_motif_grammar_domain_summary.csv",
+      "null_summary": "iterations/iter_0040/h104_depth_motif_grammar_null_summary.csv"
+    }
+  },
+  "h105": {
+    "rows_tested": 12,
+    "mean_delta_auc": 0.07098604241197817,
+    "mean_conditioned_null_gap_gain": -0.05125493779355569,
+    "positive_domain_splits_conditioned_gain": 0,
+    "artifact_paths": {
+      "by_domain_split_layer": "iterations/iter_0040/h105_string_conditioned_null_calibration_by_domain_split_layer.csv",
+      "domain_summary": "iterations/iter_0040/h105_string_conditioned_null_calibration_domain_summary.csv",
+      "null_summary": "iterations/iter_0040/h105_string_conditioned_null_calibration_null_summary.csv"
+    }
+  }
+}

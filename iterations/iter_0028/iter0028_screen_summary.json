@@ -1,0 +1,40 @@
+{
+  "iteration": "iter_0028",
+  "h67": {
+    "rows_tested": 36,
+    "mean_delta_auc": -0.03047833921081475,
+    "mean_delta_vs_one_axis": 0.004019618010222415,
+    "domain_split_fisher_sig": 1,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0028/h67_rank_surface_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0028/h67_rank_surface_domain_summary.csv",
+      "null_summary": "iterations/iter_0028/h67_rank_surface_null_summary.csv"
+    }
+  },
+  "h68": {
+    "rows_tested": 12,
+    "mean_delta_auc": -0.3046366065686903,
+    "mean_null_gap_q95": -0.03847342425500242,
+    "mean_alignment_cosine": 0.005599306079085602,
+    "domain_split_fisher_sig": 2,
+    "artifact_paths": {
+      "by_domain_layer_split": "iterations/iter_0028/h68_cycle_utility_ot_by_domain_layer_split.csv",
+      "domain_summary": "iterations/iter_0028/h68_cycle_utility_ot_domain_summary.csv",
+      "null_summary": "iterations/iter_0028/h68_cycle_utility_ot_null_summary.csv"
+    }
+  },
+  "h69": {
+    "rows_tested": 36,
+    "mean_delta_auc": 0.026165766538128892,
+    "domain_split_fisher_sig": 6,
+    "artifact_paths": {
+      "by_seed_layer_split": "iterations/iter_0028/h69_triangle_defect_by_seed_layer_split.csv",
+      "domain_summary": "iterations/iter_0028/h69_triangle_defect_domain_summary.csv",
+      "null_summary": "iterations/iter_0028/h69_triangle_defect_null_summary.csv"
+    }
+  },
+  "environment": {
+    "python_env": "subproject40-topology",
+    "string_cache_used": "iterations/iter_0020/h43_string_network_api.tsv"
+  }
+}
